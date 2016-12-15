@@ -41,8 +41,8 @@ public class WeatherServiceImpl implements WeatherServices {
 		// TODO Auto-generated method stub
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_OBSERV+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		//RestTemplate restTemplate=new RestTemplate();
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
 		HttpEntity entity = new HttpEntity(headers);
