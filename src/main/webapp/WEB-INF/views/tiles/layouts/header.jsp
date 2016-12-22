@@ -13,6 +13,24 @@ Smart Airport
 </head>
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
+<script>
+function flight() {
+	windows.location.href="/";
+    document.getElementById('id05').style.display='block';
+}
+function airport() {
+	windows.location.href="/";
+    document.getElementById('id04').style.display='block';
+}
+function route() {
+	windows.location.href="/";
+    document.getElementById('id06').style.display='block';
+}
+function weather() {
+	windows.location.href="/";
+    document.getElementById('id10').style.display='block';
+}
+</script>
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
 <div id="main" class="inlineprop">
@@ -28,11 +46,11 @@ Smart Airport
         </li>
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
-                    <li><a href="/" onclick="document.getElementById('id05').style.display='block'">Find by Flight</a></li>
-                    <li><a href="/" onclick="document.getElementById('id04').style.display='block'">Find by Airport</a></li>
-                    <li><a href="/" onclick="document.getElementById('id06').style.display='block'">Find by Route</a></li>
+                    <li><a onclick="flight()">Find by Flight</a></li>
+                    <li><a onclick="airport()">Find by Airport</a></li>
+                    <li><a onclick="route()">Find by Route</a></li>
             </ul></li>
-        <li><a href="/" onclick="document.getElementById('id10').style.display='block'">Weather Condition</a>
+        <li><a onclick="weather()">Weather Condition</a>
            <!--  <ul class="dropdown">
                     <li><a onclick="document.getElementById('id10').style.display='block'">Forecast</a></li>
                     <li><a onclick="document.getElementById('id11').style.display='block'">Current</a></li>
@@ -4488,7 +4506,7 @@ We will consistently achieve top quartile growth by contributing to our customer
       <span onclick="document.getElementById('id08').style.display='none'" class="close" title="Close Modal" style="color:#f44336">&times;</span>
       </div>
       
- 		<iframe src="http://smartairport-conversation.mybluemix.net/dist/index.html" allowTransparency="true" frameborder="0" width="30%" height="90%"></iframe>
+ 		<iframe src="http://smartairport-conversation.mybluemix.net/dist/index.html" allowTransparency="false" frameborder="0" width="30%" height="90%"></iframe>
  	
  	
 </div>
