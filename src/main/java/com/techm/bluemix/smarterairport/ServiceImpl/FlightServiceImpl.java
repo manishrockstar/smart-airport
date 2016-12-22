@@ -35,7 +35,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.techm.bluemix.smarterairport.Services.FlightServices;
 import com.techm.bluemix.smarterairport.Wrapper.FlightStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.FlightStatusbyFSWrapper;
-import com.techm.bluemix.smarterairport.model.ResponseModel;
+
 import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
 @SuppressWarnings("unused")
