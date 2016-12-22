@@ -48,8 +48,8 @@ public class FlightServiceImpl implements FlightServices {
 		// TODO Auto-generated method stub
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FS+fs+SAConstant.FLIGHSTATS_APP_ID_KEY;
 		System.out.println(srcURL);
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		//RestTemplate restTemplate=new RestTemplate();
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusbyFSWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusbyFSWrapper.class);
 		System.out.println(jsonString.getBody());
 		return jsonString.getBody();
@@ -101,8 +101,8 @@ public class FlightServiceImpl implements FlightServices {
 		
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
 		System.out.println(srcURL);
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		//RestTemplate restTemplate=new RestTemplate();
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
 		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
 	
@@ -128,8 +128,8 @@ public class FlightServiceImpl implements FlightServices {
 		
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FLIGHTS+airline+"/"+flightId+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
 		System.out.println(srcURL);
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		//RestTemplate restTemplate=new RestTemplate();
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
 		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
 	

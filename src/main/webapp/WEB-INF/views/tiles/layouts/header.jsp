@@ -24,15 +24,21 @@ function flight() {
     document.getElementById('id05').style.display='block';
 }
 function airport() {
-	window.location.href="/";
+	if(window.location.href.indexOf("flight" || "weather") > -1) {
+       window.location.href="/";
+    }	
     document.getElementById('id04').style.display='block';
 }
 function route() {
-	window.location.href="/";
+	if(window.location.href.indexOf("flight" || "weather") > -1) {
+       window.location.href="/";
+    }	
     document.getElementById('id06').style.display='block';
 }
 function weather() {
-	window.location.href="/";
+	if(window.location.href.indexOf("flight" || "weather") > -1) {
+       window.location.href="/";
+    }	
     document.getElementById('id10').style.display='block';
 }
 </script>
@@ -52,10 +58,10 @@ function weather() {
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
                     <li><a onclick = "javascript:flight();">Find by Flight</a></li>
-                    <li><a id="airport">Find by Airport</a></li>
-                    <li><a id="route">Find by Route</a></li>
+                    <li><a onclick = "javascript:airport()">Find by Airport</a></li>
+                    <li><a onclick = "javascript:route()">Find by Route</a></li>
             </ul></li>
-        <li><a id="weather">Weather Condition</a>
+        <li><a onclick = "javascript:weather()">Weather Condition</a>
            <!--  <ul class="dropdown">
                     <li><a onclick="document.getElementById('id10').style.display='block'">Forecast</a></li>
                     <li><a onclick="document.getElementById('id11').style.display='block'">Current</a></li>
