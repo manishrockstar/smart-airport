@@ -31,7 +31,7 @@
 //	private boolean processVCAP(PrintWriter writer)
 //{
 		// VCAP_SERVICES is a system environment variable
-		// Parse it to obtain the for DB2 connection info
+		
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
 	//	writer.println("VCAP_SERVICES content: " + VCAP_SERVICES);
 
@@ -47,7 +47,7 @@
 			{
 			//	writer.println("Key is: " + eachkey);
 				// Just in case the service name gets changed to lower case in the future, use toUpperCase
-				if (eachkey.toUpperCase().contains("SQLDB")) 
+				if (eachkey.toUpperCase().contains("weatherinsights")) 
 				{
 					thekey = eachkey;
 				}
