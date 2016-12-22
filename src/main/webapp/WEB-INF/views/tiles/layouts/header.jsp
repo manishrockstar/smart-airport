@@ -45,7 +45,7 @@ Smart Airport
 
 <img id="imgicon" src="${images}/icon.png" height="120px" class="inlineprop" usemap="#planetmap">
 <img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap"><map name="planetmap">
-  <area shape="rect" coords="0,0,270,126" alt="Sun" href="/SmartAirport"></map>
+  <area shape="rect" coords="0,0,270,126" alt="Sun" href="/"></map>
 </div> 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
