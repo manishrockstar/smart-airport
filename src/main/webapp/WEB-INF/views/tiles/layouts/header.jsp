@@ -14,7 +14,13 @@ Smart Airport
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
 <script>
+document.getElementById("flight").onclick = function() {flight()};
+document.getElementById("airport").onclick = function() {airport()};
+document.getElementById("route").onclick = function() {route()};
+document.getElementById("weather").onclick = function() {weather()};
+
 function flight() {
+	
 	windows.location.href="/";
     document.getElementById('id05').style.display='block';
 }
@@ -46,11 +52,11 @@ function weather() {
         </li>
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
-                    <li><a onclick="flight()">Find by Flight</a></li>
-                    <li><a onclick="airport()">Find by Airport</a></li>
-                    <li><a onclick="route()">Find by Route</a></li>
+                    <li><a id="flight">Find by Flight</a></li>
+                    <li><a id="airport">Find by Airport</a></li>
+                    <li><a id="route">Find by Route</a></li>
             </ul></li>
-        <li><a onclick="weather()">Weather Condition</a>
+        <li><a id="weather">Weather Condition</a>
            <!--  <ul class="dropdown">
                     <li><a onclick="document.getElementById('id10').style.display='block'">Forecast</a></li>
                     <li><a onclick="document.getElementById('id11').style.display='block'">Current</a></li>
