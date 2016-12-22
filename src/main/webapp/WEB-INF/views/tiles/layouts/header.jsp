@@ -18,7 +18,9 @@ Smart Airport
 
 function flight() {
 	
-	window.location.href="/";
+	if(window.location.href.indexOf("flight" || "weather") > -1) {
+       window.location.href="/";
+    }	
     document.getElementById('id05').style.display='block';
 }
 function airport() {
