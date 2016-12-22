@@ -11,7 +11,6 @@ public class SmartController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
-		return new ModelAndView("index");
-	}
-	
+		return new ModelAndView("home");
+	}	
 }

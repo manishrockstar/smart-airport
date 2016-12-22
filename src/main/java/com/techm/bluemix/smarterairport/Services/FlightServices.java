@@ -18,8 +18,12 @@ public interface FlightServices {
 	
 	public FlightStatusbyFSWrapper trackByFS(String fs) throws JsonParseException, JsonMappingException, IOException;
 
-	public FlightStatusWrapper trackByRoute(String departure, String destination, String maxnoflight, Date dat);
+	public List<FlightStatusWrapper> trackByRoute(String departure, String destination, String maxnoflight, Date dat);
 
 	public List<FlightStatusWrapper> trackByAirport(String airports, String departarrival, String hoursofday, Date dat) throws IOException;
+
+	public List<FlightStatusWrapper> trackByflightID(String airline, String flightId, String departarrival, Date dat);
+
+	
 
 }

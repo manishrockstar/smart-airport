@@ -18,14 +18,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.techm.bluemix.smarterairport.Services.FlightServices;
 import com.techm.bluemix.smarterairport.Wrapper.FlightStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.FlightStatusbyFSWrapper;
-
+import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
 
 @Controller
 @RequestMapping("/flight")
 public class FlightController<fsWrapper> {
 	
-	@Autowired
+	@Autowired(required=true)
 	private FlightServices flightServices;
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
@@ -42,10 +42,10 @@ public class FlightController<fsWrapper> {
 	}
 	
 	@RequestMapping(value="/trackByRoute", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView trackFlightByRoute(@RequestParam("departure") String departure,@RequestParam("destination") String destination,@RequestParam("maxnoflight") String maxnoflight,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
+	public ModelAndView trackFlightByRoute(@RequestParam("departure") String departure,@RequestParam("arrival") String arrival,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		FlightStatusWrapper fswrapper = flightServices.trackByRoute(SAUtils.airportCodeMap.get(departure),SAUtils.airportCodeMap.get(destination),maxnoflight,dat);
+		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(SAConstant.airportCodeMap.get(departure),SAConstant.airportCodeMap.get(arrival),departarrival,dat);
 		return new ModelAndView("flightstatus","fswrapper",fswrapper);
 	}
 	
@@ -53,11 +53,19 @@ public class FlightController<fsWrapper> {
 	public ModelAndView trackFlightByAirport(@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		List<FlightStatusWrapper> list = flightServices.trackByAirport(SAUtils.airportCodeMap.get(airports),departarrival,hoursofday,dat);
+		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(SAConstant.airportCodeMap.get(airports),departarrival,hoursofday,dat);
 		//FlightStatusWrapper fsWrapper = flightServices.trackByAirport(SAUtils.airportCodeMap.get(airports),departarrival,hoursofday,dat);
-		  
-		System.out.println(list);
-		return new ModelAndView("flightstatus","list",list);
+		System.out.println(fswrapper);
+		return new ModelAndView("flightstatus","fswrapper",fswrapper);
+	}
+	
+	@RequestMapping(value="/trackByflightID", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView trackFlightByflightID(@RequestParam("airline") String airline,@RequestParam("flightId") String flightId,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
+	{	
+		
+		List<FlightStatusWrapper> fswrapper = flightServices.trackByflightID(SAUtils.airlineCodeMap.get(airline),flightId, departarrival,dat);
+		System.out.println(fswrapper);
+		return new ModelAndView("flightstatus","fswrapper",fswrapper);
 	}
 	
 	

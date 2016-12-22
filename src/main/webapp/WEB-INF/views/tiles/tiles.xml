@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+  
+   <!-- Base Definition -->
+   <definition name="base-definition"
+       template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
+         
+       <put-attribute name="header" value="/WEB-INF/views/tiles/layouts/header.jsp" />  
+         
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/layouts/footer.jsp" />  
+   </definition>  
+  
+   <!-- Landing Page -->
+   <definition name="home" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/home.jsp" />  
+   </definition>  
+ 
+   <!-- Sign in Page -->
+   <definition name="signin" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/signin.jsp" />  
+   </definition>  
+   <!-- Sign up Page -->
+   <definition name="signup" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/signup.jsp" />  
+   </definition> 
+   <!-- About Page -->
+   <definition name="aboutus" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/aboutus.jsp" />  
+   </definition> 
+   <!-- Contact-us Page -->
+   <definition name="contactus" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/contactus.jsp" />    
+   </definition> 
+   
+   <!-- Services -->
+       
+   <!-- Chat me Page -->
+   <definition name="chatme" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/chatme.jsp" />    
+   </definition>  
+   <!-- Flight-Status By ID Page -->
+   <definition name="flightstatusId" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/flightstatusId.jsp" />    
+   </definition>  
+   <!-- Flight-Status By Airport Page -->
+   <definition name="flightstatusAirport" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/flightstatusAirport.jsp" />    
+   </definition>  
+   <!-- Flight-Status By Route Page -->
+   <definition name="flightstatusRoute" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/flightstatusRoute.jsp" />    
+   </definition>  
+   
+   <!-- Weather-Status Page -->
+   <definition name="weatherForecast" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/weatherForecast.jsp" />    
+   </definition>
+   
+   <!-- Flight-Status Page -->
+   <definition name="flightstatus" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/flightstatus.jsp" />    
+   </definition>      
+   
+  
+</tiles-definitions>

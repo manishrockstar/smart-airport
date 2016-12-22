@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class FlightStatusesWrapper {
+
 	
-	@JsonProperty("flightId")
 	private String flightId;
 	private String carrierFsCode,
 	flightNumber,

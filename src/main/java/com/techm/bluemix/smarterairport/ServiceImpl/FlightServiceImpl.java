@@ -42,22 +42,25 @@ import com.techm.bluemix.smarterairport.utils.SAUtils;
 @Service("flightServices")
 public class FlightServiceImpl implements FlightServices {
 
-	private static final Logger log = LoggerFactory.getLogger(FlightServiceImpl.class);
-	ResponseModel responseModel = null;
 	
+	@Override
 	public FlightStatusbyFSWrapper trackByFS(String fs) throws JsonParseException, JsonMappingException, IOException {
 		// TODO Auto-generated method stub
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FS+fs+SAConstant.FLIGHSTATS_APP_ID_KEY;
 		System.out.println(srcURL);
-		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		RestTemplate restTemplate=new RestTemplate();
+		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		//RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusbyFSWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusbyFSWrapper.class);
 		System.out.println(jsonString.getBody());
 		return jsonString.getBody();
 	}
 	
-	
-	public FlightStatusWrapper trackByRoute(String departure, String destination, String maxnoflight, Date dat) {
+	/**Flight Status by Route
+	 * 
+	 * 
+	 */
+	@Override
+	public List<FlightStatusWrapper> trackByRoute(String departure, String destination, String departarrival, Date dat) {
 		// TODO Auto-generated method stub
 		//Date mydate=new Date(dat);
 		
@@ -70,16 +73,21 @@ public class FlightServiceImpl implements FlightServices {
 	    String mm=monFormat.format(mydate);
 	    String dd=datFormat.format(mydate);
 		
-		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_ROUTE+departure+"/"+destination+"/dep/"+yy+"/"+mm+"/"+dd+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_ROUTE_END+maxnoflight;
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_ROUTE+departure+"/"+destination+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_ROUTE_END;
 		System.out.println(srcURL);
 		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		//RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
-		System.out.println(jsonString.getBody());
-		return jsonString.getBody();
-	}
+		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
+		System.out.println(data);
+		return data;
 
-	
+	}
+	/**Flight Status by Airport
+	 * 
+	 * 
+	 */
+	@Override
 	public List<FlightStatusWrapper> trackByAirport(String airports, String departarrival, String hoursofday, Date dat) {
 		// TODO Auto-generated method stub
 		Date mydate=dat;
@@ -93,16 +101,38 @@ public class FlightServiceImpl implements FlightServices {
 		
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
 		System.out.println(srcURL);
-		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		RestTemplate restTemplate=new RestTemplate();
+		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		//RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
-		List<FlightStatusWrapper> data = Arrays.asList(jsonString.getBody());
-		//ResponseEntity<? extends ArrayList<FlightStatusWrapper>> jsonString = restTemplate.getForEntity(srcURL, (Class<? extends ArrayList<FlightStatusWrapper>>)ArrayList.class);
-		//ResponseEntity<? extends ArrayList<HashMap<String,Object>>> responseEntity = restTemplate.getForEntity(restEndPointUrl, (Class<? extends ArrayList<HashMap<String,Object>>>)ArrayList.class, parameterId);
+		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
+	
+		System.out.println(data);
+		return data;
+	}
+
+	/**Flight Status by FlightID
+	 * 
+	 * 
+	 */
+	@Override
+	public List<FlightStatusWrapper> trackByflightID(String airline, String flightId, String departarrival, Date dat) {
+		// TODO Auto-generated method stub
+		Date mydate=dat;
+		SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
+	    SimpleDateFormat monFormat = new SimpleDateFormat("MM");
+	    SimpleDateFormat datFormat = new SimpleDateFormat("dd");
+	    //dat.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+	    String yy=yearFormat.format(mydate);
+	    String mm=monFormat.format(mydate);
+	    String dd=datFormat.format(mydate);
 		
-		//List<LinkedHashMap> jsonString=(List<LinkedHashMap>) restTemplate.getForEntity(srcURL, List.class);
-		//System.out.println(jsonString.getBody());
-		//return jsonString.getBody();
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FLIGHTS+airline+"/"+flightId+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
+		System.out.println(srcURL);
+		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		//RestTemplate restTemplate=new RestTemplate();
+		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
+		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
+	
 		System.out.println(data);
 		return data;
 	}
