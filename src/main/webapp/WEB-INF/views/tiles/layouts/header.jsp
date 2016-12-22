@@ -21,7 +21,7 @@ document.getElementById("weather").onclick = function() {weather()};
 
 function flight() {
 	
-	window.location.href="/";
+
     document.getElementById('id05').style.display='block';
 }
 function airport() {
