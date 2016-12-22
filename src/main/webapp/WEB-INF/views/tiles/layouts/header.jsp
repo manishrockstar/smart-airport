@@ -21,19 +21,19 @@ document.getElementById("weather").onclick = function() {weather()};
 
 function flight() {
 	
-	windows.location.href="/";
+	window.location.href="/";
     document.getElementById('id05').style.display='block';
 }
 function airport() {
-	windows.location.href="/";
+	window.location.href="/";
     document.getElementById('id04').style.display='block';
 }
 function route() {
-	windows.location.href="/";
+	window.location.href="/";
     document.getElementById('id06').style.display='block';
 }
 function weather() {
-	windows.location.href="/";
+	window.location.href="/";
     document.getElementById('id10').style.display='block';
 }
 </script>
