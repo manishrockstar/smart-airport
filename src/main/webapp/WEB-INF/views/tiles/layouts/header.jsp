@@ -28,11 +28,11 @@ Smart Airport
         </li>
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
-                    <li><a onclick="document.getElementById('id05').style.display='block'">Find by Flight</a></li>
-                    <li><a onclick="document.getElementById('id04').style.display='block'">Find by Airport</a></li>
-                    <li><a onclick="document.getElementById('id06').style.display='block'">Find by Route</a></li>
+                    <li><a href="/" onclick="document.getElementById('id05').style.display='block'">Find by Flight</a></li>
+                    <li><a href="/" onclick="document.getElementById('id04').style.display='block'">Find by Airport</a></li>
+                    <li><a href="/" onclick="document.getElementById('id06').style.display='block'">Find by Route</a></li>
             </ul></li>
-        <li><a href="javascript:void(0)" onclick="document.getElementById('id10').style.display='block'">Weather Condition</a>
+        <li><a href="/" onclick="document.getElementById('id10').style.display='block'">Weather Condition</a>
            <!--  <ul class="dropdown">
                     <li><a onclick="document.getElementById('id10').style.display='block'">Forecast</a></li>
                     <li><a onclick="document.getElementById('id11').style.display='block'">Current</a></li>
@@ -158,7 +158,7 @@ Smart Airport
 
 <div id="id04" class="modal">
   
-  <form class="modal-content animate" method ="POST" action="/SmartAirport/flight/trackByAirport">
+  <form class="modal-content animate" method ="POST" action="/flight/trackByAirport">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
@@ -4124,7 +4124,7 @@ Smart Airport
 
 <div id="id05" class="modal">
   
-  <form class="modal-content animate" method ="POST" action="/SmartAirport/flight/trackByflightID">
+  <form class="modal-content animate" method ="POST" action="/flight/trackByflightID">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
@@ -4421,7 +4421,7 @@ Smart Airport
 
 <div id="id06" class="modal">
   
-  <form class="modal-content animate" method ="POST" action="/SmartAirport/flight/trackByRoute">
+  <form class="modal-content animate" method ="POST" action="/flight/trackByRoute">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
@@ -4511,7 +4511,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 </div>
 
 <div id="id10" class="modal">
-<form class="modal-content animate" method ="POST" action="/SmartAirport/weather/forecast">
+<form class="modal-content animate" method ="POST" action="/weather/forecast">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id10').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="${images}/weather.jpg" width="200" height="100" border="0">
