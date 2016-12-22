@@ -75,8 +75,8 @@ public class FlightServiceImpl implements FlightServices {
 		
 		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_ROUTE+departure+"/"+destination+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_ROUTE_END;
 		System.out.println(srcURL);
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		//RestTemplate restTemplate=new RestTemplate();
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
 		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
 		System.out.println(data);
