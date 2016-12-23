@@ -6,3 +6,4 @@ applications:
   name: SmartAirport
   host: SmartAirport
   disk_quota: 1024M
+  service: -Weather Company Data-s6

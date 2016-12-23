@@ -35,7 +35,7 @@ public class SAConstant {
 	 * Weather API parameters
 	 */
 	//Url prepration
-	public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg@twcservice.mybluemix.net/api/weather/v1";
+	public static final String WEATHER_API_BASE_URI = "https://31b99c3c-90b1-4d1e-ba50-5d02b6ccca34:IFFD8ZyPJa@twcservice.mybluemix.net:443/api/weather/v1";
 	public static final String W_GEOCODE = "/geocode";
 	public static final String W_LOCATION = "/location";
 	public static final String W_FORECAST = "/forecast";

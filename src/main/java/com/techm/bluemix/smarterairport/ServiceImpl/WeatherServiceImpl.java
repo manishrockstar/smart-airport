@@ -66,58 +66,6 @@ public class WeatherServiceImpl implements WeatherServices {
 	public List<WeatherForecastWrapper> trackWeatherForecast(String latitude, String longitude, String days) {
 		// TODO Auto-generated method stub
 		
-		String databaseHost = "localhost";
-	int port = 443;
-	String databaseName = "mydb";
-    String user = "myuser";
-	String pasword = "mypass";
-	String url = "myurl";
-	String username = request.getParameter("username");   
-    String paword = request.getParameter("password");
-    
-    //HttpSession session = request.getSession();
-	PrintWriter writer = response.getWriter();
-	
-//	private boolean processVCAP(PrintWriter writer)
-//{
-		// VCAP_SERVICES is a system environment variable
-		
-		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
-	//	writer.println("VCAP_SERVICES content: " + VCAP_SERVICES);
-
-		if (VCAP_SERVICES != null)
-		{
-			// parse the VCAP JSON structure
-			BasicDBObject obj = (BasicDBObject) JSON.parse(VCAP_SERVICES);
-			String thekey = null;
-			Set<String> keys = obj.keySet();
-		//	writer.println("Searching through VCAP keys");
-			// Look for the VCAP key that holds the SQLDB information
-			for (String eachkey : keys) 
-			{
-			//	writer.println("Key is: " + eachkey);
-				// Just in case the service name gets changed to lower case in the future, use toUpperCase
-				if (eachkey.contains("weatherinsights")) 
-				{
-					thekey = eachkey;
-				}
-			}
-			if (thekey == null) 
-			{
-			//	writer.println("Cannot find any SQLDB service in the VCAP; exiting");
-			//	return false;
-			}
-			BasicDBList list = (BasicDBList) obj.get(thekey);
-			obj = (BasicDBObject) list.get("0");
-			//writer.println("Service found: " + obj.get("name"));
-			// parse all the credentials from the vcap env variable
-			obj = (BasicDBObject) obj.get("credentials");
-			databaseHost = (String) obj.get("host");
-			port = (int)obj.get("port");
-			user = (String) obj.get("username");
-			pasword = (String) obj.get("password");
-			url = (String) obj.get("jdbcurl");
-		}
 		
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
