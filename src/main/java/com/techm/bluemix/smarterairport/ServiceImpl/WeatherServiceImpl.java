@@ -7,7 +7,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -38,6 +40,8 @@ import com.techm.bluemix.smarterairport.Wrapper.WeatherStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.WeatherUpdateWrapper;
 import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
+import com.ibm.watson.developer_cloud.util.CredentialUtils;
+
 @SuppressWarnings("unused")
 @Service("weatherServices")
 public class WeatherServiceImpl implements WeatherServices {

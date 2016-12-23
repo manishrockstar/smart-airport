@@ -43,7 +43,7 @@ public class SAConstant {
 	public static final String W_PERIOD = "/daily";
 	//public static final String WF_DAYS = "/3days";
 	public static final String W_JSONFILE = ".json?";
-	public static final String W_LANGUAGE = "language=en-US";
+	public static final String W_LANGUAGE = "format=JSON&language=en-US";
 	public static final String W_UNITS = "&units=m";
 	
 	/**
