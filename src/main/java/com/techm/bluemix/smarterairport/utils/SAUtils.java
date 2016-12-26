@@ -29,7 +29,7 @@ public class SAUtils {
 		// VCAP_SERVICES is a system environment variable
 		// Parse it to obtain the for DB2 connection info
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
-
+		writer.println("Key is: " + VCAP_SERVICES);
 		if (VCAP_SERVICES != null) {
 			// parse the VCAP JSON structure
 			BasicDBObject obj = (BasicDBObject) JSON.parse(VCAP_SERVICES);
