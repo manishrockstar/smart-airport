@@ -86,7 +86,7 @@ public class WeatherServiceImpl implements WeatherServices {
 		HttpHeaders genericHeaders = new HttpHeaders();
 		genericHeaders.add("Content-Type", "application/json"); 
 		genericHeaders.add("Accept", "*/*");
-		HttpEntity<> requestEntity = new HttpEntity<>("", genericHeaders);
+		HttpEntity requestEntity = new HttpEntity("", genericHeaders);
 		/*HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
 		HttpEntity entity = new HttpEntity(headers);*/
