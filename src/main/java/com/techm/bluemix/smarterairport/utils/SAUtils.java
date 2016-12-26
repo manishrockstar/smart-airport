@@ -12,10 +12,51 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.ProxyAuthenticationStrategy;
 import org.springframework.http.client.ClientHttpRequestFactory;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\
+import com.ibm.nosql.json.api.BasicDBList;
+import com.ibm.nosql.json.api.BasicDBObject;
+import com.ibm.nosql.json.util.JSON;
 
 public class SAUtils {
+	
+	//Service call within Bluemix
+	private String databaseHost;
+	private int port;
+	private String user;
+	private String password;
+	private String url;
+	
+		// VCAP_SERVICES is a system environment variable
+		// Parse it to obtain the for DB2 connection info
+		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
 
+		
+			// parse the VCAP JSON structure
+			BasicDBObject obj = (BasicDBObject) JSON.parse(VCAP_SERVICES);
+			String thekey = null;
+			Set<String> keys = obj.keySet();
+			// Look for the VCAP key that holds the SQLDB information
+			for (String eachkey : keys) {
+				writer.println("Key is: " + eachkey);
+				// Just in case the service name gets changed to lower case in the future, use toUpperCase
+				if (eachkey.toUpperCase().contains("weatherinsights")) {
+					thekey = eachkey;
+				}
+			}
+			BasicDBList list = (BasicDBList) obj.get(thekey);
+			obj = (BasicDBObject) list.get("0");
+			writer.println("Service found: " + obj.get("name"));
+			// parse all the credentials from the vcap env variable
+			obj = (BasicDBObject) obj.get("credentials");
+			databaseHost = (String) obj.get("host");
+			databaseName = (String) obj.get("db");
+			port = (int)obj.get("port");
+			user = (String) obj.get("username");
+			password = (String) obj.get("password");
+			url = (String) obj.get("jdbcurl");
+
+	
+	
 	public static Map<String, String> flightCodeMap;
 	public static Map<String, String> countryCodeMap;
 	
