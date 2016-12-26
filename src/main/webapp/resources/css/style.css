@@ -6,7 +6,6 @@
 
 }
 
-
 #leftdiv2 {
 float:left;
   width:100%;
@@ -16,7 +15,7 @@ float:left;
 }
 #contentdiv {
   margin:1px .2em 1px 28%;
-  z-index:100;
+  z-index: 100;
 }
 #cnt1 {
   position:relative;
@@ -25,7 +24,7 @@ float:left;
 
 }
 #cnt2 {
-  position;relative;
+  position:relative;
   margin:.3em 2px;
   height: 100%;
 }
@@ -90,26 +89,6 @@ input[type=text], input[type=password], textarea {
     box-sizing: border-box;
 }
 
-input[type=list]{
-    -webkit-appearance: list;
-    -webkit-border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -webkit-user-select: none;
-    background-position: 97% center;
-    background-repeat: no-repeat;
-    border: 1px solid #AAA;
-    color: #555;
-    font-size: inherit;
-    margin: 20px;
-    overflow: hidden;
-    padding: 5px 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 300px;
-    }
-
 select{
    -webkit-appearance: button;
    -webkit-border-radius: 2px;
@@ -162,7 +141,7 @@ select#soflow-color {
 }
 
 /* Set a style for all buttons */
-button {
+input[type=button], button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -186,6 +165,8 @@ button {
     position: relative;
 }
 
+
+
 img.avatar {
     width: 20%;
     border-radius: 50%;
@@ -204,7 +185,7 @@ span.psw {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 100; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -215,6 +196,8 @@ span.psw {
     padding-top: 10px;
 }
 
+
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -222,6 +205,8 @@ span.psw {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
+
+
 
 /* The Close Button (x) */
 .close {
@@ -266,6 +251,36 @@ span.psw {
     }
 }
 
+table {
+    width:80%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+
+
+
+table#t01 tr:nth-child(even) {
+    background-color: #E5E8E8;
+    color:black;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#FDFEFE  ;
+   color:black;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+
 
 body {
     font-family: "Lato", sans-serif;
@@ -278,7 +293,7 @@ body {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     left: 0;
     background-color: white;
@@ -320,20 +335,24 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
+
+
 div#fixedheader {
-	position:fixed;
-	top:0px;
-	left:0px;
-        height:10%;
-	width:100%;
-	color:#CCC;
-	background:#333;
+  position:fixed;
+  top:0px;
+  left:0px;
+  height:10%;
+  width:100%;
+  color:#CCC;
+  background:#333;
+  z-index:100;
 }
 
+
 div#fixedheader a {
-      display: inline-block;
+    display: inline-block;
     color:white;
-    padding: 14px;
+    padding: 10px;
     text-decoration: none;
         
 }
@@ -341,6 +360,36 @@ div#fixedheader a {
 div#fixedheader a:hover {
      background-color:#777;
 }
+
+
+p#head{
+  position:absolute;
+  top:2px;
+  right:130px;
+  font-family: "Bauhaus 93", Times, serif;
+  font-size:150%;
+  
+}
+
+
+div#box{
+
+    width: 600px;
+    border: 2px solid red;
+    padding: 25px;
+    margin: 25px;
+}
+
+div#back
+{
+  align:right;
+}
+
+div#id11
+{
+ display:none;
+}
+
 
 
 #rig {
@@ -369,6 +418,14 @@ div#fixedheader a:hover {
     position:relative;
     overflow:hidden;
 }
+
+.rig-cell1 {
+    margin:12px;
+    box-shadow:0 0 6px rgba(0,0,0,0.3);
+    display:block;
+    position:relative;
+    overflow:hidden;
+}
         
 /* If have the image layer */
 .rig-img {
@@ -380,6 +437,17 @@ div#fixedheader a:hover {
     transition:all 1s;
     background-repeat:no-repeat;
     background-size:cover;
+}
+
+.rig-img1 {
+  
+    width: 200px;
+    height: 200px;
+    border:none;
+    transform:scale(1);
+    transition:all 1s;
+    background-repeat:no-repeat;
+    
 }
 
 #rig li:hover .rig-img {
@@ -448,6 +516,7 @@ img#imgicon
 float:right;
 }
 
+
 .inlineprop {
       display:inline-block;
     }
@@ -459,7 +528,7 @@ float:right;
 }
 
 img.mySlides
-{
+{ 
  width:800px;
  height:400px;
 }
@@ -472,5 +541,14 @@ div#fixedfooter {
 	width:100%;
 	color:#CCC;
 	background:#333;
-	padding:8px;
+	padding:12px;
 }
+
+div#fixedfooter a {
+  
+    color:white;
+  
+    text-decoration: none;
+        
+}
+
