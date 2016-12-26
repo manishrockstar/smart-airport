@@ -13,4 +13,25 @@ public class SmartController {
 	public ModelAndView smartHome(){
 		return new ModelAndView("home");
 	}	
+	
+	@RequestMapping(value="restroom", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartRestRoom(){
+		return new ModelAndView("restroom");
+	}	
+	
+	@RequestMapping(value="restaurant", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartRestaurant(){
+		return new ModelAndView("restaurant");
+	}	
+	
+	@RequestMapping(value="emergency", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartEmergency(){
+		return new ModelAndView("emergency");
+	}	
+		
+	@RequestMapping(value="shopping", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartShopping(){
+		return new ModelAndView("shopping");
+	}	
+
 }
