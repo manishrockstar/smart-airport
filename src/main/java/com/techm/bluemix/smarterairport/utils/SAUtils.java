@@ -25,7 +25,7 @@ public class SAUtils {
 	private String user;
 	private String password;
 	private String url;
-	
+		private boolean processVCAP() {
 		// VCAP_SERVICES is a system environment variable
 		// Parse it to obtain the for DB2 connection info
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
@@ -56,7 +56,8 @@ public class SAUtils {
 			url = (String) obj.get("jdbcurl");
 			writer.println("Service found: " + url);
 		}	
-
+		return true;
+	}
 	
 	public static Map<String, String> flightCodeMap;
 	public static Map<String, String> countryCodeMap;
