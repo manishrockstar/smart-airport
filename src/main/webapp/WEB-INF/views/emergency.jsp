@@ -12,6 +12,9 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div id="info" style="padding:0 40px 0 40px;" class="medical">
+<a onclick="location.href='SmarterAirport.html'">
+<img src="images/backk.png" height="60px" width="60px" align="left">
+</a>
 
 <b>The medical unit at Cochin International Airport provides the following services:</b><br>
  
@@ -34,9 +37,9 @@ First Aid Boxes have been provided at the following locations at the airport for
 *Power House<br>
 </p>
 <br><br>
-<img src="images/medical.jpg"><br>
+<img src="${images}/medical.jpg"><br>
 <a onclick="location.href='SmarterAirport.html'">
-<img src="images/back.png" height="80px" width="80px" align="right">
+<img src="${images}/back.png" height="80px" width="80px" align="right">
 </a>
 </div>
 </body>
