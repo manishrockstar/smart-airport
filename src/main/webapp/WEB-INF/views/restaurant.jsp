@@ -18,6 +18,9 @@
 </center>
 </div>
 <div class="inlineprop">
+<a onclick="location.href='SmarterAirport.html'">
+<img src="images/backk.png" height="60px" width="60px" align="left">
+</a>
 <ul id="rig">
    <li>
         <a class="rig-cell1" onclick="location.href='cafebar.html'">
@@ -53,8 +56,5 @@
 </div>
 
 
-<a onclick="location.href='/'">
-<img src="${images}/back.png" height="80px" width="80px" align="right">
-</a>
 </body>
 </html>

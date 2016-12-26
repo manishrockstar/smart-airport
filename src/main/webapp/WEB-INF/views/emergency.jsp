@@ -12,6 +12,9 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div id="info" style="padding:0 40px 0 40px;" class="medical">
+<a onclick="location.href='SmarterAirport.html'">
+<img src="images/backk.png" height="60px" width="60px" align="left">
+</a>
 
 <b>The medical unit at Cochin International Airport provides the following services:</b><br>
  
