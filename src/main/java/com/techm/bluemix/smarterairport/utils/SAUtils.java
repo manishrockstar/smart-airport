@@ -12,7 +12,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.ProxyAuthenticationStrategy;
 import org.springframework.http.client.ClientHttpRequestFactory;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;\
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import com.ibm.nosql.json.api.BasicDBList;
 import com.ibm.nosql.json.api.BasicDBObject;
 import com.ibm.nosql.json.util.JSON;
