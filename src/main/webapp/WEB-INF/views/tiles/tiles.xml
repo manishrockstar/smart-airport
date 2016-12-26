@@ -62,7 +62,27 @@
    <!-- Flight-Status Page -->
    <definition name="flightstatus" extends="base-definition">  
        <put-attribute name="body" value="/WEB-INF/views/flightstatus.jsp" />    
-   </definition>      
+   </definition>     
+   
+   <!-- Emergency Page -->
+   <definition name="emergency" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/emergency.jsp" />    
+   </definition>
+   
+   <!-- Restaurant Page -->
+   <definition name="restaurant" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/restaurant.jsp" />    
+   </definition>
+   
+   <!-- Restroom Page -->
+   <definition name="restroom" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/restroom.jsp" />    
+   </definition>
+   
+   <!-- Shopping Page -->
+   <definition name="shopping" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/shopping.jsp" />    
+   </definition>
    
   
 </tiles-definitions>

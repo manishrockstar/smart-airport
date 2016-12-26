@@ -52,28 +52,28 @@ We are making every effort to provide passengers with an excellent airport exper
 <div class="inlineprop">
 <ul id="rig">
     <li>
-        <a class="rig-cell" onclick="document.getElementById('id08').style.display='block'">
+        <a class="rig-cell" href="restroom">
             <img class="rig-img" src="${images}/restt.jpg" >
             <span class="rig-overlay"></span>
             <span class="rig-text">Restrooms</span>
         </a>
     </li>
     <li>
-        <a class="rig-cell" onclick="document.getElementById('id08').style.display='block'">
+        <a class="rig-cell" href="restaurant">
             <img class="rig-img" src="${images}/restaur.jpg">
             <span class="rig-overlay"></span>
             <span class="rig-text">Restaurants</span>
         </a>
     </li>
     <li>
-        <a class="rig-cell" onclick="document.getElementById('id08').style.display='block'">
+        <a class="rig-cell" href="shopping">
             <img class="rig-img" src="${images}/3.jpg">
             <span class="rig-overlay"></span>
             <span class="rig-text">Shopping</span>
         </a>
     </li>
     <li>
-        <a class="rig-cell" onclick="document.getElementById('id08').style.display='block'">
+        <a class="rig-cell" href="emergency">
             <img class="rig-img" src="${images}/emerg.jpg">
             <span class="rig-overlay"></span>
             <span class="rig-text">Emergency</span>
