@@ -15,7 +15,9 @@ import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 
 public class SAUtils {
+	
 
+	
 	public static Map<String, String> flightCodeMap;
 	public static Map<String, String> countryCodeMap;
 	
