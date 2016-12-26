@@ -30,7 +30,7 @@ public class SAUtils {
 		// Parse it to obtain the for DB2 connection info
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
 
-		
+		if (VCAP_SERVICES != null) {
 			// parse the VCAP JSON structure
 			BasicDBObject obj = (BasicDBObject) JSON.parse(VCAP_SERVICES);
 			String thekey = null;
@@ -45,7 +45,7 @@ public class SAUtils {
 			}
 			BasicDBList list = (BasicDBList) obj.get(thekey);
 			obj = (BasicDBObject) list.get("0");
-			writer.println("Service found: " + obj.get("name"));
+			
 			// parse all the credentials from the vcap env variable
 			obj = (BasicDBObject) obj.get("credentials");
 			databaseHost = (String) obj.get("host");
@@ -54,8 +54,9 @@ public class SAUtils {
 			user = (String) obj.get("username");
 			password = (String) obj.get("password");
 			url = (String) obj.get("jdbcurl");
+			writer.println("Service found: " + url);
+		}	
 
-	
 	
 	public static Map<String, String> flightCodeMap;
 	public static Map<String, String> countryCodeMap;
