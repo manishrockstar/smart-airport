@@ -34,9 +34,9 @@ First Aid Boxes have been provided at the following locations at the airport for
 *Power House<br>
 </p>
 <br><br>
-<img src="images/medical.jpg"><br>
+<img src="${images}/medical.jpg"><br>
 <a onclick="location.href='SmarterAirport.html'">
-<img src="images/back.png" height="80px" width="80px" align="right">
+<img src="${images}/back.png" height="80px" width="80px" align="right">
 </a>
 </div>
 </body>

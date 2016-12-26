@@ -13,7 +13,7 @@
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
 <center>
-<img src="images/restroom.jpg" height="300px" width="300px">
+<img src="${images}/restroom.jpg" height="300px" width="300px">
 </center>
 </div>
 
@@ -25,8 +25,8 @@ If you face difficulty in finding the restroom then follow the sign board locate
 <b>LOCATION : Ground floor,right side,T3 terminal </b>
 </div>
 </center>
-<a onclick="location.href='SmarterAirport.html'">
-<img src="images/back.png" height="80px" width="80px" align="right">
+<a onclick="location.href='/'">
+<img src="${images}/back.png" height="80px" width="80px" align="right">
 </a>
 
 </body>

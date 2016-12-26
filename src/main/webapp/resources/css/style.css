@@ -6,6 +6,7 @@
 
 }
 
+
 #leftdiv2 {
 float:left;
   width:100%;
@@ -15,6 +16,7 @@ float:left;
 }
 #contentdiv {
   margin:1px .2em 1px 28%;
+  z-index:100;
 }
 #cnt1 {
   position:relative;
