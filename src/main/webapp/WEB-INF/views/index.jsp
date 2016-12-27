@@ -16,6 +16,9 @@ Smart Airport
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
 <div id="main" class="inlineprop">
+<a onclick="goBack()">
+<img src="${images}/backk.png" height="60px" width="60px" align="left">
+</a>
 <ul>
         <li><a onclick="openNav()">&#9776;</a></li>
         
