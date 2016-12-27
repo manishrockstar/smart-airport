@@ -21,9 +21,7 @@
 </center>
 </div>
 <div class="inlineprop">
-<a onclick="location.href='/'">
-<img src="${images}/backk.png" height="60px" width="60px" align="left">
-</a>
+
 <ul id="rig">
    <li>
         <a class="rig-cell1" href="cafebar">
