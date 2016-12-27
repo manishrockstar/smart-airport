@@ -84,5 +84,94 @@
        <put-attribute name="body" value="/WEB-INF/views/shopping.jsp" />    
    </definition>
    
+     <!-- Apparel Page -->
+   <definition name="apparel" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/apparel.jsp" />    
+   </definition>
+   
+     <!-- Beauty Page -->
+   <definition name="beauty" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/beauty.jsp" />    
+   </definition>
+   
+     <!-- Travel Page -->
+   <definition name="travel" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/travel.jsp" />    
+   </definition>
+   
+     <!-- Electronics Page -->
+   <definition name="electronics" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/electronics.jsp" />    
+   </definition>
+   
+     <!-- Fashion Page -->
+   <definition name="fashion" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/fashion.jsp" />    
+   </definition>
+   
+     <!-- Jewellery Page -->
+   <definition name="jewellery" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/jewellery.jsp" />    
+   </definition>
+   
+     <!-- Packed food Page -->
+   <definition name="packed" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/packed.jsp" />    
+   </definition>
+   
+     <!-- Watches Page -->
+   <definition name="watches" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/watches.jsp" />    
+   </definition>
+   
+     <!-- Perfumes Page -->
+   <definition name="perfumes" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/perfumes.jsp" />    
+   </definition>
+   
+     <!-- Gifts Page -->
+   <definition name="gifts" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/gifts.jsp" />    
+   </definition>
+   
+     <!-- Toys Page -->
+   <definition name="toys" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/toys.jsp" />    
+   </definition>
+   
+     <!-- Travel accesories Page -->
+   <definition name="travell" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/travell.jsp" />    
+   </definition>
+   
+     <!-- Wine Page -->
+   <definition name="wine" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/wine.jsp" />    
+   </definition>
+   
+     <!-- Books Page -->
+   <definition name="books" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/books.jsp" />    
+   </definition>
+   
+      <!-- Cafebar Page -->
+   <definition name="cafebar" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/cafebar.jsp" />    
+   </definition>
+   
+     <!-- Casual dining Page -->
+   <definition name="casual" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/casual.jsp" />    
+   </definition>
+   
+     <!-- Coffe shop Page -->
+   <definition name="coffe" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/coffee.jsp" />    
+   </definition>
+   
+     <!-- Food court Page -->
+   <definition name="food" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/food.jsp" />    
+   </definition>
   
 </tiles-definitions>

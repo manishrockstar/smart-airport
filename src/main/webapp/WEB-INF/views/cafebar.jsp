@@ -13,7 +13,7 @@
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
 <center>
-<img src="images/cafeb.jpg" height="200px" width="600px">
+<img src="${images}/cafeb.jpg" height="200px" width="600px">
 </center>
 </div>
 
@@ -26,7 +26,7 @@ Touchdown bar and cafe is a place that really celebrates Chennai. Step inside an
 </div>
 </center>
 <a onclick="location.href='restaurant.html'">
-<img src="images/back.png" height="80px" width="80px" align="right">
+<img src="${images}/backk.png" height="80px" width="80px" align="right">
 </a>
 </body>
 </html>

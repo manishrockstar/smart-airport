@@ -13,8 +13,8 @@
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
 <center>
-<img src="images/shopp.jpg" height="190px" width="300px">
-<img src="images/shop.jpg" height="50%" width="50%">
+<img src="${images}/shopp.jpg" height="190px" width="300px">
+<img src="${images}/shop.jpg" height="50%" width="50%">
 </center>
 </div>
 
@@ -40,7 +40,7 @@ Haldiram's ever-delectable mouth-watering delicacies await you. Traditional swee
 
 
 <a onclick="location.href='Shopping.html'">
-<img src="images/back.png" height="80px" width="80px" align="right">
+<img src="${images}/backk.png" height="80px" width="80px" align="right">
 </a>
 
 </body>
