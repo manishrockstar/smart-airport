@@ -14,7 +14,7 @@ public class ShoppinController {
 		return new ModelAndView("shopping");
 	}	
 	
-	@RequestMapping(value="apparel", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/apparel", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartApparel(){
 		return new ModelAndView("apparel");
 	}

@@ -14,7 +14,7 @@ public class RestaurantController {
 		return new ModelAndView("restaurant");
 	}	
 	
-	@RequestMapping(value="cafebar", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/cafebar", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartCafebar(){
 		return new ModelAndView("cafebar");
 	}
