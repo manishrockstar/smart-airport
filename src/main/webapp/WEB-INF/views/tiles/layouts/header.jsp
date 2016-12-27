@@ -44,7 +44,7 @@ function weather() {
 </script>
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
-<img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap">
+<img id="imgicon1" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap">
 <div id="main" class="inlineprop">
 <ul>    
         <li>
