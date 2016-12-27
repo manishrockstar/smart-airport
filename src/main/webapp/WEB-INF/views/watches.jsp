@@ -12,6 +12,9 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
+<a onclick="location.href='SmarterAirport.html'">
+<img src="${images}/backk.png" height="60px" width="60px" align="left">
+</a>
 <center>
 <img src="${images}/shopp.jpg" height="190px" width="300px">
 <img src="${images}/shop.jpg" height="50%" width="50%">
@@ -61,10 +64,6 @@ Is known worldwide as the epitome of writing culture. In the last decade, Mont B
 </div>
 </center>
 
-
-<a onclick="location.href='Shopping.html'">
-<img src="${images}/backk.png" height="80px" width="80px" align="right">
-</a>
 
 </body>
 </html>

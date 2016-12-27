@@ -12,6 +12,9 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
+<a onclick="location.href='SmarterAirport.html'">
+<img src="${images}/backk.png" height="60px" width="60px" align="left">
+</a>
 <center>
 <img src="${images}/cafeb.jpg" height="200px" width="600px">
 </center>
@@ -52,8 +55,5 @@ At Street Food by Punjab Grill, we intend to bring the lips smacking street food
 </div>
 </center>
 
-<a onclick="location.href='restaurant.html'">
-<img src="${images}/backk.png" height="80px" width="80px" align="right">
-</a>
 </body>
 </html>
