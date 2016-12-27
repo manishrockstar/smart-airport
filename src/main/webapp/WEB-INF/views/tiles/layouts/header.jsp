@@ -44,9 +44,10 @@ function weather() {
 </script>
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
+
 <div id="main" class="inlineprop">
 <ul>
-        <li><a onclick="openNav()">&#9776;</a></li>
+        <li><img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap"></li>
         
         <li>
             <a href="javascript:void(0)">Services &#9662;</a>
@@ -73,7 +74,7 @@ function weather() {
 </div>
 
 <img id="imgicon" src="${images}/icon.png" height="120px" class="inlineprop" usemap="#planetmap">
-<img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap"><map name="planetmap">
+<map name="planetmap">
   <area shape="rect" coords="0,0,270,126" alt="Sun" href="/"></map>
 </div> 
 <div id="mySidenav" class="sidenav">
