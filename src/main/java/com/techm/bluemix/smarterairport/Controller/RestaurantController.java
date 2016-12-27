@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/restaurant")
 public class RestaurantController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
