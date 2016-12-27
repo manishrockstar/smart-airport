@@ -2,6 +2,9 @@ package com.techm.bluemix.smarterairport.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import com.ibm.nosql.json.api.BasicDBList;
+import com.ibm.nosql.json.api.BasicDBObject;
+import com.ibm.nosql.json.util.JSON;
 
 public class SAConstant {
 
