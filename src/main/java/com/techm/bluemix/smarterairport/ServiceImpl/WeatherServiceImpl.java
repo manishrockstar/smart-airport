@@ -10,6 +10,13 @@ import java.util.Map;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+import org.springframework.core.io.FileSystemResource; 
+import org.springframework.http.HttpEntity; 
+import org.springframework.http.HttpHeaders; 
+import org.springframework.http.HttpMethod; 
+import org.springframework.http.HttpStatus; 
+import org.springframework.http.MediaType; 
+import org.springframework.http.ResponseEntity; 
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -76,12 +83,15 @@ public class WeatherServiceImpl implements WeatherServices {
 		
 		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		RestTemplate restTemplate=new RestTemplate();
-		HttpEntity<WeatherForecastWrapper> requestEntity = new HttpEntity<WeatherForecastWrapper>("", genericHeaders);
-		/*HttpHeaders headers = new HttpHeaders();
+		/*HttpHeaders genericHeaders = new HttpHeaders();
+		genericHeaders.add("Content-Type", "application/json"); 
+		genericHeaders.add("Accept", "**");
+		HttpEntity<WeatherForecastWrapper> requestEntity = new HttpEntity<WeatherForecastWrapper>(genericHeaders);
+		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
 		HttpEntity entity = new HttpEntity(headers);*/
-		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, requestEntity, WeatherForecastWrapper.class);
-		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
+		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, requestEntity, WeatherForecastWrapper.class);
+		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
 		System.out.println(jsonString);
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
 		System.out.println(data);

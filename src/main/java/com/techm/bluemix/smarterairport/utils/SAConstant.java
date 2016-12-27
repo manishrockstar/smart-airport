@@ -3,6 +3,7 @@ package com.techm.bluemix.smarterairport.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class SAConstant {
 
 	public static final String REGEXP_URL = "(http://|https://)(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?[/a-zA-Z0-9]*";
@@ -35,7 +36,7 @@ public class SAConstant {
 	 * Weather API parameters
 	 */
 	//Url prepration
-	public static final String WEATHER_API_BASE_URI = "https://e694bb30-ea42-485a-8659-46a574267f78:DnRyIrHbF8@twcservice.mybluemix.net";
+	public static final String WEATHER_API_BASE_URI = "https://e694bb30-ea42-485a-8659-46a574267f78:DnRyIrHbF8@twcservice.mybluemix.net:443";
 	public static final String 	W_API="/api/weather/v1";
 	public static final String W_GEOCODE = "/geocode";
 	public static final String W_LOCATION = "/location";

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+<<<<<<< HEAD
 @RequestMapping("/")
 public class SmartController {
 
@@ -35,3 +36,18 @@ public class SmartController {
 	}	
 
 }
+=======
+@RequestMapping("/restaurant")
+public class RestaurantController {
+
+	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartRestaurant(){
+		return new ModelAndView("restaurant");
+	}	
+	
+	@RequestMapping(value="/cafebar", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartCafebar(){
+		return new ModelAndView("cafebar");
+	}
+}
+>>>>>>> 88c2d0e8fc87b1d0b73d85003fb48e0cef05e4c0
