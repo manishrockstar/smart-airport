@@ -44,11 +44,9 @@ function weather() {
 </script>
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
-
+<img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap">
 <div id="main" class="inlineprop">
-<ul>
-        <li><img id="imgicon" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap"></li>
-        
+<ul>    
         <li>
             <a href="javascript:void(0)">Services &#9662;</a>
             <ul class="dropdown">
