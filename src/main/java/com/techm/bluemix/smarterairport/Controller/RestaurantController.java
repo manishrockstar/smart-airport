@@ -14,22 +14,22 @@ public class RestaurantController {
 		return new ModelAndView("restaurant");
 	}	
 	
-	@RequestMapping(value="cafebar", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/cafebar", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartCafebar(){
 		return new ModelAndView("cafebar");
 	}	
 	
-	@RequestMapping(value="casual", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/casual", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartCasual(){
 		return new ModelAndView("casual");
 	}	
 	
-	@RequestMapping(value="coffe", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/coffe", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartCoffee(){
 		return new ModelAndView("coffee");
 	}	
 		
-	@RequestMapping(value="food", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/food", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartFood(){
 		return new ModelAndView("food");
 	}	
