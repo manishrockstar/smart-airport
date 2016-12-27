@@ -12,10 +12,9 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div id="info" style="padding:0 40px 0 40px;" class="medical">
-<a onclick="location.href='SmarterAirport.html'">
+<a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
-
 <b>The medical unit at Cochin International Airport provides the following services:</b><br>
  
 <p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px; background-color:#D6DBDF;">

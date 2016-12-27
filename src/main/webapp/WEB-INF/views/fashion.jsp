@@ -12,7 +12,7 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
-<a onclick="location.href='/'">
+<a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
 <center>

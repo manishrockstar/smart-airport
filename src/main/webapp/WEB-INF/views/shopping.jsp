@@ -12,7 +12,7 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 <div class="inline" id="shop">
-<a onclick="location.href='SmarterAirport.html'">
+<a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
 <center>
@@ -21,9 +21,7 @@
 </center>
 </div>
 <div class="inlineprop">
-<a onclick="location.href='/'">
-<img src="images/backk.png" height="60px" width="60px" align="left">
-</a>
+
 <ul id="rig">
     <li>
         <a class="rig-cell1" href="apparel">
@@ -71,7 +69,7 @@
     </li>
     <li>
         <a class="rig-cell1" href="packed">
-            <img class="rig-img1" src="${images}/packed.jpg">
+            <img class="rig-img1" src="${images}/packed.JPG">
             <span class="rig-overlay"></span>
             <span class="rig-text">Packed food</span>
         </a>
