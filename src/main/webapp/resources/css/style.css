@@ -516,6 +516,12 @@ img#imgicon
 float:right;
 }
 
+img#imgicon1
+{
+float:left;
+}
+
+
 
 .inlineprop {
       display:inline-block;

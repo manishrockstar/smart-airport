@@ -140,8 +140,8 @@
    </definition>
    
      <!-- Travel accesories Page -->
-   <definition name="travell" extends="base-definition">  
-       <put-attribute name="body" value="/WEB-INF/views/travell.jsp" />    
+   <definition name="travelacc" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/travelacc.jsp" />    
    </definition>
    
      <!-- Wine Page -->
