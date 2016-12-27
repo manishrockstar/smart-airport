@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ShoppingController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartHome(){
+	public ModelAndView smartShopping(){
 		return new ModelAndView("shopping");
 	}	
 	

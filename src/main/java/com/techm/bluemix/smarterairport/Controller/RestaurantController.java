@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class RestaurantController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartHome(){
+	public ModelAndView smartRestaurant(){
 		return new ModelAndView("restaurant");
 	}	
 	
