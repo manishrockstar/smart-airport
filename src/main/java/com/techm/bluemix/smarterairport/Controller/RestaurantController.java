@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/restaurant")
-public class SmartController {
+public class RestaurantController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartRestaurant(){
