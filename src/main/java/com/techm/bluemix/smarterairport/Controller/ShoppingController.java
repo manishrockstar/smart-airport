@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
-public class SmartController {
+public class ShoppingController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
