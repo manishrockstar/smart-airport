@@ -86,20 +86,20 @@ public class WeatherServiceImpl implements WeatherServices {
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_API+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
 		HttpClient client = new HttpClient();
-		client.getState().setCredentials(new AuthScope(SAConstant.WEATHER_API_BASE_URI, 443, "realm"), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
-		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		client.getState().setCredentials(new AuthScope(SAConstant.WEATHER_API_BASE_URI, 443, "https"), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
+		/*RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		GetMethod get = new GetMethod(srcURL);
 		get.setDoAuthentication( true );
 		int status = client.executeMethod(get);
-        System.out.println(status + "\n" + get.getResponseBodyAsString());
-		/*ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
+        System.out.println(status + "\n" + get.getResponseBodyAsString());*/
+		ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, client, WeatherForecastWrapper.class);
 		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 
 		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
 		System.out.println(jsonString.getStatusCode().value());
-		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(get.getResponseBodyAsString()));	
+		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
 		System.out.println(data);
-		return data;*/
-		return get.getResponseBodyAsString();
+		return data;
+		
 	}
 }
