@@ -10,7 +10,7 @@
 <title>
 Smart Airport
 </title>
-<link rel="shortcut icon" href="images/icon.png" type="image/png">
+<link rel="shortcut icon" href="${images}/icon.png" type="image/png">
 </head>
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
@@ -4446,9 +4446,6 @@ We will consistently achieve top quartile growth by contributing to our customer
 <br>
   </form>
 </div>
-
-
-
 
 <div id="id08">
 	
