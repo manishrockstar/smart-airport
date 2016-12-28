@@ -87,6 +87,7 @@ public class WeatherServiceImpl implements WeatherServices {
 		System.out.println(srcURL);
 		HttpClient client = new HttpClient();
 		client.getState().setCredentials(new AuthScope(SAConstant.WEATHER_API_BASE_URI, 443, "https"), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
+		RestTemplate restTemplate=new RestTemplate();
 		/*RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		GetMethod get = new GetMethod(srcURL);
 		get.setDoAuthentication( true );
