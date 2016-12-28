@@ -21,7 +21,7 @@
     background-image: url('${images}/wall.jpg');
 }
 </style>
-<body>
+<body style="background-image:url(images/flight.jpg)">
 
 
 
