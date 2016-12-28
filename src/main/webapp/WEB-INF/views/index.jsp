@@ -71,6 +71,31 @@
 	</div>
 </div>
 
+<div class="container1" id="signupb"> 
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+
+				<h2>Sign Up</h2>
+
+			</div>
+
+			<form action="./signin" method="POST">	
+			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
+			 <input type="text" id="sname" placeholder="Name" required>
+
+			 <input type="text" id="suname" placeholder="Username" required>
+
+			 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="semail" required>
+			 <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="scontact" required>
+			 <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
+
+			 <input type="password" placeholder="Re-Enter Password" name="psw2" id="psw2" required>
+			 <button type="submit" onclick="myFunction()">Sign up</button>
+			</form>
+		</div>
+
+</div>
+
 <div class="inlineprop">
 <ul id="rig">
     <li>
