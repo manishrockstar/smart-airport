@@ -46,7 +46,7 @@
 
 			<div class="box-header">
 
-				<img src="${images}/smart.png">
+				<h2> Smart Airport </h2>
 
 			</div>
 

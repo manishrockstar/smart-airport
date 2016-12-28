@@ -14,6 +14,13 @@ public class SmartController {
 		return new ModelAndView("index");
 	}	
 	
+	//Login Authentication
+	@RequestMapping(value="signin", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartLogin(@RequestParam ("uname") String uname, @RequestParam ("pword") String pword){
+		
+		
+		return new ModelAndView("index");
+	}	
 	
 	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
