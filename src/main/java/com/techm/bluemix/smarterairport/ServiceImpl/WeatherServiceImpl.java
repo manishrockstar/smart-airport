@@ -83,13 +83,13 @@ public class WeatherServiceImpl implements WeatherServices {
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_API+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
 		
-		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		RestTemplate restTemplate=new RestTemplate();
+		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		/*RestTemplate restTemplate=new RestTemplate();
 		CloseableHttpClient httpClient = HttpClients.custom()
 				 .setSSLHostnameVerifier(new NoopHostnameVerifier())
 				 .build();
 				 HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-				 requestFactory.setHttpClient(httpClient);
+				 requestFactory.setHttpClient(httpClient);*/
 				 ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 

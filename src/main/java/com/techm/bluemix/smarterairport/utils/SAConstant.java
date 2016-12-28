@@ -56,10 +56,10 @@ public class SAConstant {
 	/* 
 	 * Local Proxy parameters
 	 * */
-	public static final String localhost="10.56.188.104";
-	public static final int localport=8080;
-	public static final String uname="sr00487261";
-	public static final String pword="Sowmi625016";
+	public static final String localhost="https://twcservice.mybluemix.net";
+	public static final int localport=443;
+	public static final String uname="e694bb30-ea42-485a-8659-46a574267f78";
+	public static final String pword="DnRyIrHbF8";
 	
 	public static Map<String, String> airportCodeMap;
 	
