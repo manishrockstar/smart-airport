@@ -597,6 +597,8 @@ public class SAUtils {
 	}
 	
 	public static ClientHttpRequestFactory getClientFactory(){
+		
+		
 		CredentialsProvider credsProvider = new BasicCredentialsProvider();
 		credsProvider.setCredentials( new AuthScope(SAConstant.localhost, SAConstant.localport), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword) );
 		HttpClientBuilder clientBuilder = HttpClientBuilder.create();
