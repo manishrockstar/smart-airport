@@ -165,6 +165,13 @@ input[type=button], button {
     position: relative;
 }
 
+.imgcontainer1 {
+    text-align: center;
+    margin: 10px 0 5px 0;
+    position: relative;
+}
+
+
 
 
 img.avatar {

@@ -26,6 +26,7 @@
 
 
 <div style="height:100%">
+<center>
 <table border="1px" padding="1px" id="t01">
 
 	
@@ -63,6 +64,7 @@
 		</c:forEach>
 
 </table>
+</center>
 </div>
 
 </body>
