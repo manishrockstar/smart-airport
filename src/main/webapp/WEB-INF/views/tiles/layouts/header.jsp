@@ -4449,15 +4449,14 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 
 
-
-<div id="id08" class="modal1" style="height:70%;">
+<div id="id08">
 	
 	
     <div class="imgcontainer1">
-      <span onclick="document.getElementById('id08').style.display='none'" class="close" title="Close Modal" style="color:#f44336">&times;</span>
+      <span onclick="document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:#333">&times;</span>
       </div>
       
- 		<iframe src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="0" width="30%" height="70%"></iframe>
+ 		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="0" ></iframe>
  	
  	
 </div>
