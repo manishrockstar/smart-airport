@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.io.File;
 import java.io.IOException;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.UsernamePasswordCredentials;
+import org.apache.commons.httpclient.auth.AuthScope;
+import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.FileUtils;
 import org.springframework.core.io.FileSystemResource; 
 import org.springframework.http.HttpEntity; 
@@ -18,8 +22,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType; 
 import org.springframework.http.ResponseEntity; 
 import org.apache.http.HttpHost;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
+
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.BasicCredentialsProvider;
@@ -82,21 +85,21 @@ public class WeatherServiceImpl implements WeatherServices {
 		
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_API+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
-		
-		RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		/*RestTemplate restTemplate=new RestTemplate();
-		CloseableHttpClient httpClient = HttpClients.custom()
-				 .setSSLHostnameVerifier(new NoopHostnameVerifier())
-				 .build();
-				 HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-				 requestFactory.setHttpClient(httpClient);*/
-				 ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
+		HttpClient client = new HttpClient();
+		client.getState().setCredentials(new AuthScope(SAConstant.WEATHER_API_BASE_URI, 443, "realm"), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		GetMethod get = new GetMethod(srcURL);
+		get.setDoAuthentication( true );
+		int status = client.executeMethod(get);
+        System.out.println(status + "\n" + get.getResponseBodyAsString());
+		/*ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 
 		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
-		System.out.println(jsonString.getStatusCode().value());
-		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
+		System.out.println(jsonString.getStatusCode().value());*/
+		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(get.getResponseBodyAsString()));	
 		System.out.println(data);
 		return data;
+		
 	}
 }
