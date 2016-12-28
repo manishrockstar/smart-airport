@@ -36,7 +36,7 @@ public class SAConstant {
 	 * Weather API parameters
 	 */
 	//Url prepration
-	public static final String WEATHER_API_BASE_URI = "https://e694bb30-ea42-485a-8659-46a574267f78:DnRyIrHbF8@twcservice.mybluemix.net:443";
+	public static final String WEATHER_API_BASE_URI = "https://twcservice.mybluemix.net";
 	public static final String 	W_API="/api/weather/v1";
 	public static final String W_GEOCODE = "/geocode";
 	public static final String W_LOCATION = "/location";
@@ -56,10 +56,10 @@ public class SAConstant {
 	/* 
 	 * Local Proxy parameters
 	 * */
-	public static final String localhost="10.56.188.104";
-	public static final int localport=8080;
-	public static final String uname="sr00487261";
-	public static final String pword="Sowmi625016";
+	public static final String localhost="https://twcservice.mybluemix.net";
+	public static final int localport=443;
+	public static final String uname="e694bb30-ea42-485a-8659-46a574267f78";
+	public static final String pword="DnRyIrHbF8";
 	
 	public static Map<String, String> airportCodeMap;
 	
