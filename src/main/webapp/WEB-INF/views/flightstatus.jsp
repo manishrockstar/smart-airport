@@ -26,7 +26,7 @@
 
 
 <div style="height:100%">
-<table border="1" align="center" style="width:50%">
+<table border="1px" padding="1px" id="t01">
 
 	
 	<tr>
