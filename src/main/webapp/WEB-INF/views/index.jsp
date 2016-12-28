@@ -50,7 +50,7 @@
 
 			</div>
 
-			<form action="./signin">	
+			<form action="/signin">	
 			<label for="username">Username</label>
 
 			<br/>
@@ -79,7 +79,7 @@
 
 			</div>
 
-			<form action="./signin" method="POST">	
+			<form action="/signup" method="POST">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <input type="text" id="sname" placeholder="Name" required>
 
@@ -90,7 +90,7 @@
 			 <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
 
 			 <input type="password" placeholder="Re-Enter Password" name="psw2" id="psw2" required>
-			 <button type="submit" onclick="myFunction()">Sign up</button>
+			 <button type="submit">Sign up</button>
 			</form>
 		</div>
 

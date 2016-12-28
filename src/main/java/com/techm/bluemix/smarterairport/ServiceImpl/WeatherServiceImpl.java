@@ -90,9 +90,10 @@ public class WeatherServiceImpl implements WeatherServices {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
 		HttpEntity entity = new HttpEntity(headers);*/
-		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, requestEntity, WeatherForecastWrapper.class);
-		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
-		System.out.println(jsonString);
+		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
+
+		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
+		System.out.println(jsonString.getStatusCode().value());
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
 		System.out.println(data);
 		return data;
