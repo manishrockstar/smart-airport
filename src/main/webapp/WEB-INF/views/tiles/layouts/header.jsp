@@ -4413,7 +4413,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 </div>
 
 
-<div id="id08" class="modal" style="height:70%;">
+<div id="id08" class="modal" style="height:30%;width:30">
 	
 	
     <div class="imgcontainer">
