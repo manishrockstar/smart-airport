@@ -10,6 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class SmartController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartIndex(){
+		return new ModelAndView("index");
+	}	
+	
+	
+	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
 		return new ModelAndView("home");
 	}	
