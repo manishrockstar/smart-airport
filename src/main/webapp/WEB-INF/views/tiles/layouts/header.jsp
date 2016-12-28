@@ -71,7 +71,7 @@ function weather() {
    
 </div>
 
-<img id="imgicon" src="${images}/icon.png" height="120px" class="inlineprop" usemap="#planetmap">
+<img id="imgicon" src="${images}/icon.png" height="85px" class="inlineprop" usemap="#planetmap">
 <map name="planetmap">
   <area shape="rect" coords="0,0,270,126" alt="Sun" href="/"></map>
 </div> 
@@ -86,102 +86,6 @@ function weather() {
 
 </div>
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="./signin" method="POST">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="${images}/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label><b>Username<font color=red size=2>*</font></b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label><b>Password<font color=red size=2>*</font></b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <input type="checkbox" checked="checked"> Remember me
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw"><a href="javascript:void(0)">Forgot Password</a></span>
-      <font color=red size=2>*marked fields are mandatory</font>
-    </div>
-  </form>
-</div>
-
-<div id="id02" class="modal">
-  
-  <form class="modal-content animate" action="./signup" method="POST">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="${images}/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label><b>Name<font color=red>*</font></b></label>
-      <input type="text" placeholder="Enter Full Name" name="sname" required>
-     
-      <label><b>Username<font color=red>*</font></b></label>
-      <input type="text" placeholder="Enter Username" name="suname" required>
-     
-      <label><b>Email<font color=red>*</font></b></label>
-      <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="semail" required>
-      
-      <label><b>Contact no<font color=red>*</font></b></label>
-      <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="scontact" required>
-      
-      <label><b>Password<font color=red>*</font></b></label>
-      <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
-        
-       <label><b>Re-enter Password<font color=red>*</font></b></label>
-      <input type="password" placeholder="Re-Enter Password" name="psw2" id="psw2" required>
-        
-      <button type="submit" onclick="myFunction()">Sign up</button>
-      <p id="demo"></p>
-      
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <font color=red size=2>*marked fields are mandatory</font>
-    </div>
-  </form>
-</div>
-
-<div id="id03" class="modal">
-  
-  <form class="modal-content animate" action="./contactus">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="${images}/img_avatar2.jpg" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="name" required>
-      <label><b>Email</b></label>
-      <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="email" required>
-      <label><b>Contact no</b></label>
-      <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="contact" required>
-      
-      <label><b>Message</b></label>
-      <textarea rows="4" cols="50" placeholder="Enter your message here..." required></textarea>
-        
-      <button type="submit" onclick="required(inputtx)">Submit</button>
-      <p id="demo"></p>
-      
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-      
-    </div>
-  </form>
-</div>
 
 
 <div id="id04" class="modal">
