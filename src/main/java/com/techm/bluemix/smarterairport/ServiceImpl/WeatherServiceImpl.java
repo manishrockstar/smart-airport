@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 import java.io.File;
 import java.io.IOException;
@@ -96,10 +96,10 @@ public class WeatherServiceImpl implements WeatherServices {
 		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
 
 		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
-		System.out.println(jsonString.getStatusCode().value());*/
+		System.out.println(jsonString.getStatusCode().value());
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(get.getResponseBodyAsString()));	
 		System.out.println(data);
-		return data;
-		
+		return data;*/
+		return get.getResponseBodyAsString();
 	}
 }
