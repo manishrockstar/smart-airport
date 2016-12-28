@@ -170,7 +170,7 @@
    </definition>
    
      <!-- Coffe shop Page -->
-   <definition name="coffe" extends="base-definition">  
+   <definition name="coffee" extends="base-definition">  
        <put-attribute name="body" value="/WEB-INF/views/coffee.jsp" />    
    </definition>
    
