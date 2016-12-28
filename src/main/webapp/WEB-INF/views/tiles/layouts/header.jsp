@@ -67,6 +67,8 @@ function weather() {
             </ul> -->
             </li>
         <li><a onclick="document.getElementById('id09').style.display='block'">Transport</a></li>
+        <li><a onclick="document.getElementById('id03').style.display='block'">Contact us</a></li>        
+          <li><a onclick="document.getElementById('id07').style.display='block'">About us</a></li>
     </ul>
    
 </div>
@@ -87,6 +89,62 @@ function weather() {
 </div>
 
 
+
+
+
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="./contactus">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="${images}/img_avatar2.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+      <label><b>Email</b></label>
+      <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="email" required>
+      <label><b>Contact no</b></label>
+      <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="contact" required>
+      
+      <label><b>Message</b></label>
+      <textarea rows="4" cols="50" placeholder="Enter your message here..." required></textarea>
+        
+      <button type="submit" onclick="required(inputtx)">Submit</button>
+      <p id="demo"></p>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+  </form>
+</div>
+
+
+<div id="id07" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <b>ABOUT US</b>
+    </div>
+
+    <div class="container">
+<p align=justify>
+Tech Mahindra represents the connected world, offering innovative and customer-centric information technology services and solutions, enabling Enterprises, Associates and the Society to Rise™. We are a USD 4.1 billion company with 112,800+ professionals across 90 countries, helping over 825 global customers including Fortune 500 companies. Our innovation platforms and reusable assets connect across a number of technologies to deliver tangible business value to our stakeholders. Tech Mahindra is also amongst the Fab 50 companies in Asia as per the Forbes 2016 List.
+We are part of the USD 17.8 billion Mahindra Group that employs more than 200,000 people in over 100 countries. The Group operates in the key industries that drive economic growth, enjoying a leadership position in tractors, utility vehicles, after-market, information technology and vacation ownership.
+</p><br>
+<center><b>Our Vision</b></center>
+<p align=justify>
+We will Rise™ to be among the top three leaders in each of our chosen market segments while fostering innovation and inclusion.
+We will consistently achieve top quartile growth by contributing to our customers' success, by enabling our employees to realize their potential and by creating value for all our stakeholders.
+</p>     
+    </div>
+  </form>
+</div>
 
 <div id="id04" class="modal">
   
@@ -4390,30 +4448,9 @@ function weather() {
 
 
 
-<div id="id07" class="modal">
-  
-  <form class="modal-content animate">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <b>ABOUT US</b>
-    </div>
-
-    <div class="container">
-		<p align=justify>
-Tech Mahindra represents the connected world, offering innovative and customer-centric information technology services and solutions, enabling Enterprises, Associates and the Society to Rise™. We are a USD 4.1 billion company with 112,800+ professionals across 90 countries, helping over 825 global customers including Fortune 500 companies. Our innovation platforms and reusable assets connect across a number of technologies to deliver tangible business value to our stakeholders. Tech Mahindra is also amongst the Fab 50 companies in Asia as per the Forbes 2016 List.
-We are part of the USD 17.8 billion Mahindra Group that employs more than 200,000 people in over 100 countries. The Group operates in the key industries that drive economic growth, enjoying a leadership position in tractors, utility vehicles, after-market, information technology and vacation ownership.
-</p><br>
-<center><b>Our Vision</b></center>
-<p align=justify>
-We will Rise™ to be among the top three leaders in each of our chosen market segments while fostering innovation and inclusion.
-We will consistently achieve top quartile growth by contributing to our customers' success, by enabling our employees to realize their potential and by creating value for all our stakeholders.
-</p>     
-    </div>
-  </form>
-</div>
 
 
-<div id="id08" class="modal" style="height:70%;">
+<div id="id08" class="modal1" style="height:70%;">
 	
 	
     <div class="imgcontainer1">
