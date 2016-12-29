@@ -10,7 +10,20 @@
 <script src="${scripts}/script.js"></script>
 <body>
 <div id="fixedfooter">
-<center>Copyright reserved © 2016 Tech Mahindra Limited</center>
+<center>Copyright reserved ï¿½ 2016 Tech Mahindra Limited</center>
+ <img id="imgicon" src="${images}/chaticon.png" height="42px" class="inlineprop" onclick="document.getElementById('id08').style.display='block'">
+</div>
+
+<div id="id08">
+	
+	
+    <div class="imgcontainer1">
+      <span onclick="document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:#333">&times;</span>
+      </div>
+      
+ 		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="0" ></iframe>
+ 	
+ 	
 </div>
 </body>
 </html>
