@@ -10,8 +10,9 @@
 <script src="${scripts}/script.js"></script>
 <body>
 <div id="fixedfooter">
-<center>Copyright reserved © 2016 Tech Mahindra Limited</center>
-</div>
+<center>Copyright reserved ï¿½ 2016 Tech Mahindra Limited</center>
+</div> 
+
 </body>
 </html>
 
