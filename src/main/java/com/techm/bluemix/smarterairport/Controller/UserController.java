@@ -21,10 +21,10 @@ public class UserController {
 	public ModelAndView smartSignup(@ModelAttribute er u){
 		
 		userServices.signUp(u);
-		retur
-		String message = "User successfully added. Please login now";n new ModelAndView("index");
+		String message = "User successfully added. Please login now";
+		return new ModelAndView("index", "message", message);
 	}
-	, "message", message
+	
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
 	public ModelAndView smartSignin(@RequestParam("uname") String uname, @RequestParam("pword") String pword){
