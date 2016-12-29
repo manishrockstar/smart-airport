@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import com.techm.bluemix.smarterairport.Services.UserServices;
 import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
 
@@ -18,12 +18,13 @@ public class UserController {
 	private UserServices userServices;
 	
 	@RequestMapping(value= "/signup", method = RequestMethod.POST)
-	public ModelAndView smartSignup(UserWrapper u){
+	public ModelAndView smartSignup(@ModelAttribute er u){
 		
 		userServices.signUp(u);
-		return new ModelAndView("index");
+		retur
+		String message = "User successfully added. Please login now";n new ModelAndView("index");
 	}
-	
+	, "message", message
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
 	public ModelAndView smartSignin(@RequestParam("uname") String uname, @RequestParam("pword") String pword){
