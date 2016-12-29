@@ -367,12 +367,6 @@ body {
     padding: 16px;
 }
 
-#main1 {
-    color: white;
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
