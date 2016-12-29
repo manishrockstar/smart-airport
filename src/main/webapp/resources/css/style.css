@@ -367,6 +367,13 @@ body {
     padding: 16px;
 }
 
+#main1 {
+    color: white;
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -599,7 +606,7 @@ div#fixedfooter {
 	position:fixed;
 	bottom:0px;
 	left:0px;
-	height:4%;
+    height:3%;
 	color:#CCC;
 	background:#333;
 	padding:12px;
@@ -900,10 +907,4 @@ p.small {
 
   -webkit-animation-delay: 1s;
 
-}
-
-a#chaticon
-{
- right:95px;
-    top: 0;
 }
