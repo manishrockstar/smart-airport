@@ -9,8 +9,10 @@
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
 <body>
-<div id="fixedfooter">
+<div id="fixedfooter" class="footer">
+<div class="inlineprop">
 <center>Copyright reserved � 2016 Tech Mahindra Limited</center>
+</div>
  <img id="imgicon" src="${images}/chaticon.png" height="42px" class="inlineprop" onclick="document.getElementById('id08').style.display='block'">
 </div>
 
