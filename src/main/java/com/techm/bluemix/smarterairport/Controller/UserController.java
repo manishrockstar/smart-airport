@@ -14,18 +14,13 @@ import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
 @Controller
 public class UserController {
 	
-	private UserServices userServices;
-
 	@Autowired(required=true)
-	@Qualifier(value="userServices")
-	public void setUserServices(UserServices userServices) {
-		this.userServices = userServices;
-	}
+	private UserServices userServices;
 	
 	@RequestMapping(value= "/signup", method = RequestMethod.POST)
 	public ModelAndView smartSignup(UserWrapper u){
 		
-		this.userServices.signUp(u);
+		userServices.signUp(u);
 		return new ModelAndView("index");
 	}
 	

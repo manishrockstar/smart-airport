@@ -27,7 +27,7 @@
 		
 		
 <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-<context:component-scan base-package="com.techm.bluemix.smarterairport.*" />
+<context:component-scan base-package="com.techm.bluemix.smarterairport" />
  
 <!-- Getting Database properties -->
     <context:property-placeholder location="classpath:db.properties" />
