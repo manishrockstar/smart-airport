@@ -153,7 +153,7 @@
     		<version>8.1</version>
     		<scope>system</scope>
     		<systemPath>${project.basedir}/src/main/resources/db2jcc-8.1.jar</systemPath>
-		</dependency>
+		</dependency>-->
 		
 		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc_license_cu 	
 		<dependency>
