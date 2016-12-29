@@ -32,6 +32,7 @@
 		<org.apache.httpcomponents-version>4.5.2</org.apache.httpcomponents-version>
 		<apachetiles.version>3.0.5</apachetiles.version>
 		<spring.cloud.connectors.version>1.2.2.RELEASE</spring.cloud.connectors.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -99,6 +100,66 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+		
+		<!-- Apache Commons DBCP -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4  
+		<dependency> 
+    		<groupId>com.ibm.db2.jcc</groupId> 
+    		<artifactId>db2jcc4</artifactId> 
+    		<version>latest</version> 
+		</dependency>-->
+		
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc -->
+		<dependency>
+    		<groupId>com.ibm.db2</groupId>
+    		<artifactId>db2jcc</artifactId>
+    		<version>latest</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc_license_cu -->
+		<dependency>
+    		<groupId>com.ibm.db2</groupId>
+    		<artifactId>db2jcc_license_cu</artifactId>
+    		<version>latest</version>
+		</dependency>
+
+
+		
 		  <!-- Apache Tiles -->
         <dependency>
             <groupId>org.apache.tiles</groupId>
