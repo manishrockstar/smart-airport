@@ -161,7 +161,7 @@
     		<artifactId>db2jcc_license_cu</artifactId>
     		<version>8.1</version>
     		<scope>system</scope>
-    		<systemPath>src/main/resources/db2jcc_license_cu-8.1.jar</systemPath>
+    		<systemPath>/src/main/resources/db2jcc_license_cu-8.1.jar</systemPath>
 		</dependency> 
 		
 		
