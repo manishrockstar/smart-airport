@@ -52,7 +52,7 @@
 	
 	<!-- DataSource -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.ibm.db2.jcc.DB2Driver" />
+        <property name="driverClassName" value="COM.ibm.db2os390.sqlj.jdbc.DB2SQLJDriver" />
         <property name="url" value="jdbc:db2://dashdb-txn-small-yp-dal09-39.services.dal.bluemix.net:50000/BLUDB" />
         <property name="username" value="bluadmin" />
         <property name="password" value="Mjk4YzIzZmYyNTgz" />
