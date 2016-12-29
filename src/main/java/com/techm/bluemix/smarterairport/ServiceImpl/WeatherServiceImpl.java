@@ -83,31 +83,13 @@ public class WeatherServiceImpl implements WeatherServices {
 		// TODO Auto-generated method stub
 		
 		
-		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_API+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
-		/*HttpClient client = new HttpClient();
-		client.getState().setCredentials(new AuthScope(SAConstant.WEATHER_API_BASE_URI, 443, "https"), new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));*/
+		
 		RestTemplate restTemplate=new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
-
-		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(srcURL)
-        .queryParam("username", SAConstant.uname)
-        .queryParam("password", SAConstant.pword);
-
-		HttpEntity<?> entity = new HttpEntity<>(headers);
-
-		HttpEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(builder.build().encode().toUri(), HttpMethod.GET,entity, WeatherForecastWrapper.class);
-		/*RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
-		GetMethod get = new GetMethod(srcURL);
-		get.setDoAuthentication( true );
-		int status = client.executeMethod(get);
-        System.out.println(status + "\n" + get.getResponseBodyAsString());*/
-//		ResponseEntity<WeatherForecastWrapper> jsonString =restTemplate.exchange(srcURL, HttpMethod.GET, client, WeatherForecastWrapper.class);
-		//ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, null, WeatherForecastWrapper.class);
-
-		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
-		//System.out.println(jsonString.getStatusCode().value());
+	//	
+		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class);
+		System.out.println(jsonString);
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
 		System.out.println(data);
 		return data;
