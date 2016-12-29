@@ -137,6 +137,12 @@
 			<version>1.4</version>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4 --> 
+		<dependency> 
+    		<groupId>com.ibm.db2.jcc</groupId> 
+    		<artifactId>db2jcc4</artifactId> 
+    		<version>10.1</version> 
+		</dependency>
 		
 		  <!-- Apache Tiles -->
         <dependency>
