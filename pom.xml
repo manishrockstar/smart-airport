@@ -137,19 +137,27 @@
 			<version>1.4</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4 --> 
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4  
 		<dependency> 
     		<groupId>com.ibm.db2.jcc</groupId> 
     		<artifactId>db2jcc4</artifactId> 
     		<version>latest</version> 
-		</dependency>
+		</dependency>-->
 		
 		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc -->
 		<dependency>
     		<groupId>com.ibm.db2</groupId>
     		<artifactId>db2jcc</artifactId>
-    		<version>latest</version>
+    		<version>8.1</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc_license_cu -->
+		<dependency>
+    		<groupId>com.ibm.db2</groupId>
+    		<artifactId>db2jcc_license_cu</artifactId>
+    		<version>8.1</version>
+		</dependency>
+
 
 		
 		  <!-- Apache Tiles -->
