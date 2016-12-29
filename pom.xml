@@ -152,7 +152,7 @@
     		<artifactId>db2jcc</artifactId>
     		<version>8.1</version>
     		<scope>system</scope>
-    		<systemPath>${project.basedir}/src/main/resources/db2jcc-8.1.jar</systemPath>
+    		<systemPath>/src/main/resources/db2jcc-8.1.jar</systemPath>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.ibm.db2/db2jcc_license_cu 	-->
@@ -161,7 +161,7 @@
     		<artifactId>db2jcc_license_cu</artifactId>
     		<version>8.1</version>
     		<scope>system</scope>
-    		<systemPath>${project.basedir}/src/main/resources/db2jcc_license_cu-8.1.jar</systemPath>
+    		<systemPath>src/main/resources/db2jcc_license_cu-8.1.jar</systemPath>
 		</dependency> 
 		
 		
