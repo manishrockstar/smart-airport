@@ -46,15 +46,15 @@
 			</div>
 
 			<form:form action="signin" method="POST">	
-			<form:label path="USERNAME">Username</label>
+			<form:label path="USERNAME">Username</form:label>
 
 			<br/>
-			<form:input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required>			
+			<form:input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required />			
 			<br/>
-			<form:label path="USERNAME">Password</label>
+			<form:label path="USERNAME">Password</form:label>
 
 			<br/>
-			<form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required>
+			<form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
 			<br/>
 			<input type="submit" value="Sign In">
 
