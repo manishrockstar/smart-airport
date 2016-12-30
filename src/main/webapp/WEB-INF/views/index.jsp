@@ -74,7 +74,7 @@
 
 			</div>
 
-			<form:form action="signup" method="POST" commandName="user">	
+			<form:form action="signup" method="POST" modelAttribute="user">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <form:input type="text" path="NAME" name="NAME" placeholder="Name" required />
 
