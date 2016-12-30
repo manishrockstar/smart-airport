@@ -576,7 +576,10 @@ img#imgicon1
 {
 float:left;
 }
-
+img#imgicon2
+{
+float:right;
+}
 
 
 .inlineprop {
