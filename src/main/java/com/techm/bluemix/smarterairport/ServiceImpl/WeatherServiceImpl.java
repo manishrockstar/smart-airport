@@ -104,20 +104,21 @@ public class WeatherServiceImpl implements WeatherServices {
 		credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword)); 
 		httpClient.setCredentialsProvider(credentialsProvider);*/
 		
-		String plainCreds = "28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg";
+		/*String plainCreds = "28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg";
 		byte[] plainCredsBytes = plainCreds.getBytes();
 		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
-		String base64Creds = new String(base64CredsBytes);
+		String base64Creds = new String(base64CredsBytes);*/
 		RestTemplate restTemplate=new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Authorization", "Basic " + base64Creds);
-    	//headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		//headers.add("Authorization", "Basic " + base64Creds);
+    	headers.set("Accept", "application/json");
     	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
-   		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);
-		/*Map<String, String> params = new HashMap<String, String>();
+   		
+		Map<String, String> params = new HashMap<String, String>();
 		params.put("username", SAConstant.uname);
 		params.put("password", SAConstant.pword);		
-		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);*/
+		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class,params);
+		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);
 		System.out.println(jsonString);
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
 		//List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));
