@@ -117,10 +117,10 @@ public class WeatherServiceImpl implements WeatherServices {
 		/*Map<String, String> params = new HashMap<String, String>();
 		params.put("username", SAConstant.uname);
 		params.put("password", SAConstant.pword);		
-		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);
+		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);*/
 		System.out.println(jsonString);
-		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	*/
-		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));
+		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
+		//List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));
 		System.out.println(data);
 		return data;
 		
