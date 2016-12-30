@@ -18,7 +18,7 @@ public class UserController {
 	private UserServices userServices;
 	
 	@RequestMapping(value= "/signup", method = RequestMethod.POST)
-	public ModelAndView smartSignup(@ModelAttribute("userWrapper") UserWrapper u){
+	public ModelAndView smartSignup(@ModelAttribute("user") UserWrapper u){
 		
 		userServices.signUp(u);
 		String message = "User successfully added. Please login now";

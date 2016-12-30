@@ -120,7 +120,8 @@ public class WeatherServiceImpl implements WeatherServices {
 		// Add AuthCache to the execution context
 		HttpClientContext context = HttpClientContext.create();
 		context.setCredentialsProvider(credsProvider);
-		context.setAuthCache(authCache);		
+		context.setAuthCache(authCache);
+		System.out.println(context);
 		customFactory.setHttpContext(context);
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
