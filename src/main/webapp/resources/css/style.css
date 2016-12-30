@@ -600,7 +600,7 @@ div#fixedfooter {
 	position:fixed;
 	bottom:0px;
 	left:0px;
-    height:3%;
+    width:100%;
 	color:#CCC;
 	background:#333;
 	padding:12px;
