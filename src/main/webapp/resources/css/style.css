@@ -367,6 +367,7 @@ body {
     padding: 16px;
 }
 
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -599,7 +600,7 @@ div#fixedfooter {
 	position:fixed;
 	bottom:0px;
 	left:0px;
-	width:100%;
+    width:100%;
 	color:#CCC;
 	background:#333;
 	padding:12px;

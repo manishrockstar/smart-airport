@@ -16,7 +16,7 @@ public class SAConstant {
 	public static final String F_WEBSERVICE_FS = "/airlines/rest/v1/json/fs/";
 	
 	//Account Authentication
-	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=85c85ee7&appKey=71e5a04cdd72fe0713432ff7e3dbe97d";	//Flightstats account specific
+	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=e74fb769&appKey=30593c4222b641a974267e51c0ab4ccc";	//Flightstats account specific
 	//Flight By Route
 	public static final String F_WEBSERVICE_ROUTE = "/flightstatus/rest/v2/json/route/status/";
 	public static final String F_WEBSERVICE_AIRPORTS = "/flightstatus/rest/v2/json/airport/status/";
@@ -36,7 +36,7 @@ public class SAConstant {
 	 * Weather API parameters
 	 */
 	//Url prepration
-	public static final String WEATHER_API_BASE_URI = "https://twcservice.mybluemix.net";
+public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg@twcservice.mybluemix.net/api/weather/v1";
 	public static final String 	W_API="/api/weather/v1";
 	public static final String W_GEOCODE = "/geocode";
 	public static final String W_LOCATION = "/location";
@@ -56,7 +56,7 @@ public class SAConstant {
 	/* 
 	 * Local Proxy parameters
 	 * */
-	public static final String localhost="https://twcservice.mybluemix.net";
+	public static final String localhost="https://twcservice.mybluemix.net:443";
 	public static final int localport=443;
 	public static final String uname="e694bb30-ea42-485a-8659-46a574267f78";
 	public static final String pword="DnRyIrHbF8";

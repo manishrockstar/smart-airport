@@ -3,23 +3,33 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
 	xmlns:lang="http://www.springframework.org/schema/lang"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
-
+		
+		
 <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-<context:component-scan base-package="com.techm.bluemix.smarterairport.*" />
-  <context:annotation-config />
+<context:component-scan base-package="com.techm.bluemix.smarterairport" />
+ 
+
 
 
   <!-- Enables the Spring MVC @Controller programming model -->
@@ -38,8 +48,38 @@
 	
 	</list>
 		</property>
-</bean>
+	</bean>
+	
+	<!-- DataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="COM.ibm.db2os390.sqlj.jdbc.DB2SQLJDriver" />
+        <property name="url" value="jdbc:db2://dashdb-txn-small-yp-dal09-39.services.dal.bluemix.net:50000/BLUDB" />
+        <property name="username" value="bluadmin" />
+        <property name="password" value="Mjk4YzIzZmYyNTgz" />
+   </bean>
    
+   <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory"
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.DB2Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+        <property name="packagesToScan" value="com.techm.bluemix.smarterairport.Wrapper.UserWrapper"></property>
+    </bean>
 
+    <!-- Transaction -->
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 
 </beans>
