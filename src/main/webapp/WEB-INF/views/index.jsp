@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+ <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,22 +45,22 @@
 
 			</div>
 
-			<form action="signin">	
-			<label for="username">Username</label>
+			<form:form action="signin" method="POST">	
+			<form:label path="USERNAME">Username</label>
 
 			<br/>
-			<input type="text" placeholder="Enter Username" name="uname" required>			
+			<form:input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required>			
 			<br/>
-			<label for="password">Password</label>
+			<form:label path="USERNAME">Password</label>
 
 			<br/>
-			<input type="password" placeholder="Enter Password" name="psw" required>
+			<form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required>
 			<br/>
-			<button type="submit">Sign In</button>
+			<input type="submit" value="Sign In">
 
 			<a href="#"><p class="small">Forgot your password?</p></a>
 			<a onclick="document.getElementById('signupb').style.display='block'"><p class="small">New User? Signup Now</p></a>
-			</form>
+			</form:form>
 		</div>
 
 	</div>
@@ -72,19 +74,19 @@
 
 			</div>
 
-			<form action="signup" method="POST" command="user">	
+			<form:form action="signup" method="POST" commandName="user">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
-			 <input type="text" name="NAME" placeholder="Name" required>
+			 <form:input type="text" path="NAME" name="NAME" placeholder="Name" required />
 
-			 <input type="text" name="USERNAME" placeholder="Username" required>
+			 <form:input type="text" path="USERNAME" name="USERNAME" placeholder="Username" required />
 
-			 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="EMAIL" required>
-			 <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="CONTACT" required>
-			 <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
+			 <form:input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" path="EMAIL" name="EMAIL" required />
+			 <form:input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" path="CONTACT" name="CONTACT" required />
+			 <form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
 
-			 <input type="password" placeholder="Re-Enter Password" name="PASSWORD" id="PASSWORD" required>
+			 <form:input type="password" placeholder="Re-Enter Password" path="PASSWORD" name="PASSWORD" id="PASSWORD" required />
 			 <input type="submit" value="Sign up">
-			</form>
+			</form:form>
 		</div>
 
 </div>

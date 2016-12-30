@@ -17,9 +17,9 @@ public class UserController {
 	@Autowired(required=true)
 	private UserServices userServices;
 	
-	@RequestMapping(value= "/signup", method = RequestMethod.POST)
+	@RequestMapping(value= "/signup", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartSignup(@ModelAttribute("user") UserWrapper u){
-		
+		System.out,println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully added. Please login now";
 		return new ModelAndView("index", "message", message);
