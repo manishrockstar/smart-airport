@@ -596,14 +596,15 @@ img.mySlides
 }
 
 div#fixedfooter {  
-	font-size:15px;     
-	position:fixed;
-	bottom:0px;
-	left:0px;
-    width:100%;
-	color:#CCC;
-	background:#333;
-	padding:12px;
+  font-size:15px;     
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  height: 6%;
+  width:100%;
+  color:#CCC;
+  background:#333;
+  padding:0px;
 }
 
 div#fixedfooter a {
