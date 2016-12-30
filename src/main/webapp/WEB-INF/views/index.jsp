@@ -12,14 +12,7 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="document.getElementById('id01').style.display='block'">Sign in</a>
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="document.getElementById('id02').style.display='block'">Sign up</a>
-  <a onclick="document.getElementById('id03').style.display='block'">Contact Us</a>
-  <a onclick="document.getElementById('id07').style.display='block'">About Us</a>   
-</div>
+
 
 <div class="inlineprop" id="leftdiv">
   <img class="mySlides" src="${images}/1.jpg">
@@ -50,7 +43,7 @@
 
 			</div>
 
-			<form action="/signin">	
+			<form action="signin">	
 			<label for="username">Username</label>
 
 			<br/>
@@ -79,7 +72,7 @@
 
 			</div>
 
-			<form action="/signup" method="POST" command="user">	
+			<form action="signup" method="POST" command="user">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <input type="text" name="NAME" placeholder="Name" required>
 
