@@ -10,6 +10,7 @@ import java.util.Map;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.UsernamePasswordCredentials;
 import org.apache.commons.httpclient.auth.AuthScope;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -21,7 +22,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus; 
 import org.springframework.http.MediaType; 
 import org.springframework.http.ResponseEntity; 
-	import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.HttpHost;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.apache.http.client.CredentialsProvider;
@@ -86,21 +90,37 @@ public class WeatherServiceImpl implements WeatherServices {
 		
 		String srcURL=SAConstant.localhost+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
-		DefaultHttpClient httpClient = new DefaultHttpClient(); 
+		/*HttpClient client = HttpClientBuilder.create().build();
+		HttpGet getRequest = new HttpGet(srcURL);
+		getRequest.addHeader("Accept", "application/json");
+		HttpResponse response = httpClient.execute(getRequest);
+		if (response.getStatusLine().getStatusCode() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : "
+			   + response.getStatusLine().getStatusCode());
+		}
+		
+		
 		BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider(); 
 		credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword)); 
-		httpClient.setCredentialsProvider(credentialsProvider);
-		RestTemplate restTemplate=new RestTemplate(httpClient);
+		httpClient.setCredentialsProvider(credentialsProvider);*/
+		
+		String plainCreds = "28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg";
+		byte[] plainCredsBytes = plainCreds.getBytes();
+		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
+		String base64Creds = new String(base64CredsBytes);
+		RestTemplate restTemplate=new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
-    	headers.set("Accept", "application/json");
-    	HttpEntity entity = new HttpEntity(headers);
+		headers.add("Authorization", "Basic " + base64Creds);
+    	//headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+    	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
    		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);
 		/*Map<String, String> params = new HashMap<String, String>();
 		params.put("username", SAConstant.uname);
 		params.put("password", SAConstant.pword);		
-		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);*/
+		ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);
 		System.out.println(jsonString);
-		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	
+		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));	*/
+		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));
 		System.out.println(data);
 		return data;
 		
