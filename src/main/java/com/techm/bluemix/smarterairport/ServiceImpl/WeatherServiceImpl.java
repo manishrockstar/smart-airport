@@ -50,7 +50,7 @@ import com.techm.bluemix.smarterairport.Wrapper.WeatherStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.WeatherUpdateWrapper;
 import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
-
+import org.springframework.http.HttpEntity;
 @SuppressWarnings("unused")
 @Service("weatherServices")
 public class WeatherServiceImpl implements WeatherServices {
@@ -80,8 +80,8 @@ public class WeatherServiceImpl implements WeatherServices {
 		// TODO Auto-generated method stub
 		
 		
-		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
-		System.out.println(srcURL);
+		//String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		//System.out.println(srcURL);
 		/*HttpClient client = HttpClientBuilder.create().build();
 		HttpGet getRequest = new HttpGet(srcURL);
 		getRequest.addHeader("Accept", "application/json");
@@ -100,10 +100,11 @@ public class WeatherServiceImpl implements WeatherServices {
 		byte[] plainCredsBytes = plainCreds.getBytes();
 		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
 		String base64Creds = new String(base64CredsBytes);*/
-		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		String srcURL=SAConstant.localhost+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
 		
-		//CloseableHttpClient httpclient = HttpClients.createDefault();
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		ContextAwareHttpComponentsClientHttpRequestFactory customFactory = new ContextAwareHttpComponentsClientHttpRequestFactory(httpclient);
 		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.port, "http");
 		CredentialsProvider credsProvider = new BasicCredentialsProvider();
 		credsProvider.setCredentials(
@@ -119,8 +120,12 @@ public class WeatherServiceImpl implements WeatherServices {
 		// Add AuthCache to the execution context
 		HttpClientContext context = HttpClientContext.create();
 		context.setCredentialsProvider(credsProvider);
-		context.setAuthCache(authCache);
-		RestTemplate restTemplate=new RestTemplate(context);
+		context.setAuthCache(authCache);		
+		customFactory.setHttpContext(context);
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Accept", "application/json");
+    	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
+		RestTemplate restTemplate=new RestTemplate(customFactory);
 		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);		
 
 		/*
