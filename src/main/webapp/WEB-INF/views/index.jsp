@@ -79,7 +79,7 @@
 
 			</div>
 
-			<form action="/signup" method="POST">	
+			<form action="/signup" method="POST" command="userWrapper">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <input type="text" id="sname" placeholder="Name" required>
 

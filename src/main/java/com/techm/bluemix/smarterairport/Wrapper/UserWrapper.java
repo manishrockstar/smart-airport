@@ -12,11 +12,12 @@ public class UserWrapper {
 	@Column
 	private String USERNAME;
 	@Column
-	private String PASSWORD; 
-	@Column
 	private String EMAIL;
 	@Column
 	private int CONTACT;
+	@Column
+	private String PASSWORD; 
+	
 	public String getNAME() {
 		return NAME;
 	}
@@ -49,8 +50,8 @@ public class UserWrapper {
 	}
 	@Override
 	public String toString() {
-		return "UserWrapper [NAME=" + NAME + ", USERNAME=" + USERNAME + ", PASSWORD=" + PASSWORD + ", EMAIL=" + EMAIL
-				+ ", CONTACT=" + CONTACT + "]";
+		return "UserWrapper [NAME=" + NAME + ", USERNAME=" + USERNAME + ", EMAIL=" + EMAIL
+				+ ", CONTACT=" + CONTACT + ", PASSWORD=" + PASSWORD + "]";
 	}
 	
 	
