@@ -10,8 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class SmartController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartIndex(){
-		return new ModelAndView("index");
+	public ModelAndView smartIndex(Model model){
+		model.addAttribute("user",new User());
+		return model;
 	}	
 	
 	/**Login Authentication
