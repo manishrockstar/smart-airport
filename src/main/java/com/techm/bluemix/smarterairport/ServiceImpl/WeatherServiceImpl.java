@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.httpclient.HttpClient;
-import org.apache.http.HttpEntity;
+
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -105,7 +105,7 @@ public class WeatherServiceImpl implements WeatherServices {
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		ContextAwareHttpComponentsClientHttpRequestFactory customFactory = new ContextAwareHttpComponentsClientHttpRequestFactory(httpclient);
-		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.port, "http");
+		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.localport, "http");
 		CredentialsProvider credsProvider = new BasicCredentialsProvider();
 		credsProvider.setCredentials(
 		        new AuthScope(targetHost.getHostName(), targetHost.getPort()),
