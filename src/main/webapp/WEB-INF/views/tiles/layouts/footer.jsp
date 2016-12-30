@@ -11,15 +11,10 @@
 <body>
 
 <div id="fixedfooter" class="footer">
-<div class="inlineprop"> 
-		<center>
-		<ul >
-			<li>© 2016 Tech Mahindra Limited &nbsp;&nbsp;</li>
-		</ul></center>
-		</div>
-    <img id="imgicon" src="${images}/chaticon.png" height="42px" class="inlineprop" onclick="document.getElementById('id08').style.display='block'" usemap="#planetmap">
-    <map name="planetmap">
-  <area shape="rect" coords="0,0,270,126" alt="Sun" href="/"></map>
+<center><div class="inlineprop"> 
+© 2016 Tech Mahindra Limited &nbsp;&nbsp;
+		</div></center>
+    <img id="imgicon" src="${images}/chaticon.png" height="42px" class="inlineprop" onclick="document.getElementById('id08').style.display='block'">
 </div>
 
 </body>
