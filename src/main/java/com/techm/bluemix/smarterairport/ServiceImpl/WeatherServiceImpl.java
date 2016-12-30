@@ -7,31 +7,25 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.io.File;
-import java.io.IOException;
+
 import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.httpclient.UsernamePasswordCredentials;
-import org.apache.commons.httpclient.auth.AuthScope;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.io.FileUtils;
-import org.springframework.core.io.FileSystemResource; 
-import org.springframework.http.HttpEntity; 
-import org.springframework.http.HttpHeaders; 
-import org.springframework.http.HttpMethod; 
-import org.springframework.http.HttpStatus; 
-import org.springframework.http.MediaType; 
-import org.springframework.http.ResponseEntity; 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.AuthCache;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.impl.auth.BasicScheme;
+import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
+
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.ProxyAuthenticationStrategy;
@@ -41,7 +35,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -57,7 +50,6 @@ import com.techm.bluemix.smarterairport.Wrapper.WeatherStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.WeatherUpdateWrapper;
 import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
-import com.ibm.watson.developer_cloud.util.CredentialUtils;
 
 @SuppressWarnings("unused")
 @Service("weatherServices")
@@ -108,16 +100,43 @@ public class WeatherServiceImpl implements WeatherServices {
 		byte[] plainCredsBytes = plainCreds.getBytes();
 		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
 		String base64Creds = new String(base64CredsBytes);*/
+		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		System.out.println(srcURL);
+		
+		//CloseableHttpClient httpclient = HttpClients.createDefault();
+		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.port, "http");
+		CredentialsProvider credsProvider = new BasicCredentialsProvider();
+		credsProvider.setCredentials(
+		        new AuthScope(targetHost.getHostName(), targetHost.getPort()),
+		        new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
+
+		// Create AuthCache instance
+		AuthCache authCache = new BasicAuthCache();
+		// Generate BASIC scheme object and add it to the local auth cache
+		BasicScheme basicAuth = new BasicScheme();
+		authCache.put(targetHost, basicAuth);
+
+		// Add AuthCache to the execution context
+		HttpClientContext context = HttpClientContext.create();
+		context.setCredentialsProvider(credsProvider);
+		context.setAuthCache(authCache);
+		RestTemplate restTemplate=new RestTemplate(context);
+		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);		
+
+		/*
+		HttpClient<HashMap<String,Object>> http = new HttpClient<>();
+		HttpHeaders headers = http.createBasicAuthenticationHttpHeaders(SAConstant.uname, SAConstant.pword);
 		RestTemplate restTemplate=new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		//headers.add("Authorization", "Basic " + base64Creds);
+		headers.set("Authorization", "Bearer " +getOauthAdminAuthToken()); 
     	headers.set("Accept", "application/json");
     	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
    		
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("username", SAConstant.uname);
 		params.put("password", SAConstant.pword);		
-		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);
+		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);*/
 		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);
 		System.out.println(jsonString);
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
