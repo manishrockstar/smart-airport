@@ -9,9 +9,18 @@
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
 <body>
-<div id="fixedfooter">
-<center>Copyright reserved � 2016 Tech Mahindra Limited</center>
-</div> 
+
+<div id="fixedfooter" class="footer">
+<div class="inlineprop"> 
+		<center>
+		<ul >
+			<li>© 2016 Tech Mahindra Limited &nbsp;&nbsp;</li>
+		</ul></center>
+		</div>
+    <img id="imgicon" src="${images}/chaticon.png" height="42px" class="inlineprop" onclick="document.getElementById('id08').style.display='block'" usemap="#planetmap">
+    <map name="planetmap">
+  <area shape="rect" coords="0,0,270,126" alt="Sun" href="/"></map>
+</div>
 
 </body>
 </html>
