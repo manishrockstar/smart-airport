@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.techm.bluemix.smarterairport.Services.UserServices;
 import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
+import org.springframework.ui.Model;
 
 @Controller
 public class UserController {
