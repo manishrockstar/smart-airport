@@ -42,7 +42,6 @@ public class UserController {
 	}
 	
 	
-	@SuppressWarnings("rawtypes")
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
 	public ModelAndView smartSignin(@Valid User u, BindingResult result,
 			Map model){
