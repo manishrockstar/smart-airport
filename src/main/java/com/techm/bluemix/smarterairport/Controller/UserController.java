@@ -33,8 +33,16 @@ public class UserController {
 	 
 	
 	@RequestMapping(value= "/signup", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartSignup(@ModelAttribute("user")User u, BindingResult result){
+	public ModelAndView smartSignup(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword,
+			@RequestParam("NAME") String name, @RequestParam("EMAIL") String email,@RequestParam("CONTACT") int contact){
 		//model.addAttribute("user", new User());
+		User u = null;
+		u.setUSERNAME(uname);
+		u.setPASSWORD(pword);
+		u.setEMAIL(email);
+		u.setNAME(name);
+		u.setCONTACT(contact);
+		
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully Registered. Please login now";

@@ -52,8 +52,8 @@ public class User {
 	public int getCONTACT() {
 		return CONTACT;
 	}
-	public void setCONTACT(int cONTACT) {
-		CONTACT = cONTACT;
+	public void setCONTACT(int contact) {
+		CONTACT = contact;
 	}
 	@Override
 	public String toString() {
