@@ -28,6 +28,11 @@ public class SmartController {
 		return new ModelAndView("home");
 	}	
 	
+	@RequestMapping(value="register", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartRegister(){
+		return new ModelAndView("signup");
+	}	
+	
 	@RequestMapping(value="restroom", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartRestRoom(){
 		return new ModelAndView("restroom");

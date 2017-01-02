@@ -59,37 +59,14 @@
 			<input type="submit" value="Sign In">
 
 			<a href="#"><p class="small">Forgot your password?</p></a>
-			<a onclick="document.getElementById('signupb').style.display='block'"><p class="small">New User? Signup Now</p></a>
+			<a href="register"><p class="small">New User? Signup Now</p></a>
 			</form:form>
 		</div>
 
 	</div>
 </div>
 
-<div class="container1" id="signupb"> 
-		<div class="login-box animated fadeInUp">
-			<div class="box-header">
 
-				<h2>Sign Up</h2>
-
-			</div>
-
-			<form:form action="signup" method="POST" modelAttribute="user" commandName="user">	
-			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
-			 <form:input type="text" path="NAME" name="NAME" placeholder="Name" required />
-
-			 <form:input type="text" path="USERNAME" name="USERNAME" placeholder="Username" required />
-
-			 <form:input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" path="EMAIL" name="EMAIL" required />
-			 <form:input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" path="CONTACT" name="CONTACT" required />
-			 <form:input type="password" placeholder="Enter Password" path="PASSWORD1" name="PASSWORD" required />
-
-			 <form:input type="password" placeholder="Re-Enter Password" path="PASSWORD" name="PASSWORD" id="PASSWORD" required />
-			 <input type="submit" value="Sign up">
-			</form:form>
-		</div>
-
-</div>
 
 <div class="inlineprop">
 <ul id="rig">
