@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.techm.bluemix.smarterairport.DAO.UserDAO;
 import com.techm.bluemix.smarterairport.Wrapper.User;

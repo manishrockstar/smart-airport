@@ -8,14 +8,14 @@ import com.techm.bluemix.smarterairport.Services.UserServices;
 import com.techm.bluemix.smarterairport.Wrapper.User;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserServices {
 	
 	@Autowired
 	private UserDAO userDAO;
 	
 	
-	@Override
-	@Transactional
+	@Override	
 	public void signUp(User u) {
 		// TODO Auto-generated method stub
 		userDAO.signUp(u);

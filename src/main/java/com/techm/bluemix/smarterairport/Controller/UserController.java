@@ -51,7 +51,7 @@ public class UserController {
 				return new ModelAndView("home","name",uw.getNAME());
 			}	
 		}
-		return new ModelAndView("index");
+		return new ModelAndView("index"); 
 		
 	}
 	
