@@ -43,12 +43,11 @@ public class UserController {
 	
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
-	public ModelAndView smartSignin(@Valid User u, BindingResult result,
-			Map model){
-		u = (User) model.get("user");
-		User uw=userServices.getUserByUsername(u.getUSERNAME());
+	public ModelAndView smartSignin(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword){
+		
+		User uw=userServices.getUserByUsername(uname);
 		if(uw!=null){
-			if(uw.getPASSWORD().equals(u.getPASSWORD())){
+			if(uw.getPASSWORD().equals(pword)){
 				return new ModelAndView("home","name",uw.getNAME());
 			}	
 		}
