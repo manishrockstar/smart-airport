@@ -70,7 +70,8 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="com.techm.bluemix.smarterairport.Wrapper.User"></property>
+        <property name="annotatedClasses">
+        <list> <value>com.techm.bluemix.smarterairport.Wrapper.User</value></list></property>
     </bean>
 
     <!-- Transaction -->
