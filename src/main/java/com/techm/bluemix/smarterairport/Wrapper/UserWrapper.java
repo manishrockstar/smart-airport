@@ -17,7 +17,14 @@ public class UserWrapper {
 	private int CONTACT;
 	@Column
 	private String PASSWORD; 
+	private String PASSWORD1; 
 	
+	public String getPASSWORD1() {
+		return PASSWORD1;
+	}
+	public void setPASSWORD1(String pASSWORD1) {
+		PASSWORD1 = pASSWORD1;
+	}
 	public String getNAME() {
 		return NAME;
 	}

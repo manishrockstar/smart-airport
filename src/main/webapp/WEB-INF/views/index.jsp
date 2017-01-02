@@ -74,7 +74,7 @@
 
 			</div>
 
-			<form:form action="signup" method="POST" modelAttribute="user">	
+			<form:form action="signup" method="POST" modelAttribute="user" commandName="user">	
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <form:input type="text" path="user.NAME" name="NAME" placeholder="Name" required />
 
@@ -82,7 +82,7 @@
 
 			 <form:input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" path="user.EMAIL" name="EMAIL" required />
 			 <form:input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" path="user.CONTACT" name="CONTACT" required />
-			 <form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
+			 <form:input type="password" placeholder="Enter Password" path="user.PASSWORD1" name="PASSWORD" required />
 
 			 <form:input type="password" placeholder="Re-Enter Password" path="user.PASSWORD" name="PASSWORD" id="PASSWORD" required />
 			 <input type="submit" value="Sign up">

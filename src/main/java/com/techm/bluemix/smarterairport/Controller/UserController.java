@@ -27,14 +27,11 @@ public class UserController {
 	@Autowired(required=true)
 	private UserServices userServices;
 	
-	 @RequestMapping(value = "/signup", method = RequestMethod.GET)
-	    public String registration(Model model) {
-	        model.addAttribute("user", new UserWrapper());
-	        return "signup";
-	    }
+	 
 	
 	@RequestMapping(value= "/signup", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartSignup(@ModelAttribute("command")UserWrapper u, BindingResult result){
+	public ModelAndView smartSignup(@ModelAttribute("user")UserWrapper u, BindingResult result){
+		//model.addAttribute("user", new UserWrapper());
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully Registered. Please login now";
