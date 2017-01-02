@@ -9,16 +9,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.techm.bluemix.smarterairport.Services.UserServices;
+import com.techm.bluemix.smarterairport.Wrapper.LoginForm;
 import com.techm.bluemix.smarterairport.Wrapper.User;
 import org.springframework.ui.Model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 
 
 @Controller
@@ -40,11 +43,12 @@ public class UserController {
 	
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
-	public ModelAndView smartSignin(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword){
-		
-		User uw=userServices.getUserByUsername(uname);
+	public ModelAndView smartSignin(@Valid LoginForm loginForm, BindingResult result,
+			Map model){
+		loginForm = (LoginForm) model.get("loginForm");
+		User uw=userServices.getUserByUsername(loginForm.getUSERNAME());
 		if(uw!=null){
-			if(uw.getPASSWORD().equals(pword)){
+			if(uw.getPASSWORD().equals(loginForm.getPASSWORD())){
 				return new ModelAndView("home","name",uw.getNAME());
 			}	
 		}

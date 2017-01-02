@@ -145,6 +145,14 @@
             <scope>compile</scope>
         </dependency>
 		
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+    		<groupId>javax.validation</groupId>
+    		<artifactId>validation-api</artifactId>
+    		<version>1.0.0.GA</version>
+		</dependency>
+		
+		
 		<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc4  
 		<dependency> 
     		<groupId>com.ibm.db2.jcc</groupId> 
