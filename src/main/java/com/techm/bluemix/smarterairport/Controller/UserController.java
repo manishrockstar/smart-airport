@@ -29,7 +29,7 @@ public class UserController {
 	
 	 @RequestMapping(value = "/signup", method = RequestMethod.GET)
 	    public String registration(Model model) {
-	        model.addAttribute("u", new UserWrapper());
+	        model.addAttribute("user", new UserWrapper());
 	        return "signup";
 	    }
 	
