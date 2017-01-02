@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.techm.bluemix.smarterairport.Services.UserServices;
-import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
+import com.techm.bluemix.smarterairport.Wrapper.User;
 import org.springframework.ui.Model;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,8 +30,8 @@ public class UserController {
 	 
 	
 	@RequestMapping(value= "/signup", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartSignup(@ModelAttribute("user")UserWrapper u, BindingResult result){
-		//model.addAttribute("user", new UserWrapper());
+	public ModelAndView smartSignup(@ModelAttribute("user")User u, BindingResult result){
+		//model.addAttribute("user", new User());
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully Registered. Please login now";
@@ -40,9 +40,9 @@ public class UserController {
 	
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
-	public ModelAndView smartSignin(@RequestParam("uname") String uname, @RequestParam("pword") String pword){
+	public ModelAndView smartSignin(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword){
 		
-		UserWrapper uw=userServices.getUserByUsername(uname);
+		User uw=userServices.getUserByUsername(uname);
 		if(uw!=null){
 			if(uw.getPASSWORD().equals(pword)){
 				return new ModelAndView("home","name",uw.getNAME());

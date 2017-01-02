@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="SIGNUP")
-public class UserWrapper {
+public class User {
 	@Column
 	private String NAME;
 	@Column

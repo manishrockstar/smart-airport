@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.techm.bluemix.smarterairport.DAO.UserDAO;
-import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
+import com.techm.bluemix.smarterairport.Wrapper.User;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -19,16 +19,16 @@ public class UserDAOImpl implements UserDAO {
 	 
 
 	@Override
-	public void signUp(UserWrapper u) {
+	public void signUp(User u) {
 		// TODO Auto-generated method stub
 		getCurrentSession().save(u);
 	}
 
 	@Override
-	public UserWrapper getUserByUsername(String uname) {
+	public User getUserByUsername(String uname) {
 		// TODO Auto-generated method stub
 			
-		UserWrapper u = (UserWrapper) getCurrentSession().load(UserWrapper.class, new String(uname));		
+		User u = (User) getCurrentSession().load(User.class, new String(uname));		
 		return u;
 	}
 

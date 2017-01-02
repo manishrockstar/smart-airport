@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.techm.bluemix.smarterairport.DAO.UserDAO;
 import com.techm.bluemix.smarterairport.Services.UserServices;
-import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
+import com.techm.bluemix.smarterairport.Wrapper.User;
 
 @Service
 public class UserServiceImpl implements UserServices {
@@ -16,15 +16,15 @@ public class UserServiceImpl implements UserServices {
 	
 	@Override
 	@Transactional
-	public void signUp(UserWrapper u) {
+	public void signUp(User u) {
 		// TODO Auto-generated method stub
 		userDAO.signUp(u);
 	}
 
 	@Override
-	public UserWrapper getUserByUsername(String uname) {
+	public User getUserByUsername(String uname) {
 		// TODO Auto-generated method stub
-		UserWrapper uw=userDAO.getUserByUsername(uname);
+		User uw=userDAO.getUserByUsername(uname);
 		return uw;
 		
 	}
