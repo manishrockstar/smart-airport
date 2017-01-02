@@ -42,13 +42,14 @@ public class UserController {
 	}
 	
 	
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
-	public ModelAndView smartSignin(@Valid LoginForm loginForm, BindingResult result,
+	public ModelAndView smartSignin(@Valid User u, BindingResult result,
 			Map model){
-		loginForm = (LoginForm) model.get("loginForm");
-		User uw=userServices.getUserByUsername(loginForm.getUSERNAME());
+		u = (User) model.get("user");
+		User uw=userServices.getUserByUsername(u.getUSERNAME());
 		if(uw!=null){
-			if(uw.getPASSWORD().equals(loginForm.getPASSWORD())){
+			if(uw.getPASSWORD().equals(u.getPASSWORD())){
 				return new ModelAndView("home","name",uw.getNAME());
 			}	
 		}
