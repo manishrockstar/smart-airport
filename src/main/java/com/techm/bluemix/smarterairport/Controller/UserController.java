@@ -11,6 +11,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import com.techm.bluemix.smarterairport.Services.UserServices;
 import com.techm.bluemix.smarterairport.Wrapper.UserWrapper;
 import org.springframework.ui.Model;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+
 
 @Controller
 public class UserController {
@@ -18,11 +27,17 @@ public class UserController {
 	@Autowired(required=true)
 	private UserServices userServices;
 	
+	 @RequestMapping(value = "/signup", method = RequestMethod.GET)
+	    public String registration(Model model) {
+	        model.addAttribute("u", new UserWrapper());
+	        return "signup";
+	    }
+	
 	@RequestMapping(value= "/signup", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartSignup(@ModelAttribute("user") UserWrapper u){
+	public ModelAndView smartSignup(@ModelAttribute("command")UserWrapper u, BindingResult result){
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
-		String message = "User successfully added. Please login now";
+		String message = "User successfully Registered. Please login now";
 		return new ModelAndView("index", "message", message);
 	}
 	
