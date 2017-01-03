@@ -100,7 +100,8 @@ public class WeatherServiceImpl implements WeatherServices {
 		byte[] plainCredsBytes = plainCreds.getBytes();
 		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
 		String base64Creds = new String(base64CredsBytes);*/
-		String srcURL=SAConstant.localhost+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
+		//String srcURL=SAConstant.localhost+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
