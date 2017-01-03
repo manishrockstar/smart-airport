@@ -33,7 +33,7 @@ public class UserDAOImpl implements UserDAO {
 	public void signUp(User u) {
 		// TODO Auto-generated method stub
 			
-		 getCurrentSession().persist(p);
+		 getCurrentSession().persist(u);
 		}
 	
 
