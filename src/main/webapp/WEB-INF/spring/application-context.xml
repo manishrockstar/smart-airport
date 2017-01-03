@@ -27,10 +27,8 @@
 		
 		
 <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-<context:component-scan base-package="com.techm.bluemix.smarterairport">
-     <context:include-filter type="aspectj" expression="com.techm.bluemix.smarterairport.*" />
-</context:component-scan> 
-
+<context:component-scan base-package="com.techm.bluemix.smarterairport.*" />
+ 
 
 
   <!-- Enables the Spring MVC @Controller programming model -->
