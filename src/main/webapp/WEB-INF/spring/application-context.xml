@@ -70,8 +70,8 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
-        <property name="mappingResources">
-        <list> <value>com.techm.bluemix.smarterairport.Wrapper.User</value></list></property>
+        <mapping class="com.techm.bluemix.smarterairport.Wrapper.User" />
+        </property>
     </bean>
 
     <!-- Transaction -->
