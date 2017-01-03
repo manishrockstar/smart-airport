@@ -9,8 +9,6 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-
-
 import com.ibm.db2.jcc.DB2SimpleDataSource;
 import com.ibm.nosql.json.api.BasicDBList;
 import com.ibm.nosql.json.api.BasicDBObject;
@@ -24,24 +22,24 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	private Session getCurrentSession() {
-	        return sessionFactory.getCurrentSession();
-	    }
+	public void setSessionFactory(SessionFactory sf){
+		this.sessionFactory = sf;
+	}
 	 
 
 	@Override
 	public void signUp(User u) {
 		// TODO Auto-generated method stub
-			
-		 getCurrentSession().persist(u);
+		Session session = this.sessionFactory.getCurrentSession();
+		session.persist(u);
 		}
 	
 
 	@Override
 	public User getUserByUsername(String uname) {
 		// TODO Auto-generated method stub
-			
-		User u = (User) getCurrentSession().load(User.class, new String(uname));		
+		Session session = this.sessionFactory.getCurrentSession();
+		User u = (User) session.load(User.class, new String(uname));		
 		return u;
 	}
 

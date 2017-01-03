@@ -33,16 +33,9 @@ public class UserController {
 	 
 	
 	@RequestMapping(value= "/signup", method = RequestMethod.POST)
-	public ModelAndView smartSignup(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword,
-			@RequestParam("NAME") String name, @RequestParam("EMAIL") String email,@RequestParam("CONTACT") int contact){
+	public ModelAndView smartSignup(@ModelAttribute("user") User u){
 		//model.addAttribute("user", new User());
-		User u = null;
-		u.setUSERNAME(uname);
-		u.setPASSWORD(pword);
-		u.setEMAIL(email);
-		u.setNAME(name);
-		u.setCONTACT(contact);
-		
+				
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully Registered. Please login now";
@@ -51,18 +44,16 @@ public class UserController {
 	
 	
 	@RequestMapping(value= "/signin", method = RequestMethod.POST)
-	public ModelAndView smartSignin(@RequestParam("USERNAME") String uname, @RequestParam("PASSWORD") String pword){
+ 	public ModelAndView smartLogin(@ModelAttribute("loginForm") LoginForm loginForm) {
 		
-		User uw=userServices.getUserByUsername(uname);
+		User uw=userServices.getUserByUsername(loginForm.getUSERNAME());
 		if(uw!=null){
-			if(uw.getPASSWORD().equals(pword)){
+			if(uw.getPASSWORD().equals(loginForm.getPASSWORD())){
 				return new ModelAndView("home","name",uw.getNAME());
 			}	
 		}
-		return new ModelAndView("index"); 
-		
+		return new ModelAndView("index"); 	
 	}
-	
 	
 
 }

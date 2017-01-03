@@ -45,22 +45,22 @@
 
 			</div>
 
-			<form action="signin" method="POST">	
-			<label>Username</label>
+			<form:form action="signin" method="POST">	
+			<form:label>Username</form:label>
 
 			<br/>
-			<input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required />			
+			<form:input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required />			
 			<br/>
-			<label>Password</label>
+			<form:label>Password</form:label>
 
 			<br/>
-			<input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
+			<form:input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
 			<br/>
 			<input type="submit" value="Sign In">
 
 			<a href="#"><p class="small">Forgot your password?</p></a>
 			<a href="register"><p class="small">New User? Signup Now</p></a>
-			</form>
+			</form:form>
 		</div>
 
 	</div>
