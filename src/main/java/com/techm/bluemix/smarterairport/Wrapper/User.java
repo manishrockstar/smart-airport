@@ -3,12 +3,14 @@ package com.techm.bluemix.smarterairport.Wrapper;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
 @Table(name="SIGNUP")
 public class User {
 	@Column
 	private String NAME;
+	@Id
 	@Column
 	private String USERNAME;
 	@Column

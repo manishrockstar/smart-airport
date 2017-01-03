@@ -9,7 +9,7 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import com.ibm.db2.jcc.DB2SimpleDataSource;
 import com.ibm.nosql.json.api.BasicDBList;
