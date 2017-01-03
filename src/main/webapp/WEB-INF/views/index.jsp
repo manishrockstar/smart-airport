@@ -45,7 +45,7 @@
 
 			</div>
 
-			<form:form action="signin" method="POST">	
+			<form:form action="signin" method="POST" modelAttribute="loginForm">	
 			<form:label path="USERNAME">Username</form:label>
 
 			<br/>

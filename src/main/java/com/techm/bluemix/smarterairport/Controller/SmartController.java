@@ -5,14 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
-
+import com.techm.bluemix.smarterairport.Wrapper.LoginForm;
+import com.techm.bluemix.smarterairport.Wrapper.User;	
 @Controller
 @RequestMapping("/")
 public class SmartController {
 
-	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public ModelAndView smartIndex(){
-		return new ModelAndView("index");
+		return new ModelAndView("index","loginForm", new LoginForm());
 	}	
 	
 	/**Login Authentication
@@ -28,9 +29,9 @@ public class SmartController {
 		return new ModelAndView("home");
 	}	
 	
-	@RequestMapping(value="register", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="register", method=RequestMethod.GET)
 	public ModelAndView smartRegister(){
-		return new ModelAndView("signup");
+		return new ModelAndView("signup", "user", new User());
 	}	
 	
 	@RequestMapping(value="restroom", method={RequestMethod.GET,RequestMethod.POST})

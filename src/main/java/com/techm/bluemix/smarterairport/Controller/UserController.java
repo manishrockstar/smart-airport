@@ -39,7 +39,7 @@ public class UserController {
 		System.out.println("Entered into Controller");
 		userServices.signUp(u);
 		String message = "User successfully Registered. Please login now";
-		return new ModelAndView("index", "message", message);
+		return new ModelAndView("redirect:", "message", message);
 	}
 	
 	
