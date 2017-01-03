@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+ <%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,14 +14,7 @@
 <script src="${scripts}/script.js"></script>
 <body bgcolor="#DFE2DB">
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="document.getElementById('id01').style.display='block'">Sign in</a>
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="document.getElementById('id02').style.display='block'">Sign up</a>
-  <a onclick="document.getElementById('id03').style.display='block'">Contact Us</a>
-  <a onclick="document.getElementById('id07').style.display='block'">About Us</a>   
-</div>
+
 
 <div class="inlineprop" id="leftdiv">
   <img class="mySlides" src="${images}/1.jpg">
@@ -50,51 +45,28 @@
 
 			</div>
 
-			<form action="/signin">	
-			<label for="username">Username</label>
+			<form action="signin" method="POST">	
+			<label>Username</label>
 
 			<br/>
-			<input type="text" placeholder="Enter Username" name="uname" required>			
+			<input type="text" placeholder="Enter Username" path="USERNAME" name="USERNAME" required />			
 			<br/>
-			<label for="password">Password</label>
+			<label>Password</label>
 
 			<br/>
-			<input type="password" placeholder="Enter Password" name="psw" required>
+			<input type="password" placeholder="Enter Password" path="PASSWORD" name="PASSWORD" required />
 			<br/>
-			<button type="submit">Sign In</button>
+			<input type="submit" value="Sign In">
 
 			<a href="#"><p class="small">Forgot your password?</p></a>
-			<a onclick="document.getElementById('signupb').style.display='block'"><p class="small">New User? Signup Now</p></a>
+			<a href="register"><p class="small">New User? Signup Now</p></a>
 			</form>
 		</div>
 
 	</div>
 </div>
 
-<div class="container1" id="signupb"> 
-		<div class="login-box animated fadeInUp">
-			<div class="box-header">
 
-				<h2>Sign Up</h2>
-
-			</div>
-
-			<form action="/signup" method="POST" command="userWrapper">	
-			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
-			 <input type="text" id="sname" placeholder="Name" required>
-
-			 <input type="text" id="suname" placeholder="Username" required>
-
-			 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="semail" required>
-			 <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="scontact" required>
-			 <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
-
-			 <input type="password" placeholder="Re-Enter Password" name="psw2" id="psw2" required>
-			 <button type="submit">Sign up</button>
-			</form>
-		</div>
-
-</div>
 
 <div class="inlineprop">
 <ul id="rig">

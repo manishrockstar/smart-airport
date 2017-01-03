@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/")
@@ -25,6 +26,11 @@ public class SmartController {
 	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
 		return new ModelAndView("home");
+	}	
+	
+	@RequestMapping(value="register", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartRegister(){
+		return new ModelAndView("signup");
 	}	
 	
 	@RequestMapping(value="restroom", method={RequestMethod.GET,RequestMethod.POST})
