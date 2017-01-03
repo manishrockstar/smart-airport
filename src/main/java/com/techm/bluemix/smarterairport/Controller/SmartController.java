@@ -12,7 +12,7 @@ public class SmartController {
 
 	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartIndex(){
-		return new ModelAndView("index");
+		return new ModelAndView("home");
 	}	
 	
 	/**Login Authentication
@@ -21,12 +21,12 @@ public class SmartController {
 		
 		
 		return new ModelAndView("index");
-	}	**/
+	}	
 	
 	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
 		return new ModelAndView("home");
-	}	
+	}	**/
 	
 	@RequestMapping(value="register", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartRegister(){
