@@ -42,7 +42,11 @@ public class Signin extends HttpServlet {
 			conn = DriverManager.getConnection(url,uname,pass);
 			stmt = conn.createStatement();
 			
+<<<<<<< HEAD
 			String sql = "SELECT * FROM signup where email like '" + email + "' and password like '" + pwd + "'";
+=======
+			String sql = "SELECT * FROM signup where email = '" + email + "' and pwd like '" + pwd + "'";
+>>>>>>> 9f30761d5b5e2f52d7eb0f050b9ac42768d4bba2
 			rs = stmt.executeQuery(sql);
 			
 			if(rs.next())
