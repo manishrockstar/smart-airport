@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="container1" id="signupb"> 
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
