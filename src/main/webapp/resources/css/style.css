@@ -626,7 +626,7 @@ div#fixedfooter a {
     left: 25%;
     width: 50%;
     height: 50%;
-    z-index:99;
+    z-index:100;
 }
 
 
