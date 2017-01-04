@@ -64,7 +64,7 @@
 		</c:forEach>
 		</c:if>
 		<c:if test="${fswrapper = null}">
-		<script>alert("Flight details not found.");</script>
+		<%<script>alert("Flight details not found.");</script>%>
 		</c:if>
 
 </table>

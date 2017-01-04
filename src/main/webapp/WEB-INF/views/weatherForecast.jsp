@@ -24,7 +24,7 @@
 </div>
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
-<c:if test=${wfWrappers.forecasts[ite.index].dow != null }>
+<c:if test="${wfWrappers.forecasts[ite.index].dow != null }">
 	<table align="center" border="1" style="width:60%" height="250px">
 	
 		<tr>
@@ -90,7 +90,7 @@
 		</tr>
 	</table>
 </c:if>
-<c:if test=${wfWrappers.forecasts[ite.index].dow = null }>
+<c:if test="${wfWrappers.forecasts[ite.index].dow = null }">
 	<table align="center" border="1" style="width:60%" height="250px">
 	
 		<tr>
