@@ -19,7 +19,7 @@
 			</div>
 
 			
-			<form action="signup" method="POST" modelAttribute="user">	
+			<form:form action="signup" method="POST" modelAttribute="user">	
 			 <input type="text" id="sname" placeholder="Name" required>
 
 			 <input type="text" id="suname" placeholder="Username" required>
