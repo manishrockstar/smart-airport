@@ -44,7 +44,7 @@
 			<th>Status</th>
 		</tr>
 		<c:set var="fsw" value="${fswrapper}"
-		<c:if test="${not empty fsw}">
+		<c:if test="${not empty fsw.flightStatuses}">
 		<c:forEach items="${fswrapper}" var="fsWrappers" >	
 		
 			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
@@ -65,7 +65,7 @@
 			</c:forEach>
 		</c:forEach>
 		</c:if>
-		<c:if test="${empty fsw}">
+		<c:if test="${empty fsw.flightStatuses}">
 		<script>alert("Flight details not found.");</script>
 		</c:if>
 		
