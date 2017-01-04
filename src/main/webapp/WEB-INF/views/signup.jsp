@@ -18,12 +18,8 @@
 
 			</div>
 
-<<<<<<< HEAD
-			<form action="./signin" method="POST">	
-=======
+			
 			<form:form action="signup" method="POST" modelAttribute="user">	
->>>>>>> cbcbf1534e47cc9f88bb1c8a1c2f7bc4cb431da6
-			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
 			 <input type="text" id="sname" placeholder="Name" required>
 
 			 <input type="text" id="suname" placeholder="Username" required>
