@@ -45,9 +45,8 @@ public class WeatherController {
 	{
 		
 		List<WeatherForecastWrapper> wfwrapper = weatherServices.trackWeatherForecast(SAUtils.latMap.get(w_country),SAUtils.lonMap.get(w_country), days);
-		ModelAndView modelAndView = null;
-		modelAndView.addObject("Country",w_country);
-		return new ModelAndView("weatherForecast","Country",wfwrapper);
+		
+		return new ModelAndView("weatherForecast","wfwrapper",wfwrapper);
 	}
 	
 }
