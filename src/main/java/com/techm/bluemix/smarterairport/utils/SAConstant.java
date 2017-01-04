@@ -16,7 +16,7 @@ public class SAConstant {
 	public static final String F_WEBSERVICE_FS = "/airlines/rest/v1/json/fs/";
 	
 	//Account Authentication
-	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=e74fb769&appKey=30593c4222b641a974267e51c0ab4ccc";	//Flightstats account specific
+	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=fe647c90&appKey=acc7c5bf565d3ff434254541df7e1785";	//Flightstats account specific
 	//Flight By Route
 	public static final String F_WEBSERVICE_ROUTE = "/flightstatus/rest/v2/json/route/status/";
 	public static final String F_WEBSERVICE_AIRPORTS = "/flightstatus/rest/v2/json/airport/status/";

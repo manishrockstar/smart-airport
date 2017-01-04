@@ -1,5 +1,7 @@
 
-
+function goBack() {
+    window.history.back();
+}
 
 
 
@@ -24,3 +26,12 @@ function myFunction() {
         return true;
 
 }
+function required(inputtx)   
+   {  
+     if (inputtx.value.length == 0)  
+      {   
+         alert("message");        
+         return false;   
+      }       
+      return true;   
+    }   
