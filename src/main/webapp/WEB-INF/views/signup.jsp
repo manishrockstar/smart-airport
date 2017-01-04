@@ -18,19 +18,23 @@
 
 			</div>
 
-			<form:form action="signup" method="POST" modelAttribute="user" commandName="user">	
+<<<<<<< HEAD
+			<form action="./signin" method="POST">	
+=======
+			<form:form action="signup" method="POST" modelAttribute="user">	
+>>>>>>> cbcbf1534e47cc9f88bb1c8a1c2f7bc4cb431da6
 			 <span onclick="document.getElementById('signupb').style.display='none'" class="close" title="Close Modal">&times;</span>
-			 <form:input type="text" path="NAME" name="NAME" placeholder="Name" required />
+			 <input type="text" id="sname" placeholder="Name" required>
 
-			 <form:input type="text" path="USERNAME" name="USERNAME" placeholder="Username" required />
+			 <input type="text" id="suname" placeholder="Username" required>
 
-			 <form:input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" path="EMAIL" name="EMAIL" required />
-			 <form:input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" path="CONTACT" name="CONTACT" required />
-			 <form:input type="password" placeholder="Enter Password" path="PASSWORD1" name="PASSWORD" required />
+			 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email id" name="semail" required>
+			 <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit Mobile Number" name="scontact" required>
+			 <input type="password" placeholder="Enter Password" name="psw1" id="psw1" required>
 
-			 <form:input type="password" placeholder="Re-Enter Password" path="PASSWORD" name="PASSWORD" id="PASSWORD" required />
-			 <input type="submit" value="Sign up">
-			</form:form>
+			 <input type="password" placeholder="Re-Enter Password" name="psw2" id="psw2" required>
+			 <button type="submit" onclick="myFunction()">Sign up</button>
+			</form>
 		</div>
 
 </div>

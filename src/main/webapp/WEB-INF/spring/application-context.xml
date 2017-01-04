@@ -27,9 +27,8 @@
 		
 		
 <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-<context:component-scan base-package="com.techm.bluemix.smarterairport" />
+<context:component-scan base-package="com.techm.bluemix.smarterairport.*" />
  
-
 
 
   <!-- Enables the Spring MVC @Controller programming model -->
@@ -62,6 +61,11 @@
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+        <property name="annotatedClasses">
+            <list>
+            	<value>com.techm.bluemix.smarterairport.Wrapper.User</value>
+            </list>
+          </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.DB2Dialect</prop>
@@ -69,9 +73,7 @@
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
-        </property>
-        <property name="annotatedClasses">
-        <list> <value>com.techm.bluemix.smarterairport.Wrapper.User</value></list></property>
+        </property>       
     </bean>
 
     <!-- Transaction -->

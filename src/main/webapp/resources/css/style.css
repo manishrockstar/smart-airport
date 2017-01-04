@@ -620,7 +620,7 @@ div#fixedfooter a {
 
 #signupb
 {
-  display: none;
+  display: block;
   position: absolute;
     top: 15%;
     left: 25%;
