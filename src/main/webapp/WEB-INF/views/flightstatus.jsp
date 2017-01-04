@@ -43,8 +43,10 @@
 			<th>Arrival Terminal</th>
 			<th>Status</th>
 		</tr>
+		<c:set var="fsw" value="${fswrapper}"
+		<c:if test="${not empty fsw}">
 		<c:forEach items="${fswrapper}" var="fsWrappers" >	
-		<c:if test="${not empty fswrappers}">
+		
 			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 		<tr>
@@ -61,12 +63,12 @@
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].status}"/></td>
 		</tr>
 			</c:forEach>
-		
+		</c:forEach>
 		</c:if>
-		<c:if test="${empty fswrappers}">
+		<c:if test="${empty fsw}">
 		<script>alert("Flight details not found.");</script>
 		</c:if>
-		</c:forEach>
+		
 
 </table>
 </center>
