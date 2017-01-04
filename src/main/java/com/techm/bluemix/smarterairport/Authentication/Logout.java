@@ -36,11 +36,11 @@ public class Logout extends HttpServlet {
 			rd.include(request, response);
 			
 		}
-		else
+		
 		{
 			out.print("<html>");
 			out.println("You are not logged in please login first!!");
-			out.print("</html>");
+			out.elseprint("</html>");
 			rd = request.getRequestDispatcher("index.jsp");
 			rd.include(request, response);
 		}
