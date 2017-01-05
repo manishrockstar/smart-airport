@@ -66,7 +66,7 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	
 	static{
 	airportCodeMap= new HashMap<String, String>();
-	airportCodeMap.put("CHHATRAPATI SHIVAJI INTERNATIONAL, INDIA", "BOM");
+	airportCodeMap.put("(BOM) CHHATRAPATI SHIVAJI INTERNATIONAL, INDIA", "BOM");
 	airportCodeMap.put("(BLR) Kempegowda International Airport, INDIA", "BLR");
 	airportCodeMap.put("(CCU) Netaji Subhas Chandra Bose Airport,India","CCU");
 	airportCodeMap.put("(DEL) Indira Gandhi Intl, Delhi, INDIA","DEL");

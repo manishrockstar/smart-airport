@@ -159,7 +159,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 	<div class="container">
    <h3>Flight Information by Airport</h3>
 
-    <input list="airports" name="airports" placeholder="Airport"  type="list">
+    <input list="airport" name="airports" placeholder="Airport"  type="list">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="date" name="dat">
 <br>
@@ -4409,6 +4409,41 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 
+<datalist id="airport">
+<option value="(BOM) CHHATRAPATI SHIVAJI INTERNATIONAL, INDIA" >
+<option value="(BLR) Kempegowda International Airport, INDIA" >
+<option value="(CCU) Netaji Subhas Chandra Bose Airport,INDIA">
+<option value="(DEL) Indira Gandhi Intl, Delhi, INDIA">
+<option value="(HYD) Rajiv Gandhi International Airport,INDIA">
+<option value="(MAA) Chennai Airport, Chennai, IN">
+<option value="(PNQ) Pune Airport, Pune, IN">
+<option value="(AMD) Ahmedabad Airport, Ahmedabad, IN">
+<option value="(VNS) Lal Bahadur Shastri Intl, Varanasi, IN">
+<option value="(PAT) Jay Prakash Narayan Intl, Patna, IN">
+<option value="(ISK) Gandhinagar Airport, Nasik, IN">
+<option value="(GOI) Dabolim Airport, Goa, IN">
+<option value="(TIR) Tirupati Airport, Tirupati, IN">
+<option value="(SXR) Srinagar Intl, Srinagar, IN">
+<option value="(TRV) Trivandrum Intl, Thiruvananthapuram, IN">
+<option value="(IXC) Chandigarh Airport, Chandigarh, IN">
+<option value="(ADL) Adelaide Airport,>
+<option value="(SYD) Sydney (Kingsford Smith) Airport, Sydney, NSW, AU">
+<option value="(SFO) San Francisco Intl, San Francisco, CA, US">
+<option value="(BNE) Brisbane Airport, Brisbane, QLD, AU">
+<option value="(GOS) Gosford Airport, Gosford, NSW, AU">
+<option value="(IAH) George Bush Intercontinental Airport, Houston, TX, US">
+<option value="(YHM) Hamilton Airport">
+<option value="(CLT) Charlotte Douglas International Airport">
+<option value="(CLT) Charlotte Douglas International Airport">
+<option value="(MHT) Manchester Boston Regional Airport, Manchester, NH, US">
+<option value="(ANC) Ted Stevens Anchorage International Airport">
+<option value="(PER) Perth Airport, Perth, WA, AU">
+<option value="(MHT) Manchester Boston Regional Airport, Manchester">
+<option value="(ANC) Ted Stevens Anchorage International Airport">
+<option value="(PER) Perth Airport, Perth, WA, AU">
+
+</datalist>
+
 <div id="id06" class="modal">
   
   <form class="modal-content animate" method ="POST" action="/flight/trackByRoute">
@@ -4422,10 +4457,10 @@ We will consistently achieve top quartile growth by contributing to our customer
 <div class="container">
    <h3>Flight Information by Route</h3>
    
-    <input list="airports" name="departure" placeholder="Departure"  type="list">
+    <input list="airport" name="departure" placeholder="Departure"  type="list">
    
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input list="airports" name="arrival" placeholder="Arrival" type="list">
+<input list="airport" name="arrival" placeholder="Arrival" type="list">
 
     
     <br>
