@@ -608,6 +608,7 @@ div#fixedfooter {
   color:#CCC;
   background:#333;
   padding:0px;
+  z-index:100;
 }
 
 div#fixedfooter a {
@@ -621,7 +622,7 @@ div#fixedfooter a {
 #signupb
 {
   display: block;
-  position: fixed;
+  position: absolute;
     top: 15%;
     left: 25%;
     width: 50%;
