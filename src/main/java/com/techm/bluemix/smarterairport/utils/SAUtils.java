@@ -6,13 +6,21 @@ import java.util.Map;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.AuthCache;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.protocol.ClientContext;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.impl.auth.BasicScheme;
+import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.ProxyAuthenticationStrategy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+
+import com.techm.bluemix.smarterairport.ServiceImpl.ContextAwareHttpComponentsClientHttpRequestFactory;
 
 
 public class SAUtils {
@@ -613,5 +621,29 @@ public class SAUtils {
 		HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
 		factory.setHttpClient(client);
 		return factory;
+	}
+	
+	public static ContextAwareHttpComponentsClientHttpRequestFactory getHttpContext(){
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		ContextAwareHttpComponentsClientHttpRequestFactory customFactory = new ContextAwareHttpComponentsClientHttpRequestFactory(httpclient);
+		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.localport, "http");
+		CredentialsProvider credsProvider = new BasicCredentialsProvider();
+		credsProvider.setCredentials(
+		        new AuthScope(targetHost.getHostName(), targetHost.getPort()),
+		        new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
+
+		// Create AuthCache instance
+		AuthCache authCache = new BasicAuthCache();
+		// Generate BASIC scheme object and add it to the local auth cache
+		BasicScheme basicAuth = new BasicScheme();
+		authCache.put(targetHost, basicAuth);
+
+		// Add AuthCache to the execution context
+		HttpClientContext context = HttpClientContext.create();
+		context.setCredentialsProvider(credsProvider);
+		context.setAuthCache(authCache);
+		System.out.println(context);
+		customFactory.setHttpContext(context);
+		return customFactory;
 	}
 }

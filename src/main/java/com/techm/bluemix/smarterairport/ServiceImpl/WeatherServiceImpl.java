@@ -80,71 +80,14 @@ public class WeatherServiceImpl implements WeatherServices {
 		// TODO Auto-generated method stub
 		
 		
-		//String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
-		//System.out.println(srcURL);
-		/*HttpClient client = HttpClientBuilder.create().build();
-		HttpGet getRequest = new HttpGet(srcURL);
-		getRequest.addHeader("Accept", "application/json");
-		HttpResponse response = httpClient.execute(getRequest);
-		if (response.getStatusLine().getStatusCode() != 200) {
-			throw new RuntimeException("Failed : HTTP error code : "
-			   + response.getStatusLine().getStatusCode());
-		}
-		
-		
-		BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider(); 
-		credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword)); 
-		httpClient.setCredentialsProvider(credentialsProvider);*/
-		
-		/*String plainCreds = "28188990-cb66-4dc4-95c7-c340adb75cf5:p547h8yKfg";
-		byte[] plainCredsBytes = plainCreds.getBytes();
-		byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
-		String base64Creds = new String(base64CredsBytes);*/
 		String srcURL=SAConstant.WEATHER_API_BASE_URI+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		//String srcURL=SAConstant.localhost+SAConstant.W_GEOCODE+"/"+latitude+"/"+longitude+SAConstant.W_FORECAST+SAConstant.W_PERIOD+days+SAConstant.W_JSONFILE+SAConstant.W_LANGUAGE+SAConstant.W_UNITS;
 		System.out.println(srcURL);
-		
-		CloseableHttpClient httpclient = HttpClients.createDefault();
-		ContextAwareHttpComponentsClientHttpRequestFactory customFactory = new ContextAwareHttpComponentsClientHttpRequestFactory(httpclient);
-		HttpHost targetHost = new HttpHost(SAConstant.localhost, SAConstant.localport, "http");
-		CredentialsProvider credsProvider = new BasicCredentialsProvider();
-		credsProvider.setCredentials(
-		        new AuthScope(targetHost.getHostName(), targetHost.getPort()),
-		        new UsernamePasswordCredentials(SAConstant.uname, SAConstant.pword));
-
-		// Create AuthCache instance
-		AuthCache authCache = new BasicAuthCache();
-		// Generate BASIC scheme object and add it to the local auth cache
-		BasicScheme basicAuth = new BasicScheme();
-		authCache.put(targetHost, basicAuth);
-
-		// Add AuthCache to the execution context
-		HttpClientContext context = HttpClientContext.create();
-		context.setCredentialsProvider(credsProvider);
-		context.setAuthCache(authCache);
-		System.out.println(context);
-		customFactory.setHttpContext(context);
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
     	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
-		RestTemplate restTemplate=new RestTemplate(customFactory);
+		RestTemplate restTemplate=new RestTemplate(SAUtils.getHttpContext());
 		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);		
-
-		/*
-		HttpClient<HashMap<String,Object>> http = new HttpClient<>();
-		HttpHeaders headers = http.createBasicAuthenticationHttpHeaders(SAConstant.uname, SAConstant.pword);
-		RestTemplate restTemplate=new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		//headers.add("Authorization", "Basic " + base64Creds);
-		headers.set("Authorization", "Bearer " +getOauthAdminAuthToken()); 
-    	headers.set("Accept", "application/json");
-    	HttpEntity<WeatherForecastWrapper> entity = new HttpEntity<WeatherForecastWrapper>(headers);
-   		
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("username", SAConstant.uname);
-		params.put("password", SAConstant.pword);		
-		ResponseEntity<WeatherForecastWrapper> jsonString = restTemplate.exchange(srcURL, HttpMethod.GET, entity, WeatherForecastWrapper.class);*/
-		//ResponseEntity<WeatherForecastWrapper> jsonString=restTemplate.getForEntity(srcURL, WeatherForecastWrapper.class, params);
 		System.out.println(jsonString);
 		List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
 		//List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));

@@ -3,7 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -43,8 +43,8 @@
 			<th>Arrival Terminal</th>
 			<th>Status</th>
 		</tr>
-		<c:set var="fsw" value="${fswrapper}"
-		<c:if test="${fn:length(fsw) > 0}">
+		<c:set var="fsw" value="${fswrapper}" />
+		<c:if test="${fsw.flightStatuses[] != null}">
 		<c:forEach items="${fswrapper}" var="fsWrappers" >	
 		
 			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
@@ -65,7 +65,7 @@
 			</c:forEach>
 		</c:forEach>
 		</c:if>
-		<c:if test="${fn:length(fsw) == 0}">
+		<c:if test="${fsw.flightStatuses[] == null}">
 		<script>alert("Flight details not found.");</script>
 		</c:if>
 		
