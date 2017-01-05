@@ -58,7 +58,7 @@
 			</td>
 					
 			<td align="right" valign="top" width="20%" style="font-family:Arial; font-size:11pt; ">&nbsp;
-				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="180px" style="padding:10px;">
+				<table cellspacing="0" cellpadding="0" border="0" width="250px" height="300px" style="padding:10px;">
 				
 					<tr>
 						<td align="left" style="color:white;">Min Temp</td>
