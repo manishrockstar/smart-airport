@@ -58,6 +58,11 @@
    <definition name="flightstatusRoute" extends="base-definition">  
        <put-attribute name="body" value="/WEB-INF/views/flightstatusRoute.jsp" />    
    </definition>  
+   <!-- Flight-Status By Route Page -->
+   <definition name="flighterror" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/flighterror.jsp" />    
+   </definition>  
+   
    
    <!-- Weather-Status Page -->
    <definition name="weatherForecast" extends="base-definition">  

@@ -57,7 +57,7 @@ function nn(){
 	
 		
 		<c:forEach items="${fswrapper}" var="fsWrappers" >	
-		<c:if test="${fsWrappers.flightStatuses != null}">
+		
 			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 			
@@ -76,11 +76,8 @@ function nn(){
 		</tr>
 			</c:forEach>
 		
-		</c:if>
 		
-		<c:if test="${fsWrappers.flightStatuses == null}">
-			<c:out value="javascript:nn()" />
-		</c:if>
+		
 		</c:forEach>
 		
 

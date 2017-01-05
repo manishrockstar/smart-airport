@@ -46,7 +46,15 @@ public class FlightController<fsWrapper> {
 	{	
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(SAConstant.airportCodeMap.get(departure),SAConstant.airportCodeMap.get(arrival),departarrival,dat);
+		System.out.println(fswrapper);
+		if(fswrapper!=null){		
 		return new ModelAndView("flightstatus","fswrapper",fswrapper);
+		}
+		else{
+			
+			String message="Flight details not Found";
+			return new ModelAndView("flighterror","message",message);
+		}
 	}
 	
 	@RequestMapping(value="/trackByAirport", method={RequestMethod.GET,RequestMethod.POST})
@@ -56,7 +64,14 @@ public class FlightController<fsWrapper> {
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(SAConstant.airportCodeMap.get(airports),departarrival,hoursofday,dat);
 		//FlightStatusWrapper fsWrapper = flightServices.trackByAirport(SAUtils.airportCodeMap.get(airports),departarrival,hoursofday,dat);
 		System.out.println(fswrapper);
+		if(fswrapper!=null){		
 		return new ModelAndView("flightstatus","fswrapper",fswrapper);
+		}
+		else{
+			
+			String message="Flight details not Found";
+			return new ModelAndView("flighterror","message",message);
+		}
 	}
 	
 	@RequestMapping(value="/trackByflightID", method={RequestMethod.GET,RequestMethod.POST})
@@ -65,7 +80,14 @@ public class FlightController<fsWrapper> {
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByflightID(SAUtils.airlineCodeMap.get(airline),flightId, departarrival,dat);
 		System.out.println(fswrapper);
+		if(fswrapper!=null){		
 		return new ModelAndView("flightstatus","fswrapper",fswrapper);
+		}
+		else{
+			
+			String message="Flight details not Found";
+			return new ModelAndView("flighterror","message",message);
+		}
 	}
 	
 	
