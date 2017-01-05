@@ -101,7 +101,7 @@
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; border-radius:10px;">
 						
 						<tr>
-						<td><center><h3>${wfWrappers.forecasts[ite.index].night.dow}</h3></center></td>
+						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
 						</tr>
 						<tr>
 							<td><center><h1><b>${wfWrappers.forecasts[ite.index].night.max_temp} &#176; C</b></h1></center></td>
