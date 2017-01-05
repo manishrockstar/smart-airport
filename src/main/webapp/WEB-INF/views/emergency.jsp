@@ -15,7 +15,7 @@
 <a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
-<b>The medical unit at Cochin International Airport provides the following services:</b><br>
+<b>The medical unit at Smart International Airport provides the following services:</b><br>
  
 <p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px; background-color:#D6DBDF;">
 *First-aid in the event of aircraft / airport emergencies<br>
