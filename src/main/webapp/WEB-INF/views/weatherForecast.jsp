@@ -104,7 +104,7 @@
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
 						</tr>
 						<tr>
-							<td><center><h1><b>${wfWrappers.forecasts[ite.index].night.max_temp} &#176; C</b></h1></center></td>
+							<td><center><h1><b>${wfWrappers.forecasts[ite.index].night.hi} &#176; C</b></h1></center></td>
 						</tr>
 						<tr>
 							<td>${wfWrappers.forecasts[ite.index].night.narrative}</td>
@@ -128,7 +128,7 @@
 				
 					<tr>
 						<td align="left" style="color:white;">Min Temp</td>
-						<td align="right" style="color:white;">${wfWrappers.forecasts[ite.index].night.min_temp}&#176; C</td>
+						<td align="right" style="color:white;">${wfWrappers.forecasts[ite.index].min_temp}&#176; C</td>
 					</tr>
 					
 					<tr>	
