@@ -29,7 +29,7 @@
 	
 		<tr>
 			<td>
-			<table align="center" style="width:70%" "height:100%">
+			<table align="center" style="width:80%" "height:100%">
 			<tr>
 			<td align="left" valign="top" width="30%" style="color:white;">
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; border-radius:10px;">
@@ -91,11 +91,11 @@
 	</table>
 </c:if>
 <c:if test="${wfWrappers.forecasts[ite.index].max_temp == null }">
-	<table align="center" border="1" style="width:60%" height="250px">
+	<table align="center" border="1" style="width:100%" height="250px">
 	
 		<tr>
 			<td>
-			<table align="center" style="width:60% height:90%">
+			<table align="center" style="width:80% height:90%">
 			<tr>
 			<td align="left" valign="top" width="30%" style="color:white;">
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; border-radius:10px;">
@@ -158,7 +158,7 @@
 </c:if>
 </div>
 <div style="background-color:#6DA9C3;">
-	<table align="center" border="1" style="width:60%">
+	<table align="center" border="1" style="width:80%">
 
 			<c:forEach items="${wfWrappers.forecasts}" varStatus="loop">
 			<c:if test="${not loop.first}">
