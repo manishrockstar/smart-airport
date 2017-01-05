@@ -44,7 +44,7 @@
 			<th>Status</th>
 		</tr>
 		<c:set var="fsw" value="${fswrapper}"
-		<c:if test="${not empty fsw.flightStatuses}">
+		<c:if test="${not empty fsw}">
 		<c:forEach items="${fswrapper}" var="fsWrappers" >	
 		
 			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
