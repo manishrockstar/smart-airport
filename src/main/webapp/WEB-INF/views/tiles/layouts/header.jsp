@@ -57,7 +57,7 @@ function weather() {
         </li>
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
-                    <li><a onclick = "javascript:flight();">Find by Flight</a></li>
+                    <li><a onclick = "javascript:flight()">Find by Flight</a></li>
                     <li><a onclick = "javascript:airport()">Find by Airport</a></li>
                     <li><a onclick = "javascript:route()">Find by Route</a></li>
             </ul></li>

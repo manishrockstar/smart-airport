@@ -15,6 +15,17 @@
 
 <spring:url value="/resources/images" var="images" />
 
+<script type="text/javascript">
+
+function nn(){
+	
+	window.location.href="/";
+	alert("Flight details not found");
+	
+	
+}
+</script>
+
 
 <style type="text/css">
 .bgimg {
@@ -68,11 +79,7 @@
 		</c:if>
 		
 		<c:if test="${fsWrappers.flightStatuses == null}">
-		<script>
-    		window.addEventListener("load",function(){
-         alert("Flight details not found.");
-  			  }
- 		</script>
+			<c:out value="javascript:nn()" />
 		</c:if>
 		</c:forEach>
 		
