@@ -4426,7 +4426,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <option value="(SXR) Srinagar Intl, Srinagar, IN">
 <option value="(TRV) Trivandrum Intl, Thiruvananthapuram, IN">
 <option value="(IXC) Chandigarh Airport, Chandigarh, IN">
-<option value="(ADL) Adelaide Airport,>
+<option value="(ADL) Adelaide Airport, Adelaide, SA, AU">
 <option value="(SYD) Sydney (Kingsford Smith) Airport, Sydney, NSW, AU">
 <option value="(SFO) San Francisco Intl, San Francisco, CA, US">
 <option value="(BNE) Brisbane Airport, Brisbane, QLD, AU">
@@ -4440,7 +4440,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <option value="(PER) Perth Airport, Perth, WA, AU">
 <option value="(MHT) Manchester Boston Regional Airport, Manchester">
 <option value="(ANC) Ted Stevens Anchorage International Airport">
-<option value="(PER) Perth Airport, Perth, WA, AU">
+
 
 </datalist>
 

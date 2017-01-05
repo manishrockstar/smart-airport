@@ -82,7 +82,7 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	airportCodeMap.put("(SXR) Srinagar Intl, Srinagar, IN","SXR");
 	airportCodeMap.put("(TRV) Trivandrum Intl, Thiruvananthapuram, IN","TRV");
 	airportCodeMap.put("(IXC) Chandigarh Airport, Chandigarh, IN","IXC");
-	airportCodeMap.put("(ADL) Adelaide Airport","ADL");
+	airportCodeMap.put("(ADL) Adelaide Airport, Adelaide, SA, AU,IN","ADL");
 	airportCodeMap.put("(SYD) Sydney (Kingsford Smith) Airport, Sydney, NSW, AU","SYD");
 	airportCodeMap.put("(SFO) San Francisco Intl, San Francisco, CA, US","SFO");
 	airportCodeMap.put("(BNE) Brisbane Airport, Brisbane, QLD, AU","BNE");
