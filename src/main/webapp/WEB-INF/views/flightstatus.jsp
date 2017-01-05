@@ -68,7 +68,11 @@
 		</c:if>
 		
 		<c:if test="${fsWrappers.flightStatuses == null}">
-		<script>alert("Flight details not found.");</script>
+		<script>
+    		window.addEventListener("load",function(){
+         alert("${loginError}");
+  			  }
+ 		</script>
 		</c:if>
 		</c:forEach>
 		
