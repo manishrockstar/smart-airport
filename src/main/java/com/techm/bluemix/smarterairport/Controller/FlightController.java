@@ -47,7 +47,7 @@ public class FlightController<fsWrapper> {
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(SAConstant.airportCodeMap.get(departure),SAConstant.airportCodeMap.get(arrival),departarrival,dat);
 		System.out.println(fswrapper);
-		ifif(fswrapper.isEmpty()){		
+		if(fswrapper.isEmpty()){		
 			String message="Flight details not Found";
 			return new ModelAndView("flighterror","message",message);
 		}
