@@ -25,7 +25,7 @@
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
 <c:if test="${wfWrappers.forecasts[ite.index].max_temp != null}">
-	<table align="center" border="1" style="width:100%" height="400px">
+	<table align="center" border="1" style="width:60%" height="250px">
 	
 		<tr>
 			<td>
