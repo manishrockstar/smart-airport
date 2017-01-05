@@ -159,12 +159,12 @@ We will consistently achieve top quartile growth by contributing to our customer
 	<div class="container">
    <h3>Flight Information by Airport</h3>
 
-    <input list="airport" name="airports" placeholder="Airport"  type="list">
+    <input list="airport" name="airports" placeholder="Airport"  type="list" required>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="date" name="dat">
 <br>
 <br>
-<select type="list" name="hoursofday">
+<select type="list" name="hoursofday" required>
  <option value="">Select Time(in Hours)</option>
  <option value="0">0000-0400</option>
  <option value="4">0400-0800</option>
@@ -176,7 +176,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="departarrival" value="dep" >Departure
+<input type="radio" name="departarrival" value="dep" required>Departure
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="departarrival" value="arr">Arrival
 &nbsp;
 <button style="width:0px;height:0px;background-color:white;">
@@ -4125,7 +4125,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <div class="container">
    <h3>Flight Information by Flight</h3>
 
-    <input list="airline" name="airline" placeholder="Airlines" type="list" >
+    <input list="airline" name="airline" placeholder="Airlines" type="list" required >
     <datalist id="airline"> 
 <option value="Adria Airways (JP)">
 <option value="Aegean Airlines (A3)">
@@ -4389,10 +4389,10 @@ We will consistently achieve top quartile growth by contributing to our customer
 	
 	</datalist>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="list" name="flightId" placeholder="Flight">
+<input type="list" name="flightId" placeholder="Flight" required>
 <br>
 <br>
-<input type="date" name="dat">
+<input type="date" name="dat" required>
 
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4457,18 +4457,18 @@ We will consistently achieve top quartile growth by contributing to our customer
 <div class="container">
    <h3>Flight Information by Route</h3>
    
-    <input list="airport" name="departure" placeholder="Departure"  type="list">
+    <input list="airport" name="departure" placeholder="Departure"  type="list" required>
    
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input list="airport" name="arrival" placeholder="Arrival" type="list">
+<input list="airport" name="arrival" placeholder="Arrival" type="list" required>
 
     
     <br>
-<input type="date" name="dat">
+<input type="date" name="dat" required>
 
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="departarrival" value="dep" >Departure
+<input type="radio" name="departarrival" value="dep"  required>Departure
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="departarrival" value="arr">Arrival
 &nbsp;
 <button style="width:0px;height:0px;background-color:white;">
@@ -4520,7 +4520,7 @@ We will consistently achieve top quartile growth by contributing to our customer
     <div class="container">
     <h3 align="Center">Weather Forecasting</h3>
        
-	<select type="list" name="w_country">
+	<select type="list" name="w_country" required>
     	<option value="New York">New York</option> 
 		<option value="Ottawa">Ottawa</option>
 		<option value="London">London</option>
@@ -4535,7 +4535,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 	</select>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	
-	<select type="list" name="days">
+	<select type="list" name="days" required>
     	<option value="/3day">0-3 days</option>
     	<option value="/5day">3-5 days</option>
     	<option value="/7day">5-7 days</option>
