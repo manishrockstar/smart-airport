@@ -57,7 +57,7 @@ function weather() {
         </li>
         <li><a href="javascript:void(0)">Flight status &nbsp;&nbsp;&nbsp; &#9662;</a>
             <ul class="dropdown">
-                    <li><a onclick = "javascript:flight();">Find by Flight</a></li>
+                    <li><a onclick = "javascript:flight()">Find by Flight</a></li>
                     <li><a onclick = "javascript:airport()">Find by Airport</a></li>
                     <li><a onclick = "javascript:route()">Find by Route</a></li>
             </ul></li>
@@ -188,7 +188,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <br>
   </form>
 </div>
-<datalist id="airports"> 
+<%--<datalist id="airports"> 
 <option value="ANAA, FRENCH POLYNESIA">
 <option value="ARRABURY, AUSTRALIA">
 <option value="AL ARISH INTERNATIONAL AIRPORT, EGYPT">
@@ -4109,7 +4109,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <option value="EXCHANGEST RAILWAY SVC, UNITED STATES">
 <option value="SYRACUSE NY RAIL, UNITED STATES">
 <option value="ZANESVILLE, UNITED STATES">	
-	</datalist>
+	</datalist>--%>
   
 
 <div id="id05" class="modal">

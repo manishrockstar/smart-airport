@@ -32,7 +32,7 @@
 			<table align="center" style="width:70%" "height:100%">
 			<tr>
 			<td align="left" valign="top" width="30%" style="color:white;">
-				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; border-radius:10px;">
+				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
@@ -49,7 +49,7 @@
 				</td>
 			
 			<td align="center" valign="top" width="30%" style="color:white;">
-				<table cellspacing="0" cellpadding="0" border="0"  height="200px" style="padding:10px; border-radius:10px;">
+				<table cellspacing="0" cellpadding="0" border="0"  height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						<tr>
 							<td><img vspace="4px" width="200px" height="200px" src="${wimages}/icon${wfWrappers.forecasts[ite.index].day.icon_code}.png"></td>
 						</tr>
@@ -58,7 +58,7 @@
 			</td>
 					
 			<td align="right" valign="top" width="40%" style="font-family:Arial; font-size:11pt; ">&nbsp;
-				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="250px" style="padding:10px;">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="200px" style="padding:10px; width:100%;">
 				
 					<tr>
 						<td align="left" style="color:white;">Min Temp</td>
@@ -91,14 +91,14 @@
 	</table>
 </c:if>
 <c:if test="${wfWrappers.forecasts[ite.index].max_temp == null }">
-	<table align="center" border="1" style="width:60%" height="250px">
+	<table align="center" border="1" style="width:100%" height="250px">
 	
 		<tr>
 			<td>
-			<table align="center" style="width:60% height:90%">
+			<table align="center" style="width:70% height:90%">
 			<tr>
 			<td align="left" valign="top" width="30%" style="color:white;">
-				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; border-radius:10px;">
+				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
@@ -115,7 +115,7 @@
 				</td>
 			
 			<td align="center" valign="top" width="30%" style="color:white;">
-				<table cellspacing="0" cellpadding="0" border="0"  height="200px" style="padding:10px; border-radius:10px;">
+				<table cellspacing="0" cellpadding="0" border="0"  height="200px" style="padding:10px; border-radius:10px; width:100%;">
 						<tr>
 							<td><img vspace="4px" width="200px" height="200px" src="${wimages}/icon${wfWrappers.forecasts[ite.index].night.icon_code}.png"></td>
 						</tr>
@@ -123,8 +123,8 @@
 				</table>
 			</td>
 					
-			<td align="right" valign="top" width="20%" style="font-family:Arial; font-size:11pt; ">&nbsp;
-				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="180px" style="padding:10px;">
+			<td align="right" valign="top" width="40%" style="font-family:Arial; font-size:11pt; ">&nbsp;
+				<table cellspacing="0" cellpadding="0" border="0"  height="200px" style="padding:10px; width:100%;">
 				
 					<tr>
 						<td align="left" style="color:white;">Min Temp</td>
@@ -158,10 +158,10 @@
 </c:if>
 </div>
 <div style="background-color:#6DA9C3;">
-	<table align="center" border="1" style="width:60%">
+	<table align="center" border="1" style="width:70%">
 
 			<c:forEach items="${wfWrappers.forecasts}" varStatus="loop">
-			<c:if test="${not loop.first}">
+			<c:if test="${not loop.first}">	
 		<tr>
 			<td>
 			<table cellspacing="0" cellpadding="0" border="0"  height="100px" style="width:100%; padding:10px; border-radius:10px;">
@@ -222,48 +222,6 @@
 </div>
 
 </c:forEach>
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
-
-var myIndex = 0;
-carousel();
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>			
-			
 </body>
 </html>
