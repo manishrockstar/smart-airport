@@ -4396,7 +4396,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="departarrival" value="dep" >Departure
+<input type="radio" name="departarrival" value="dep" required>Departure
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="departarrival" value="arr">Arrival
 &nbsp;
 <button style="width:0px;height:0px;background-color:white;">
