@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 import com.techm.bluemix.smarterairport.Wrapper.LoginForm;
 import com.techm.bluemix.smarterairport.Wrapper.User;	
+import org.springframework.web.bind.annotation.ModelAttribute;
 @Controller
 @RequestMapping("/")
 public class SmartController {
@@ -16,13 +17,7 @@ public class SmartController {
 		return new ModelAndView("index","loginForm", new LoginForm());
 	}	
 	
-	//Login Authentication
-	@RequestMapping(value="signin", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartLogin(@RequestParam ("uname") String uname, @RequestParam ("pword") String pword){
 		
-		
-		return new ModelAndView("index");
-	}	
 	
 	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
