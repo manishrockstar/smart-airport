@@ -67,7 +67,6 @@ function weather() {
                     <li><a onclick="document.getElementById('id11').style.display='block'">Current</a></li>
             </ul> -->
             </li>
-        <li><a onclick="document.getElementById('id09').style.display='block'">Transport</a></li>
         <li><a onclick="document.getElementById('id03').style.display='block'">Contact us</a></li>        
           <li><a onclick="document.getElementById('id07').style.display='block'">About us</a></li>
     </ul>
