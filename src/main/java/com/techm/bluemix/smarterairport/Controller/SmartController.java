@@ -134,7 +134,7 @@ public class SmartController {
 		return new ModelAndView("casual");
 	}	
 	
-	@RequestMapping(value="coffe", method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="coffee", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartCoffee(){
 		return new ModelAndView("coffee");
 	}	
