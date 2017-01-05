@@ -4440,7 +4440,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 <option value="(PER) Perth Airport, Perth, WA, AU">
 <option value="(MHT) Manchester Boston Regional Airport, Manchester">
 <option value="(ANC) Ted Stevens Anchorage International Airport">
-<option value="(PER) Perth Airport, Perth, WA, AU">
+
 
 </datalist>
 
