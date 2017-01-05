@@ -25,7 +25,7 @@
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
 <c:if test="${wfWrappers.forecasts[ite.index].max_temp != null}">
-	<table align="center" border="1" style="width:60%" height="250px">
+	<table align="center" border="1" style="width:100%" height="400px">
 	
 		<tr>
 			<td>
@@ -58,7 +58,7 @@
 			</td>
 					
 			<td align="right" valign="top" width="20%" style="font-family:Arial; font-size:11pt; ">&nbsp;
-				<table cellspacing="0" cellpadding="0" border="0" width="800px" height="800px" style="padding:10px;">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="180px" style="padding:10px;">
 				
 					<tr>
 						<td align="left" style="color:white;">Min Temp</td>
