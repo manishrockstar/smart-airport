@@ -15,6 +15,7 @@
 <a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
+<center>
 <b>The medical unit at Smart International Airport provides the following services:</b><br>
  
 <p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px;">
@@ -37,7 +38,7 @@ First Aid Boxes have been provided at the following locations at the airport for
 </p>
 <br><br>
 <img src="${images}/medical.jpg"><br>
-
+</center>
 </div>
 </body>
 </html>
