@@ -15,24 +15,7 @@
 
 <spring:url value="/resources/images" var="images" />
 
-<script type="text/javascript">
-
-function nn(){
-	
-	window.location.href="/";
-	alert("Flight details not found");
-	
-	
-}
-</script>
-
-
-<style type="text/css">
-.bgimg {
-    background-image: url('${images}/wall.jpg');
-}
-</style>
-<body style="background-image:url(${images}/flight.jpg)">
+<body style="background-image:url(${images}/flight.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
 
 
