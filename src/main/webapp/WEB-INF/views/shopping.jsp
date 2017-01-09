@@ -103,7 +103,7 @@
         </a>
     </li>
     <li>
-        <a class="rig-cell1" href="travell">
+        <a class="rig-cell1" href="travelacc">
             <img class="rig-img1" src="${images}/travell.jpg">
             <span class="rig-overlay"></span>
             <span class="rig-text">Travel Accesories</span>
