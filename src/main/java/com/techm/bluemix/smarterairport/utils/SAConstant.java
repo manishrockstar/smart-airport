@@ -21,8 +21,8 @@ public class SAConstant {
 	public static final String F_WEBSERVICE_ROUTE = "/flightstatus/rest/v2/json/route/status/";
 	public static final String F_WEBSERVICE_AIRPORTS = "/flightstatus/rest/v2/json/airport/status/";
 	public static final String F_WEBSERVICE_FLIGHTS = "/flightstatus/rest/v2/json/flight/status/";
-	public static final String F_WEBSERVICE_ROUTE_END="&hourOfDay=0&utc=false&numHours=24&maxFlights=5";
-	public static final String F_WEBSERVICE_Airport_END="&utc=false&numHours=4&maxFlights=5";
+	public static final String F_WEBSERVICE_ROUTE_END="&hourOfDay=0&utc=false&numHours=24";
+	public static final String F_WEBSERVICE_Airport_END="&utc=false&numHours=4";
 
 	/**
 	 * API Error messages 
