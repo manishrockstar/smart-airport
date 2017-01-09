@@ -15,16 +15,17 @@
 <a onclick="goBack()">
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
+<center>
 <b>The medical unit at Smart International Airport provides the following services:</b><br>
  
-<p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px; background-color:#D6DBDF;">
+<p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px;">
 *First-aid in the event of aircraft / airport emergencies<br>
 *First-aid to passengers, visitors and others airport users<br>
 *Standby medical services for VVIP/VIPs<br>
 *First-aid to employees on-duty of all agencies operating at Cochin Airport<br>
 </p> 
 
-<p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px; background-color:#D6DBDF;">
+<p style="font-size: 0.85em; text-align:justify; padding:20px 40px 20px 40px;">
 A medical inspection unit has been established at the airport to render the above services.<br>
 The MI Room terminal is manned round the clock, by the Medical Officer and one medical assistant.<br>
 The MI room is provided with a bed, medical equipments, sufficient quantity of medical equipments,<br>
@@ -37,7 +38,7 @@ First Aid Boxes have been provided at the following locations at the airport for
 </p>
 <br><br>
 <img src="${images}/medical.jpg"><br>
-
+</center>
 </div>
 </body>
 </html>
