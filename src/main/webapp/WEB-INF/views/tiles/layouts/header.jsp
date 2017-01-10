@@ -10,7 +10,7 @@
 <title>
 Smart Airport
 </title>
-<link rel="shortcut icon" href="${images}/icon.png" type="image/png">
+<link rel="shortcut icon" type="image/png" href="${images}/icon.png">
 </head>
 <link rel="stylesheet" type="text/css" href="${css}/style.css">
 <script src="${scripts}/script.js"></script>
