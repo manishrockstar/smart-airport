@@ -21,7 +21,7 @@
 
 <div style="height:100%">
 <center>
-<table border="1px" padding="1px" id="t01">
+<table border="3px" padding="1px" id="t01">
 
 	
 	<tr>
