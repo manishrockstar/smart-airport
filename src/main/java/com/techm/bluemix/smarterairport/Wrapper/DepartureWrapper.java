@@ -7,9 +7,8 @@ public class DepartureWrapper {
 	
 	private String dateLocal, dateUTC;
 
-
-	public String getDateLocal(){
-	return dateLocal;
+	public String getDateLocal() {
+		return dateLocal;
 	}
 
 	public void setDateLocal(String dateLocal) {
