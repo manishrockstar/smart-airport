@@ -60,7 +60,7 @@
 
 			
 
-			<c:set value="{fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
+			<c:set value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
 			<fmt:parseDate value="${dateString}" pattern="yyyy-MM-dd'T'HH:mm:ss:SSS" var="dateObject" />
 
 			
