@@ -65,7 +65,7 @@
 
 			
 
-			<td><fmt:formatDate value="${dateObject}" pattern="dd/MM/yyyy - hh:mm a" /></td>
+			<td><fmt:formatDate value="${dateString}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			
 
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
