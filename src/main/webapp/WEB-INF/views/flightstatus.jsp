@@ -32,17 +32,17 @@
 <table border="3px" padding="1px" id="t01">
 	
 	<tr>
-			<th align="center">Flight Number</th>
-			<th align="center">Departure</th>
-			<th align="center">Arrival</th>
-			<th align="center">Airlines</th>
-			<th align="center">Departure Time</th>
-			<th align="center">Arrival Time</th>
-			<th align="center">Departure Gate</th>
-			<th align="center">Arrival Gate</th>
-			<th align="center">Departure Terminal</th>
-			<th align="center">Arrival Terminal</th>
-			<th align="center">Status</th>
+			<th>Flight Number</th>
+			<th>Departure</th>
+			<th>Arrival</th>
+			<th>Airlines</th>
+			<th>Departure Time</th>
+			<th>Arrival Time</th>
+			<th>Departure Gate</th>
+			<th>Arrival Gate</th>
+			<th>Departure Terminal</th>
+			<th>Arrival Terminal</th>
+			<th>Status</th>
 	</tr>
 	
 	
@@ -50,31 +50,31 @@
 			
 			
 		<tr>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
+			<td width="80px"><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
 
 							
 			<%-- <td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td> --%>
 			
 
-			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+			<td align="center" width="200px"><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
 
 			
 
 			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="departureDate" />
 			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="arrivalDate" />
-			<td><fmt:formatDate value="${departureDate}" pattern="hh:mm a" /></td>
+			<td width="110px"><fmt:formatDate value="${departureDate}" pattern="hh:mm a" /></td>
 			
 
 			<!--<td><fmt:formatDate value="${arrivalDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>-->
-			<td><fmt:formatDate value="${arrivalDate}" pattern="hh:mm a" /> </td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureTerminal}"/></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalTerminal}"/></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].status}"/></td>
+			<td width="110px"><fmt:formatDate value="${arrivalDate}" pattern="hh:mm a" /> </td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureTerminal}"/></td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalTerminal}"/></td>
+			<td width="110px"><c:out value="${fsWrappers.flightStatuses[loop.index].status}"/></td>
 		</tr>
 			</c:forEach>
 		
