@@ -19,9 +19,7 @@
 
 <body style="background-image:url(${images}/flight.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
-String startDateStr = request.getParameter("dateLocal");
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-Date startDate = sdf.parse(startDateStr);
+
 
 <div style="height:100%">
 <center>
@@ -54,7 +52,7 @@ Date startDate = sdf.parse(startDateStr);
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
 			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.startDateStr}"/></td>
+			<td><c:out value="${new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(fsWrappers.flightStatuses[loop.index].departureDate.dateLocal))}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
