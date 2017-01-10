@@ -4,9 +4,8 @@
 <%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -64,7 +63,7 @@
 			<c:set value="{fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
 
 			<fmt:parseDate value="${dateString}" var="dateObject"
-                                      pattern="yyyy/MM/dd - HH:mm:ss" />
+                                      pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" />
 
 			<td><fmt:formatDate value="${dateObject}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			
