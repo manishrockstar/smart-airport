@@ -13,18 +13,14 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-
 <spring:url value="/resources/images" var="images" />
 <spring:url value="/resources/fimages" var="fimages" />
 
 <body style="background-image:url(${images}/flight.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
-
-
 <div style="height:100%">
 <center>
 <table border="3px" padding="1px" id="t01">
-
 	
 	<tr>
 			<th>Flight Number</th>
@@ -38,12 +34,10 @@
 			<th>Departure Terminal</th>
 			<th>Arrival Terminal</th>
 			<th>Status</th>
-		</tr>
+	</tr>
 	
-		
-		<c:forEach items="${fswrapper}" var="fsWrappers" >	
-		
-			<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
+				<c:forEach items="${fswrapper}" var="fsWrappers" >	
+					<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 			
 		<tr>
