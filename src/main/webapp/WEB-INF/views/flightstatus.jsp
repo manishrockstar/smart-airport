@@ -58,7 +58,7 @@
 			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
 
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td>
+			
 
 			<c:set value="{fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
 
