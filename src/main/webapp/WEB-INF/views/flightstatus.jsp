@@ -14,6 +14,7 @@
 
 
 <spring:url value="/resources/images" var="images" />
+<spring:url value="/resources/fimages" var="fimages" />
 
 <body style="background-image:url(${images}/flight.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
@@ -48,7 +49,8 @@
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}"/></td>				
+			<td><img vspace="4px" width="200px" height="200px" src="${fimages}/icon${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
