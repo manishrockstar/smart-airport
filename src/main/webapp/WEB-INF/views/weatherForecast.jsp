@@ -19,12 +19,12 @@
 
 <div style="width:50% height:50px">
 	
-			<center><h1>Smart Airport Weather Forecasting - ${Country}</h1></center>
+			<center><h1>Smart Airport Weather Forecasting</h1></center>
 		
 </div>
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
-<c:if test="${not empty wfWrappers.forecasts[ite.index].max_temp}">
+<c:if test="${wfWrappers.forecasts[ite.index].max_temp != null}">
 	<table align="center" style="width:800px; height:250px">
 	
 		<tr>
@@ -90,7 +90,7 @@
 		</tr>
 	</table>
 </c:if>
-<c:if test="${empty wfWrappers.forecasts[ite.index].max_temp}">
+<c:if test="${wfWrappers.forecasts[ite.index].max_temp == null}">
 	<table align="center" border="0" style="width:100%" height="250px">
 	
 		<tr>

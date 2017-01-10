@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
 <%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -16,31 +17,15 @@
 
 
 <spring:url value="/resources/images" var="images" />
+<spring:url value="/resources/fimages" var="fimages" />
 
-<script type="text/javascript">
-
-function nn(){
-	
-	window.location.href="/";
-	alert("Flight details not found");
-	
-	
-}
-</script>
-
-
-<style type="text/css">
-.bgimg {
-    background-image: url('${images}/wall.jpg');
-}
-</style>
-<body style="background-image:url(${images}/flight.jpg)">
+<body style="background-image:url(${images}/flight.jpg); background-repeat: no-repeat; background-attachment: fixed;">
 
 
 
 <div style="height:100%">
 <center>
-<table border="1px" padding="1px" id="t01">
+<table border="3px" padding="1px" id="t01">
 
 	
 	<tr>
@@ -67,6 +52,7 @@ function nn(){
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
+
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}"/></td>				
 			<%-- <td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td> --%>
 			<c:set value="{fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
@@ -76,6 +62,11 @@ function nn(){
 
 			<td><fmt:formatDate value="${dateObject}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			
+
+			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+
+			<td><c:out value="${new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(fsWrappers.flightStatuses[loop.index].departureDate.dateLocal))}"/></td>
+
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
@@ -93,6 +84,9 @@ function nn(){
 </table>
 </center>
 </div>
+
+
+
 
 </body>
 
