@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*" %>
-<%@ page import="java.text.*" %>
 <%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -52,7 +51,7 @@
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
 			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
-			<td><c:out value="${new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(fsWrappers.flightStatuses[loop.index].departureDate.dateLocal))}"/></td>
+			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
