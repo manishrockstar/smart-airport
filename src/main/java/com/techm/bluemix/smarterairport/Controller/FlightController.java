@@ -57,7 +57,7 @@ public class FlightController<fsWrapper> {
 	}
 	
 	@RequestMapping(value="/trackByAirport", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView trackFlightByAirport(@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "dd-MM-yyyy") Date dat) throws JsonParseException, JsonMappingException, IOException
+	public ModelAndView trackFlightByAirport(@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(SAConstant.airportCodeMap.get(airports),departarrival,hoursofday,dat);
