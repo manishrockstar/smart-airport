@@ -20,6 +20,14 @@
 
 <div style="height:100%">
 <center>
+<c:forEach items="${fswrapper}" var="fsWrappers" varStatus="ite">
+<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="HDate" />
+
+		<div class="box-header" style="width:800px">
+
+				<h2> Flight Status as on <c:out value="${HDate}" /></h2>
+
+			</div>
 <table border="3px" padding="1px" id="t01">
 	
 	<tr>
@@ -36,7 +44,7 @@
 			<th>Status</th>
 	</tr>
 	
-				<c:forEach items="${fswrapper}" var="fsWrappers" >	
+	
 					<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 			
@@ -56,10 +64,11 @@
 
 			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="departureDate" />
 			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="arrivalDate" />
-			<td><fmt:formatDate value="${departureDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>
+			<td><fmt:formatDate value="${departureDate}" pattern="hh:mm a" /></td>
 			
 
-			<td><fmt:formatDate value="${arrivalDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>
+			<!--<td><fmt:formatDate value="${arrivalDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>-->
+			<td><fmt:formatDate value="${arrivalDate}" pattern="hh:mm a" /> </td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureTerminal}"/></td>
@@ -70,11 +79,12 @@
 		
 		
 		
-		</c:forEach>
+		
 		
 
 </table>
 </center>
+</c:forEach>
 </div>
 
 
