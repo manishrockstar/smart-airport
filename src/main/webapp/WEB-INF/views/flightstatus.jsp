@@ -54,15 +54,12 @@
 
 			
 
-			<c:set value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
+			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="departureDate" />
+			<fmt:parseDate value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="arrivalDate" />
+			<td><fmt:formatDate value="${departureDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			
 
-			<fmt:parseDate value="${dateString}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="dateObject" />
-
-			<td><fmt:formatDate value="${dateObject}" pattern="dd/MM/yyyy - hh:mm a" /></td>
-			
-
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
+			<td><fmt:formatDate value="${arrivalDate}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureTerminal}"/></td>
