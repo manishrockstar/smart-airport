@@ -45,7 +45,7 @@
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
 
-			<td><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}"/></td>				
+							
 			<%-- <td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td> --%>
 			
 
@@ -54,10 +54,10 @@
 
 			
 
-			<c:set value="{fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
+			<c:set value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}" var="dateString" />
+			<fmt:parseDate value="${dateString}" pattern="yyyy-MM-dd'T'HH:mm:ss:SSS" var="dateObject" />
 
-			<fmt:parseDate value="${dateString}" var="dateObject"
-                                      pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" />
+			
 
 			<td><fmt:formatDate value="${dateObject}" pattern="dd/MM/yyyy - hh:mm a" /></td>
 			
