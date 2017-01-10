@@ -21,8 +21,8 @@ public class SAConstant {
 	public static final String F_WEBSERVICE_ROUTE = "/flightstatus/rest/v2/json/route/status/";
 	public static final String F_WEBSERVICE_AIRPORTS = "/flightstatus/rest/v2/json/airport/status/";
 	public static final String F_WEBSERVICE_FLIGHTS = "/flightstatus/rest/v2/json/flight/status/";
-	public static final String F_WEBSERVICE_ROUTE_END="&hourOfDay=0&utc=false&numHours=24&maxFlights=5";
-	public static final String F_WEBSERVICE_Airport_END="&utc=false&numHours=4&maxFlights=5";
+	public static final String F_WEBSERVICE_ROUTE_END="&hourOfDay=0&utc=false&numHours=24";
+	public static final String F_WEBSERVICE_Airport_END="&utc=false&numHours=4";
 
 	/**
 	 * API Error messages 
@@ -86,7 +86,6 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	airportCodeMap.put("(SYD) Sydney (Kingsford Smith) Airport, Sydney, NSW, AU","SYD");
 	airportCodeMap.put("(SFO) San Francisco Intl, San Francisco, CA, US","SFO");
 	airportCodeMap.put("(BNE) Brisbane Airport, Brisbane, QLD, AU","BNE");
-	airportCodeMap.put("(GOS) Gosford Airport, Gosford, NSW, AU","GOS");
 	airportCodeMap.put("(IAH) George Bush Intercontinental Airport, Houston, TX, US","IAH");
 	airportCodeMap.put("(YHM) Hamilton Airport","YHM");
 	airportCodeMap.put("(CLT) Charlotte Douglas International Airport","CLT");
@@ -94,6 +93,16 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	airportCodeMap.put("(MHT) Manchester Boston Regional Airport, Manchester, NH, US","MHT");
 	airportCodeMap.put("(ANC) Ted Stevens Anchorage International Airport","ANC");
 	airportCodeMap.put("(PER) Perth Airport, Perth, WA, AU","PER");
+	airportCodeMap.put("(ATL) Hartsfield-Jackson Atlanta International Airport,US","ATL");
+	airportCodeMap.put("(LAX) Los Angeles Intl, Los Angeles, CA, US","LAX");
+	airportCodeMap.put("(DFW) Dallas/Fort Worth International Airport,US","DFW");
+	airportCodeMap.put("(DEN) Denver Intl, Denver, CO, US","DEN");
+	airportCodeMap.put("(JFK) John F. Kennedy Intl, New York, NY, US","JFK");
+	airportCodeMap.put("(SFO) San Francisco International Airport,US","SFO");
+	airportCodeMap.put("(CLT) Charlotte Douglas Intl, Charlotte, NC, US","CLT");
+	airportCodeMap.put("(LAS) McCarran Intl, Las Vegas, NV, US","LAS");
+	airportCodeMap.put("(MIA) Miami Intl, Miami, FL, US","MIA");
+	
 	}
 }
 

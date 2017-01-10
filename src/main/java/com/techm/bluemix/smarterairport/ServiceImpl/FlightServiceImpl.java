@@ -73,7 +73,7 @@ public class FlightServiceImpl implements FlightServices {
 	    String mm=monFormat.format(mydate);
 	    String dd=datFormat.format(mydate);
 		
-		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_ROUTE+departure+"/"+destination+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_ROUTE_END;
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_ROUTE+departure+"/"+destination+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_ROUTE_END+"&sort=departureDate&departureDate.dir=asc";
 		System.out.println(srcURL);
 		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		RestTemplate restTemplate=new RestTemplate();
@@ -99,7 +99,7 @@ public class FlightServiceImpl implements FlightServices {
 	    String mm=monFormat.format(mydate);
 	    String dd=datFormat.format(mydate);
 		
-		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END+"&sort=departureDate&departureDate.dir=asc";
 		System.out.println(srcURL);
 		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		RestTemplate restTemplate=new RestTemplate();
@@ -126,7 +126,7 @@ public class FlightServiceImpl implements FlightServices {
 	    String mm=monFormat.format(mydate);
 	    String dd=datFormat.format(mydate);
 		
-		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FLIGHTS+airline+"/"+flightId+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END;
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_FLIGHTS+airline+"/"+flightId+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END+"&sort=departureDate&departureDate.dir=asc";
 		System.out.println(srcURL);
 		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		RestTemplate restTemplate=new RestTemplate();
