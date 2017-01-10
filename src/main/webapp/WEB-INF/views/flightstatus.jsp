@@ -49,7 +49,7 @@
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
-			<td><img vspace="4px" width="200px" height="200px" src="${fimages}/icon${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+			<td><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td>
 			<td><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalDate.dateLocal}"/></td>
