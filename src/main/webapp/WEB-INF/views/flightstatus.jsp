@@ -60,7 +60,7 @@
 
 			<td><img style="padding-top:10px;padding-bottom:10px;width:150px;height:50px;" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
 
-			<td align="center" style="width:200px"><img vspace="4px" width="200px" height="45px" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+			
 
 
 			
