@@ -24,7 +24,7 @@
         
             <div style="height:70px"><tiles:insertAttribute name="header" /></div>
         
-           <div style="float:left;width:100%;height:800px; ">   <tiles:insertAttribute name="body" /></div>
+           <div style="float:left;width:100%;height:700px; ">   <tiles:insertAttribute name="body" /></div>
         
       
             <div id="fixedfooter"><tiles:insertAttribute name="footer" /></div>
