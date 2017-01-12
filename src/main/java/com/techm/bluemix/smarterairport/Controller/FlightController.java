@@ -20,6 +20,7 @@ import com.techm.bluemix.smarterairport.Wrapper.FlightStatusWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.FlightStatusbyFSWrapper;
 import com.techm.bluemix.smarterairport.utils.SAConstant;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
+import com.techm.bluemix.smarterairport.utils.SAProp;
 
 @Controller
 @RequestMapping("/flight")
