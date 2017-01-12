@@ -14,8 +14,8 @@ public class SAProp {
 	public static Properties prop= new Properties();
 	
 	static{
-	String filename="airport.properties";
-	input= SAProp.class.getClassLoader().getResourceAsStream(filename);
+	
+	input= new FileInputStream("/src/main/resources/airport.properties");
 	try {
 		prop.load(input);
 	} catch (IOException e) {
