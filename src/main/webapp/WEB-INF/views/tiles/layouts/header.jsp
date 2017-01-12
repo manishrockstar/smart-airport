@@ -148,7 +148,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="id04" class="modal">
   
-  <form class="modal-content animate" method ="POST" action="/flight/trackByAirport">
+  <form class="modal-content animate" method ="GET" action="/flight/trackByAirport">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
@@ -189,7 +189,7 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 <datalist id="airports"> 
-<option value="(BBA) Balmaceda Airport, Chile">
+<option value="BBA">(BBA) Balmaceda Airport, Chile</option>
 <option value="(BBC) Bay City Airport, United States">
 <option value="(BBB) Benson Airport, United States">
 <option value="(BBE) Big Bell Airport, Australia">
