@@ -45,7 +45,7 @@ public class FlightController<fsWrapper> {
 	public ModelAndView trackFlightByRoute(@RequestParam("departure") String departure,@RequestParam("arrival") String arrival,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(SAConstant.airportCodeMap.get(departure),SAConstant.airportCodeMap.get(arrival),departarrival,dat);
+		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(SAProp.prop.getProperty(departure),SAProp.prop.getProperty(arrival),departarrival,dat);
 		System.out.println(fswrapper);
 		if(fswrapper.isEmpty()){		
 			String message="Flight details not Found";
@@ -60,7 +60,7 @@ public class FlightController<fsWrapper> {
 	public ModelAndView trackFlightByAirport(@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(SAConstant.airportCodeMap.get(airports),departarrival,hoursofday,dat);
+		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(SAProp.prop.getProperty(airports),departarrival,hoursofday,dat);
 		//FlightStatusWrapper fsWrapper = flightServices.trackByAirport(SAUtils.airportCodeMap.get(airports),departarrival,hoursofday,dat);
 		System.out.println(fswrapper);
 		if(fswrapper.isEmpty()){		
