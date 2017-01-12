@@ -13,7 +13,7 @@ public class SAConstant {
 	 */
 	//Url prepration
 	public static final String FLIGHSTATS_API_BASE_URI = "https://api.flightstats.com/flex";
-	public static final String F_WEBSERVICE_FS = "/airlines/rest/v1/json/fs/";
+	public static final String F_WEBSERVICE_FS = "/airports/rest/v1/json/fs/";
 	
 	//Account Authentication
 	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=fe647c90&appKey=acc7c5bf565d3ff434254541df7e1785";	//Flightstats account specific
@@ -61,6 +61,16 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	public static final String uname="e694bb30-ea42-485a-8659-46a574267f78";
 	public static final String pword="DnRyIrHbF8";
 	
+	public static Map<String, String> airportCodeMap;
+	
+	static {
+	airportCodeMap= new HashMap<String, String>();
+		airportCodeMap.put("Adria Airways (JP)", "ADR");
+		airportCodeMap.put("Aegean airports (A3)", "AEE");
+		airportCodeMap.put("Aer Lingus (EI)", "EIN");
+		airportCodeMap.put("Aero Contractors (NG)", "NIG");
+}
+
 	
 }
 
