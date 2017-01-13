@@ -22,7 +22,9 @@ public class SAProp {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	
 	}
-
+String x=prop.getProperty("(BEF) Bluefields Airport, Nicaragua");
+	System.out.println(x);
 }
 
