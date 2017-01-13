@@ -15,7 +15,12 @@ public class SAProp {
 	
 	static{
 	
-	input= new FileInputStream("/src/main/resources/airport.properties");
+	try {
+		input= new FileInputStream("/src/main/resources/airport.properties");
+	} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
 	try {
 		prop.load(input);
 	} catch (IOException e) {
