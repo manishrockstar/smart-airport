@@ -16,7 +16,7 @@ public class SAProp {
 	static{
 	
 	try {
-		input= new FileInputStream("airport.properties");
+		input= new FileInputStream("/airport.properties");
 	} catch (FileNotFoundException e1) {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
