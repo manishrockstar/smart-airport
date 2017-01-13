@@ -14,13 +14,8 @@ public class SAProp {
 	public static Properties prop= new Properties();
 	
 	static{
-	
-	try {
-		input= new FileInputStream("/airport.properties");
-	} catch (FileNotFoundException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
+	String filename="/airport.properties";
+	input=SAProp.class.getClassLoader().getResourceAsStream(filename);
 	try {
 		prop.load(input);
 	} catch (IOException e) {
