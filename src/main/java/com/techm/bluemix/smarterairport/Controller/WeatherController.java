@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.techm.bluemix.smarterairport.Services.WeatherServices;
 import com.techm.bluemix.smarterairport.Wrapper.WeatherForecastWrapper;
 import com.techm.bluemix.smarterairport.Wrapper.WeatherStatusWrapper;
-
+import com.techm.bluemix.smarterairport.utils.SAProp;
 import com.techm.bluemix.smarterairport.utils.SAUtils;
 
 @Controller
