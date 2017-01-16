@@ -2,7 +2,7 @@ package com.techm.bluemix.smarterairport.Controller;
 
 import java.io.IOException;
 import java.util.List;
-
+import org.springframework.ui.ModelMap;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +39,9 @@ public class WeatherController {
 	{
 		
 		List<WeatherForecastWrapper> wfwrapper = weatherServices.trackWeatherForecast(SAUtils.prop.getProperty(w_country),SAProp.prop.getProperty(w_country), days);
-		String msg=w_country;
-		return new ModelAndView("weatherForecast","msg",wfwrapper);
+		ModelMap mm = null;
+		mm.addAttribute("msg", w_country);
+		return new ModelAndView("weatherForecast","wfwrapper",wfwrapper);
 	}
 	
 }
