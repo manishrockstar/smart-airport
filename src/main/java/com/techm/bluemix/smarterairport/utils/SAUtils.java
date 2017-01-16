@@ -2,6 +2,11 @@ package com.techm.bluemix.smarterairport.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
@@ -18,6 +23,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.ProxyAuthenticationStrategy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+
+
 
 import com.techm.bluemix.smarterairport.ServiceImpl.ContextAwareHttpComponentsClientHttpRequestFactory;
 
