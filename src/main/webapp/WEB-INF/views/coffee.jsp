@@ -16,7 +16,7 @@
 <img src="${images}/backk.png" height="60px" width="60px" align="left">
 </a>
 <center>
-<img src="${images}/cafeb.jpg" height="200px" width="600px">
+<img src="${images}/cafeb.jpg" height="200px" width="650px">
 </center>
 </div>
 
