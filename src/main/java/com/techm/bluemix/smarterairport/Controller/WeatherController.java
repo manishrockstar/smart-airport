@@ -33,18 +33,12 @@ public class WeatherController {
 		return new ModelAndView("Weather");
 	}
 	
-	@RequestMapping(value="/observation", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView trackWeatherByGeo(@RequestParam("w_country") String w_country) throws JsonParseException, JsonMappingException, IOException
-	{
-		WeatherStatusWrapper wswrapper = weatherServices.trackByGeo(SAUtils.latMap.get(w_country),SAUtils.lonMap.get(w_country));
-		return new ModelAndView("weatherstatus","wswrapper",wswrapper);
-	}
-	
+		
 	@RequestMapping(value="/forecast", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView trackWeatherForecast(@RequestParam("w_country") String w_country,@RequestParam("days") String days) throws JsonParseException, JsonMappingException, IOException
 	{
 		
-		List<WeatherForecastWrapper> wfwrapper = weatherServices.trackWeatherForecast(SAUtils.latMap.get(w_country),SAUtils.lonMap.get(w_country), days);
+		List<WeatherForecastWrapper> wfwrapper = weatherServices.trackWeatherForecast(SAUtils.prop.getProperty(w_country),SAProp.prop.getProperty(w_country), days);
 		
 		return new ModelAndView("weatherForecast","wfwrapper",wfwrapper);
 	}

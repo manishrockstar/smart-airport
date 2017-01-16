@@ -33,8 +33,20 @@ public class SAUtils {
 	public static Map<String, String> latMap;
 	public static Map<String, String> lonMap;
 	public static Map<String, String> airlineCodeMap;
+	public static InputStream input = null;
+	public static Properties prop= new Properties();
 	
-	static {
+	static{
+	String filename="/lat.properties";
+	input=SAProp.class.getClassLoader().getResourceAsStream(filename);
+	try {
+		prop.load(input);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
 				
 		countryCodeMap= new HashMap<String, String>();
 		countryCodeMap.put("GA", "/30339%3A4%3AUS");
