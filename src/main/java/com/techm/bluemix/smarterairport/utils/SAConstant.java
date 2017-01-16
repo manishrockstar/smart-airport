@@ -58,8 +58,8 @@ public static final String WEATHER_API_BASE_URI = "https://28188990-cb66-4dc4-95
 	 * */
 	public static final String localhost="https://twcservice.mybluemix.net:443";
 	public static final int localport=443;
-	public static final String uname="e694bb30-ea42-485a-8659-46a574267f78";
-	public static final String pword="DnRyIrHbF8";
+	public static final String uname="d239b711-6329-43db-9726-e2b395094e83";
+	public static final String pword="BKghcCfxgN";
 	
 	public static Map<String, String> airportCodeMap;
 	
