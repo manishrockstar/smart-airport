@@ -24,7 +24,6 @@ public class SAProp {
 	}
 	
 	}
-String x=prop.getProperty("(BEF) Bluefields Airport, Nicaragua");
-	System.out.println(x);
+
 }
 
