@@ -39,8 +39,8 @@ public class WeatherController {
 	{
 		
 		List<WeatherForecastWrapper> wfwrapper = weatherServices.trackWeatherForecast(SAUtils.prop.getProperty(w_country),SAProp.prop.getProperty(w_country), days);
-		
-		return new ModelAndView("weatherForecast","wfwrapper",wfwrapper);
+		String msg=w_country;
+		return new ModelAndView("weatherForecast","msg",wfwrapper);
 	}
 	
 }

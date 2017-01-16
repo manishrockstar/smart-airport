@@ -19,7 +19,7 @@
 
 <div style="width:50% height:50px">
 	
-			<center><h1>Smart Airport Weather Forecasting</h1></center>
+			<center><h1>Smart Airport Weather Forecasting - ${msg}</h1></center>
 		
 </div>
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
