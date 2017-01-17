@@ -44,7 +44,7 @@
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}<br>						
 						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
-						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" /></h3></center>
+						<fmt:formatDate value="${HDate}" pattern="MMM dd,yyyy" /></h3></center>
 						</td>
 						</tr>
 						<tr>
@@ -113,7 +113,7 @@
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}<br>						
 						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
-						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" /></h3></center>
+						<fmt:formatDate value="${HDate}" pattern="MMM dd,yyyy" /></h3></center>
 						</td>
 						</tr>
 						<tr>
@@ -185,7 +185,7 @@
 						<tr>
 							<td align="center"><h3><c:out value="${wfWrappers.forecasts[loop.index].dow}" /><br>						
 						<fmt:parseDate value="${wfWrappers.forecasts[loop.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="RDate" />
-						<fmt:formatDate value="${RDate}" pattern="MM/dd/yyyy" /></h3></td>
+						<fmt:formatDate value="${RDate}" pattern="MMM dd,yyyy" /></h3></td>
 						</tr>
 					</table>
 				</td>
