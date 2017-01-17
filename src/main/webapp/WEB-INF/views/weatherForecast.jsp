@@ -100,7 +100,7 @@
 		</tr>
 	</table>
 </c:when>
-<c:otherwise test="${empty wfWrappers.forecasts[ite.index].max_temp}">
+<c:otherwise>
 	<table align="center" border="0" style="width:100%" height="250px">
 	
 		<tr>
