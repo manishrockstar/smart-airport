@@ -42,7 +42,7 @@
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
-						<!--<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="HDate" />-->
+						<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss-SSSS" var="HDate" />
 						<fmt:formatDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="MM/dd/yyyy" />
 						</td>
 						</tr>
@@ -111,7 +111,7 @@
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
-						<!--<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="HDate" />-->
+						<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss-SSSS" var="HDate" />
 						<fmt:formatDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="MM/dd/yyyy" />
 						</td>
 						</tr>
