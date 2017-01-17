@@ -30,7 +30,8 @@
 </div>
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
-<c:if test= "${not empty wfWrappers.forecasts[ite.index].max_temp}">
+<c:choose>
+<c:when test= "${not empty wfWrappers.forecasts[ite.index].max_temp}">
 	<table align="center" style="width:800px; height:250px">
 	
 		<tr>
@@ -42,7 +43,7 @@
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
-						<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss-SSSS" var="HDate" />
+						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
 						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" />
 						</td>
 						</tr>
@@ -98,8 +99,8 @@
 			</td>
 		</tr>
 	</table>
-</c:if>
-<c:if test="${empty wfWrappers.forecasts[ite.index].max_temp}">
+</c:when >
+<c:otherwise test="${empty wfWrappers.forecasts[ite.index].max_temp}">
 	<table align="center" border="0" style="width:100%" height="250px">
 	
 		<tr>
@@ -111,7 +112,7 @@
 						
 						<tr>
 						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
-						<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss-SSSS" var="HDate" />
+						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
 						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" />
 						</td>
 						</tr>
@@ -167,7 +168,8 @@
 			</td>
 		</tr>
 	</table>
-</c:if>
+</c:otherwise>
+</c:choose>
 </div>
 <div style="background-color:#6DA9C3;">
 	<table align="center" border="1" style="width:800px">
