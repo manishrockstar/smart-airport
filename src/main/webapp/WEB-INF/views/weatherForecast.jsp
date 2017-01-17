@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -24,7 +30,7 @@
 </div>
 <c:forEach items="${wfwrapper}" var="wfWrappers" varStatus="ite">
 <div style="background-color:#0080c0; height:250px;">
-<c:if test="${wfWrappers.forecasts[ite.index].max_temp != null}">
+<c:if test= "${not empty wfWrappers.forecasts[ite.index].max_temp}">
 	<table align="center" style="width:800px; height:250px">
 	
 		<tr>
@@ -35,7 +41,10 @@
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
-						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
+						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
+						<!--<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="HDate" />-->
+						<fmt:formatDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="MM/dd/yyyy" />
+						</td>
 						</tr>
 						<tr>
 							<td><center><h1><b>${wfWrappers.forecasts[ite.index].max_temp} &#176; C</b></h1></center></td>
@@ -90,7 +99,7 @@
 		</tr>
 	</table>
 </c:if>
-<c:if test="${wfWrappers.forecasts[ite.index].max_temp == null}">
+<c:if test="${empty wfWrappers.forecasts[ite.index].max_temp}">
 	<table align="center" border="0" style="width:100%" height="250px">
 	
 		<tr>
@@ -101,7 +110,10 @@
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
-						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center></td>
+						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
+						<!--<fmt:parseDate value="${fsWrappers.flightStatuses[ite.index].departureDate.dateLocal}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" var="HDate" />-->
+						<fmt:formatDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="MM/dd/yyyy" />
+						</td>
 						</tr>
 						<tr>
 							<td><center><h1><b>${wfWrappers.forecasts[ite.index].night.hi} &#176; C</b></h1></center></td>
