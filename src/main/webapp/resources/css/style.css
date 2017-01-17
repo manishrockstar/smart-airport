@@ -209,7 +209,7 @@ span.psw {
     position: fixed; /* Stay in place */
     z-index: 100; /* Sit on top */
     right: 0;
-    bottom: 0;
+    bottom:20 ;
     width: 30%; /* Full width */
     height: 70%; /* Full height */
     overflow: auto; /* Enable scroll if needed */

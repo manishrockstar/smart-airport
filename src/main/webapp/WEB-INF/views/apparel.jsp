@@ -69,7 +69,5 @@ The Satya Paul product line comprises women’s designer wears, handbags, clutch
 </div>
 </center>
 
-
-
 </body>
 </html>
