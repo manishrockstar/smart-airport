@@ -42,9 +42,9 @@
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
-						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
+						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}<br>						
 						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
-						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" />
+						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" /></h3></center>
 						</td>
 						</tr>
 						<tr>
@@ -111,9 +111,9 @@
 				<table cellspacing="0" cellpadding="0" border="0" height="200px" style="padding:10px; width:100%; border-radius:10px;">
 						
 						<tr>
-						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}</h3></center><br>						
+						<td><center><h3>${wfWrappers.forecasts[ite.index].dow}<br>						
 						<fmt:parseDate value="${wfWrappers.forecasts[ite.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="HDate" />
-						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" />
+						<fmt:formatDate value="${HDate}" pattern="MM/dd/yyyy" /></h3></center>
 						</td>
 						</tr>
 						<tr>
@@ -183,7 +183,9 @@
 				<td align="left" valign="top" width="120px" style="font-family:Arial; font-size:11pt; ">
 					<table cellspacing="0" cellpadding="0" border="0" height="100px" style="width:100% padding:10px; border-radius:10px;">
 						<tr>
-							<td align="center"><h3><c:out value="${wfWrappers.forecasts[loop.index].dow}" /></h3></td>
+							<td align="center"><h3><c:out value="${wfWrappers.forecasts[loop.index].dow}" /><br>						
+						<fmt:parseDate value="${wfWrappers.forecasts[loop.index].fcst_valid_local}" pattern="yyyy-MM-dd'T'HH:mm:ssZ" var="RDate" />
+						<fmt:formatDate value="${RDate}" pattern="MM/dd/yyyy" /></h3></td>
 						</tr>
 					</table>
 				</td>
