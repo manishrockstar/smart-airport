@@ -10,9 +10,9 @@
 <title>
 Smart Airport
 </title>
-<link rel="shortcut icon" type="image/png" href="${images}/icon.png">
+<link rel="shortcut icon" href="${views}/head.ico"/>
 </head>
-<link rel="stylesheet" type="text/css" href="${css}/style.css">
+
 <script src="${scripts}/script.js"></script>
 <script type="text/javascript">
 
@@ -87,9 +87,6 @@ function weather() {
 </div>
 
 </div>
-
-
-
 
 
 <div id="id03" class="modal">
@@ -19685,8 +19682,14 @@ We will consistently achieve top quartile growth by contributing to our customer
       <span onclick="document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:#333">&times;</span>
       </div>
       
+<<<<<<< HEAD
  		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="4" ></iframe>
  
+=======
+ 		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="2" ></iframe>
+ 	
+ 	
+>>>>>>> bc8604590be3e3e0bd2e9df7580c06a6ea3c63e3
 </div>
 
 
