@@ -14,14 +14,15 @@ public class SAProp {
 	public static Properties prop= new Properties();
 	
 	static{
-	
-	input= new FileInputStream("/src/main/resources/airport.properties");
+	String filename="/airport.properties";
+	input=SAProp.class.getClassLoader().getResourceAsStream(filename);
 	try {
 		prop.load(input);
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	
 	}
 
 }

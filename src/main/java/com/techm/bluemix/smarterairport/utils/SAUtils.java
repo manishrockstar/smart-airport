@@ -2,6 +2,11 @@ package com.techm.bluemix.smarterairport.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
@@ -19,6 +24,8 @@ import org.apache.http.impl.client.ProxyAuthenticationStrategy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 
+
+
 import com.techm.bluemix.smarterairport.ServiceImpl.ContextAwareHttpComponentsClientHttpRequestFactory;
 
 
@@ -33,8 +40,20 @@ public class SAUtils {
 	public static Map<String, String> latMap;
 	public static Map<String, String> lonMap;
 	public static Map<String, String> airlineCodeMap;
+	public static InputStream input = null;
+	public static Properties prop= new Properties();
 	
-	static {
+	static{
+	String filename="/lat.properties";
+	input=SAProp.class.getClassLoader().getResourceAsStream(filename);
+	try {
+		prop.load(input);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
 				
 		countryCodeMap= new HashMap<String, String>();
 		countryCodeMap.put("GA", "/30339%3A4%3AUS");
