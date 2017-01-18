@@ -67,8 +67,8 @@
 							
 			<%-- <td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td> --%>
 			
-
-			<td><img style="padding-top:10px;padding-bottom:10px;width:150px;height:50px;" src="${fimages}/${fsWrappers.flightStatuses[loop.index].carrierFsCode}.gif"></td>
+			<c:set var="fscode" value="${fn:replace(fsWrappers.flightStatuses[loop.index].carrierFsCode, '*', '')}"/>
+			<td><img style="padding-top:10px;padding-bottom:10px;width:150px;height:50px;" src="${fimages}/${fscode}.gif"></td>
 
 			
 
