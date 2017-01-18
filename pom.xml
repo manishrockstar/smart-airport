@@ -132,7 +132,7 @@
 			<version>1.4</version>
 		</dependency>
 		
-		<dependency>
+		<!--<dependency>
             <groupId>com.ibm.db2</groupId>
             <artifactId>db2jcc</artifactId>
             <version>${com.ibm.db2-version}</version>
@@ -144,7 +144,7 @@
   			<artifactId>nosqljson</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 		
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>
@@ -349,12 +349,12 @@
 		</plugins>
 	</build>
 	
-	<repositories>
+	<!--<repositories>
         <repository>
             <id>git-explore</id>
             <name>explore project</name>
             <url>https://github.com/sushilverma/ibmmavenrepo/raw/master/</url>
         </repository>
     </repositories>
-
+-->
 </project>
