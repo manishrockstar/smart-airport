@@ -33,7 +33,8 @@ public class SmartController {
 		output = new FileOutputStream("db.properties");
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.store(output, null);
+		prop.store(output,"API Key details");
+		output.close;
 		return new ModelAndView("home");		
 	}
 	
