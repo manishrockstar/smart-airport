@@ -34,7 +34,7 @@ public class SmartController {
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
 		prop.store(output, null);
-		return new ModelAndView("index");		
+		return new ModelAndView("home");		
 	}
 	
 	
