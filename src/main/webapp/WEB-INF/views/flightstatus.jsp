@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*" %>
-<%@ page import="com.techm.bluemix.smarterairport.utils.SAUtils" %>
+<%@ page import="com.techm.bluemix.smarterairport.utils.SAProp" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -51,10 +51,13 @@
 			
 			
 		<tr>
-			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
-			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
-			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
-
+			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}" /><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+			<c:set var="dep" value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/>
+			<c:set var="arr" value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/>
+			<fmt:bundle basename="/airport.properties">
+			<td style="width:110px"><fmt:message key="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/></td>		
+			<td style="width:110px"><fmt:message key="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/></td>
+			
 							
 			<%-- <td><c:out value="${fsWrappers.flightStatuses[loop.index].departureDate.dateLocal}"/></td> --%>
 			
@@ -77,7 +80,8 @@
 			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalGate}"/></td>
 			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.departureTerminal}"/></td>
 			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].airportResources.arrivalTerminal}"/></td>
-			<td style="width:110px"><c:out value="${fsWrappers.flightStatuses[loop.index].status}"/></td>
+			<td style="width:110px"><fmt:message key="${fsWrappers.flightStatuses[loop.index].status}"/></td>
+			</fmt:bundle>
 		</tr>
 			</c:forEach>
 		
