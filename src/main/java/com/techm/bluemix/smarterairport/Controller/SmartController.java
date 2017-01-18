@@ -30,17 +30,17 @@ public class SmartController {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";
 		Properties prop = new Properties();
-<<<<<<< HEAD
+
 		OutputStream output = null;
 		output = new FileOutputStream("/db.properties");
-=======
+
 		//OutputStream output = null;
 		//output = new FileOutputStream("db.properties");
->>>>>>> 2bd1caa1fc4f3a213f86b5dfcb74451cd356d4ac
+
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.store(new FileWriter("db.properties"),"API Key details");
-		//output.close();
+		prop.store(output,"API Key details");
+		output.close();
 		return new ModelAndView("home");		
 	}
 	
