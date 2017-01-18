@@ -10,7 +10,7 @@
 <title>
 Smart Airport
 </title>
-<link rel="shortcut icon" href="${views}/head.ico"/>
+
 </head>
 
 <script src="${scripts}/script.js"></script>
@@ -145,7 +145,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="id04" class="modal">
   
-  <form class="modal-content animate" method ="GET" action="/flight/trackByAirport">
+  <form class="modal-content animate" method ="POST" action="/flight/trackByAirport">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
@@ -19682,9 +19682,9 @@ We will consistently achieve top quartile growth by contributing to our customer
       <span onclick="document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:#333">&times;</span>
       </div>
       
- 		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="2" ></iframe>
- 	
- 	
+
+ 		<iframe id="idxx" src="https://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="4" ></iframe>
+
 </div>
 
 

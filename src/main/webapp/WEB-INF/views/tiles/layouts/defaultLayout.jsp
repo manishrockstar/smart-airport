@@ -13,10 +13,7 @@
 <script src="${scripts}/script.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Smart Airport</title>
-<spring:url value="/resources/css" var="css" />
-<spring:url value="/resources/scripts" var="scripts" />
-<spring:url value="/resources/images" var="images" />
-<link rel="stylesheet" type="text/css" href="${css}/style.css">
+<link rel="shortcut icon" href="${images}/head.ico"/>
 <script src="${scripts}/script.js"></script>
 </head>
 
