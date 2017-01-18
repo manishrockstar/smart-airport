@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,12 +30,12 @@ public class SmartController {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";
 		Properties prop = new Properties();
-		OutputStream output = null;
-		output = new FileOutputStream("db.properties");
+		//OutputStream output = null;
+		//output = new FileOutputStream("db.properties");
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.store(output,"API Key details");
-		output.close();
+		prop.store(new FileWriter("db.properties"),"API Key details");
+		//output.close();
 		return new ModelAndView("home");		
 	}
 	
