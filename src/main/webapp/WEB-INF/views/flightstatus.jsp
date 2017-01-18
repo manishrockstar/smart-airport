@@ -50,7 +50,8 @@
 					<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 			
-		<tr><c:choose>
+		<tr>
+		<c:choose>
     		<c:when test="${fn:contains(fsWrappers.flightStatuses[loop.index].carrierFsCode, '*')}">
 			<td style="width:80px"><c:out value="${fn:replace(fsWrappers.flightStatuses[loop.index].carrierFsCode, '*', '')}"/>-<c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
 			</c:when>

@@ -69,6 +69,7 @@ function weather() {
             </li>
         <li><a onclick="document.getElementById('id03').style.display='block'">Contact us</a></li>        
           <li><a onclick="document.getElementById('id07').style.display='block'">About us</a></li>
+          <li><a onclick="document.getElementById('id17').style.display='block'">Update API</a></li>
     </ul>
    
 </div>
@@ -142,6 +143,43 @@ We will consistently achieve top quartile growth by contributing to our customer
     </div>
   </form>
 </div>
+
+<div id="id17" class="modal">
+  
+  <form class="modal-content animate" method ="POST" action="/update">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id17').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <br>
+      <img src="${images}/flight.gif" alt="Avatar" class="avatar1">
+    </div>
+
+
+	<div class="container">
+   <h3>Update API Id and Key</h3>
+
+    <input type="text" placeholder="Enter API ID" name="appid" required>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" placeholder="Enter API Key" name="appkey" required>
+<br>
+<br>
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="api" value="flight" required>FlightStats API
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="api" value="weather">Weather API
+&nbsp;
+<button style="width:0px;height:0px;background-color:white;">
+<img src="${images}/download.jpg" width="30" height="30" border="0">
+</button>
+    </div>
+
+<br>
+<br>
+  </form>
+</div>
+
+
+
+
 
 <div id="id04" class="modal">
   
