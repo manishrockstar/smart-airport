@@ -50,8 +50,14 @@
 					<c:forEach items="${fsWrappers.flightStatuses}" varStatus="loop">
 			
 			
-		<tr>
-			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}" />-<c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+		<tr><c:choose>
+    		<c:when test="${fn:contains(fsWrappers.flightStatuses[loop.index].carrierFsCode, '*')}">
+			<td style="width:80px"><c:out value="${fn:replace(fsWrappers.flightStatuses[loop.index].carrierFsCode, '*', '')}"/>-<c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+			</c:when>
+			<c:otherwise>
+			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}"/>-<c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+			</c:otherwise>
+			</c:choose>
 			<c:set var="dep" value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/>
 			<c:set var="arr" value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/>
 			<fmt:bundle basename="airport">
