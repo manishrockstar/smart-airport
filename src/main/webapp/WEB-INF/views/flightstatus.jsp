@@ -51,7 +51,7 @@
 			
 			
 		<tr>
-			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}" /><c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
+			<td style="width:80px"><c:out value="${fsWrappers.flightStatuses[loop.index].carrierFsCode}" />-<c:out value="${fsWrappers.flightStatuses[loop.index].flightNumber}" /></td>
 			<c:set var="dep" value="${fsWrappers.flightStatuses[loop.index].departureAirportFsCode}"/>
 			<c:set var="arr" value="${fsWrappers.flightStatuses[loop.index].arrivalAirportFsCode}"/>
 			<fmt:bundle basename="airport">
