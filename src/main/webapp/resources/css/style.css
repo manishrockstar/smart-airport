@@ -218,9 +218,9 @@ span.psw {
     padding-bottom: 10px;
 }
 .closeme {
-    position: relative;
-    right:22px;
-    top:50px;
+    position:absolute;
+    right:25px;
+    top:0;
     font-size: 35px;
     font-weight: bold;
     
