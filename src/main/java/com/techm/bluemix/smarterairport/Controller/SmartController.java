@@ -30,12 +30,12 @@ public class SmartController {
 	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
 		String application_id=api+".appid";
 		String application_key=api+".appkey";
-		FileInputStream in = new FileInputStream("db.properties");
+		FileInputStream in = new FileInputStream("/db.properties");
 		Properties props = new Properties();
 		props.load(in);
 		in.close();
 
-		FileOutputStream out = new FileOutputStream("db.properties");
+		FileOutputStream out = new FileOutputStream("/db.properties");
 		props.setProperty(application_id, appid);
 		props.setProperty(application_key, appkey);
 		props.store(out, null);
