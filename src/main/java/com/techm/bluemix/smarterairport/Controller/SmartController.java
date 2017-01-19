@@ -32,16 +32,18 @@ public class SmartController {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
 		Properties prop = new Properties();
-		ClassLoader classLoader = null;
+		String dir = SmartController.class.getResource("/").getFile();
+		
 		OutputStream output = null;
 		String filename="/db.properties";
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
 		prop.store(output, null);
-		File configFile=new File(classLoader.getClass().getClassLoader().getResource(filename).getFile());
-		output=new FileOutputStream(configFile);
+		
+		output=new FileOutputStream(dir+"db.properties");
 		prop.store(output, null);
 		output.close();
+		
 		 
 		return new ModelAndView("index");		
 	}
