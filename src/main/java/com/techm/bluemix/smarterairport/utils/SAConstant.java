@@ -16,7 +16,7 @@ public class SAConstant {
 	public static final String F_WEBSERVICE_FS = "/airports/rest/v1/json/fs/";
 	
 	//Account Authentication
-	public static final String FLIGHSTATS_APP_ID_KEY = "?appId=fe647c90&appKey=acc7c5bf565d3ff434254541df7e1785";	//Flightstats account specific
+	public static final String FLIGHSTATS_APP_ID_KEY = "?appId="+SAAuth.prop.getProperty("flight.appid")+"&appKey="+SAAuth.prop.getProperty("flight.appkey");
 	//Flight By Route
 	public static final String F_WEBSERVICE_ROUTE = "/flightstatus/rest/v2/json/route/status/";
 	public static final String F_WEBSERVICE_AIRPORTS = "/flightstatus/rest/v2/json/airport/status/";
@@ -36,8 +36,8 @@ public class SAConstant {
 	 * Weather API parameters
 	 */
 	//Url prepration
-public static final String WEATHER_API_BASE_URI = "https://d239b711-6329-43db-9726-e2b395094e83:BKghcCfxgN@twcservice.mybluemix.net/api/weather/v1";
-	public static final String 	W_API="/api/weather/v1";
+public static final String WEATHER_API_BASE_URI = "https://"+SAAuth.prop.getProperty("weather.appid")+":"+SAAuth.prop.getProperty("weather.appkey")+"@twcservice.mybluemix.net/api/weather/v1";
+	public static final String W_API="/api/weather/v1";
 	public static final String W_GEOCODE = "/geocode";
 	public static final String W_LOCATION = "/location";
 	public static final String W_FORECAST = "/forecast";
@@ -58,18 +58,10 @@ public static final String WEATHER_API_BASE_URI = "https://d239b711-6329-43db-97
 	 * */
 	public static final String localhost="https://twcservice.mybluemix.net:443";
 	public static final int localport=443;
-	public static final String uname="d239b711-6329-43db-9726-e2b395094e83";
-	public static final String pword="BKghcCfxgN";
+	public static final String uname=SAAuth.prop.getProperty("weather.appid");
+	public static final String pword=SAAuth.prop.getProperty("weather.appkey");
 	
-	public static Map<String, String> airportCodeMap;
 	
-	static {
-	airportCodeMap= new HashMap<String, String>();
-		airportCodeMap.put("Adria Airways (JP)", "ADR");
-		airportCodeMap.put("Aegean airports (A3)", "AEE");
-		airportCodeMap.put("Aer Lingus (EI)", "EIN");
-		airportCodeMap.put("Aero Contractors (NG)", "NIG");
-}
 
 	
 }

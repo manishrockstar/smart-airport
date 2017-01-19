@@ -1,8 +1,15 @@
 package com.techm.bluemix.smarterairport.Controller;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Properties;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 import com.techm.bluemix.smarterairport.Wrapper.LoginForm;
@@ -17,7 +24,26 @@ public class SmartController {
 		return new ModelAndView("index","loginForm", new LoginForm());
 	}	
 	
-		
+	// Update API ID and key
+	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
+		String application_id=api+".appid";
+		String application_key=api+".appkey";
+		Properties prop = new Properties();
+
+		OutputStream output = null;
+		output = new FileOutputStream("/db.properties");
+
+		//OutputStream output = null;
+		//output = new FileOutputStream("db.properties");
+
+		prop.setProperty(application_id, appid);
+		prop.setProperty(application_key, appkey);
+		prop.store(output,"API Key details");
+		output.close();
+		return new ModelAndView("home");		
+	}
+	
 	
 	@RequestMapping(value="home", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartHome(){
