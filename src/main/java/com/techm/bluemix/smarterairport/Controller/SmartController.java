@@ -28,8 +28,8 @@ public class SmartController {
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
-		String application_id=app+".appid";
-		String application_key=app+".appkey";
+		String application_id=api+".appid";
+		String application_key=api+".appkey";
 		FileInputStream in = new FileInputStream("db.properties");
 		Properties props = new Properties();
 		props.load(in);
