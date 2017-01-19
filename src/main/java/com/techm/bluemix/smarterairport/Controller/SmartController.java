@@ -1,11 +1,12 @@
 package com.techm.bluemix.smarterairport.Controller;
 
 import java.io.IOException;
-import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.File;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,17 +30,19 @@ public class SmartController {
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
 		String application_id=api+".appid";
-		String application_key=api+".appkey";
-		FileInputStream in = new FileInputStream("/db.properties");
-		Properties props = new Properties();
-		props.load(in);
-		in.close();
-
-		FileOutputStream out = new FileOutputStream("/db.properties");
-		props.setProperty(application_id, appid);
-		props.setProperty(application_key, appkey);
-		props.store(out, null);
-		out.close();
+		String application_key=api+".appkey";		
+		Properties prop = new Properties();
+		ClassLoader classLoader = null;
+		OutputStream output = null;
+		String filename="/db.properties";
+		prop.setProperty(application_id, appid);
+		prop.setProperty(application_key, appkey);
+		prop.store(output, null);
+		File configFile=new File(classLoader.getClass().getClassLoader().getResource(filename).getFile());
+		output=new FileOutputStream(configFile);
+		prop.store(output, null);
+		output.close();
+		 
 		return new ModelAndView("index");		
 	}
 	
