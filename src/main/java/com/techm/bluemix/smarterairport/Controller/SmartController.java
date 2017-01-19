@@ -1,6 +1,7 @@
 package com.techm.bluemix.smarterairport.Controller;
 
 import java.io.IOException;
+import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.io.FileOutputStream;
@@ -27,21 +28,19 @@ public class SmartController {
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
-		String application_id=api+".appid";
-		String application_key=api+".appkey";
-		Properties prop = new Properties();
+		String application_id=app+".appid";
+		String application_key=app+".appkey";
+		FileInputStream in = new FileInputStream("db.properties");
+		Properties props = new Properties();
+		props.load(in);
+		in.close();
 
-		OutputStream output = null;
-		output = new FileOutputStream("/db.properties");
-
-		//OutputStream output = null;
-		//output = new FileOutputStream("db.properties");
-
-		prop.setProperty(application_id, appid);
-		prop.setProperty(application_key, appkey);
-		prop.store(output,"API Key details");
-		output.close();
-		return new ModelAndView("home");		
+		FileOutputStream out = new FileOutputStream("db.properties");
+		props.setProperty(application_id, appid);
+		props.setProperty(application_key, appkey);
+		props.store(out, null);
+		out.close();
+		return new ModelAndView("index");		
 	}
 	
 	
