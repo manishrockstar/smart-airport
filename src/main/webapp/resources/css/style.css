@@ -226,6 +226,7 @@ span.psw {
     font-size: 45px;
     font-weight: bold;
     color:#FBFCFC;
+    z-index:1;
     
 }
 
