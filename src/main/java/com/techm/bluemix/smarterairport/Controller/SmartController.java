@@ -30,7 +30,7 @@ public class SmartController {
 	
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException, throws ConfigurationException {
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
 		String filename="db.properties";
@@ -38,10 +38,7 @@ public class SmartController {
 		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.save();
-		
-		
-		 
+		prop.save();		 
 		return new ModelAndView("index");		
 	}
 	
