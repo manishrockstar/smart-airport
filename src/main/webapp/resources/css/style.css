@@ -221,8 +221,9 @@ span.psw {
 
 .closeme {
     position:fixed;
-    right:25px;
-    top:85px;
+    right:45px;
+    top:105px;
+    color: #FFFDFC;
     font-size: 35px;
     font-weight: bold;
     
