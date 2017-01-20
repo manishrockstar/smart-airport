@@ -221,11 +221,12 @@ span.psw {
 
 .closeme {
     position:fixed;
-    right:25px;
-    top:65px;
-    font-size: 35px;
+    right:28px;
+    top:74px;
+    font-size: 45px;
     font-weight: bold;
-    
+    color:#FBFCFC;
+    z-index:1;
     
 }
 
