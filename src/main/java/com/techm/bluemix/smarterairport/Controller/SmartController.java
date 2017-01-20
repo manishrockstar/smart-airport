@@ -33,7 +33,7 @@ public class SmartController {
 	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
-		String filename="db.properties";
+		String filename="/db.properties";
 		File propertiesFile = new File(getClass().getClassLoader().getResource(filename).getFile());
 		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
 		prop.setProperty(application_id, appid);
