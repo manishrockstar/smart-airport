@@ -38,7 +38,7 @@ public class SmartController {
 		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.save();		 
+		prop.save();	 
 		return new ModelAndView("home");		
 	}
 	
