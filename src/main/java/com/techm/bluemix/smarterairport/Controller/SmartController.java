@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.File;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 
 
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,7 @@ public class SmartController {
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
 		prop.save();	
-		propertiesFile.close();
+		prop.setReloadingStrategy(new FileChangedReloadingStrategy());
 		return new ModelAndView("home");		
 	}
 	
