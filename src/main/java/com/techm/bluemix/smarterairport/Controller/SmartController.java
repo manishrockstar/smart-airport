@@ -31,16 +31,21 @@ public class SmartController {
 	
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException {
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException, InterruptedException {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
 		String filename="db.properties";
+		Thread t = null;
+		t.start();
 		File propertiesFile = new File(getClass().getClassLoader().getResource(filename).getFile());
+		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
+		fileChangedReloadingStrategy.setRefreshDelay(2000);
 		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
+		prop.setReloadingStrategy(fileChangedReloadingStrategy);	
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
 		prop.save();	
-		prop.setReloadingStrategy(new FileChangedReloadingStrategy());
+		Thread.sleep(3000);
 		return new ModelAndView("home");		
 	}
 	

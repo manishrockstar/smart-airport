@@ -146,7 +146,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="id17" class="modal">
   
-  <form class="modal-content animate" method ="GET" action="/update">
+  <form class="modal-content animate" method ="POST" action="/update">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id17').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
