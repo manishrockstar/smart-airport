@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @RequestMapping("/")
 public class SmartController {
 
+	private Thread t;
+	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public ModelAndView smartIndex(){
 		return new ModelAndView("index","loginForm", new LoginForm());
@@ -35,7 +37,6 @@ public class SmartController {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
 		String filename="db.properties";
-		Thread t = null;
 		t.start();
 		File propertiesFile = new File(getClass().getClassLoader().getResource(filename).getFile());
 		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
