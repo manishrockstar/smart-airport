@@ -6,6 +6,9 @@ import java.util.Properties;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.File;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 
 
 import org.springframework.stereotype.Controller;
@@ -21,6 +24,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @RequestMapping("/")
 public class SmartController {
 
+	private Thread t;
+	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public ModelAndView smartIndex(){
 		return new ModelAndView("index","loginForm", new LoginForm());
@@ -28,24 +33,21 @@ public class SmartController {
 	
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws IOException{
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException, InterruptedException {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
-		Properties prop = new Properties();
-		String dir = SmartController.class.getResource("/").getFile();
-		
-		OutputStream output = null;
-		String filename="/db.properties";
+		String filename="db.properties";
+		t.start();
+		File propertiesFile = new File(getClass().getClassLoader().getResource(filename).getFile());
+		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
+		fileChangedReloadingStrategy.setRefreshDelay(2000);
+		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
+		prop.setReloadingStrategy(fileChangedReloadingStrategy);	
 		prop.setProperty(application_id, appid);
 		prop.setProperty(application_key, appkey);
-		prop.store(output, null);
-		
-		output=new FileOutputStream(dir+"db.properties");
-		prop.store(output, null);
-		output.close();
-		
-		 
-		return new ModelAndView("index");		
+		prop.save();	
+		Thread.sleep(3000);
+		return new ModelAndView("home");		
 	}
 	
 	
