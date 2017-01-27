@@ -36,7 +36,7 @@ public class SmartController {
 	
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api){
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException, InterruptedException {
 		String filename="db.properties";
 		weatherServices.propUpdate(appid, appkey, filename, api);
 		return new ModelAndView("home");		
