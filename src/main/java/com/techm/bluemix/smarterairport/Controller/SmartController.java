@@ -20,11 +20,14 @@ import org.springframework.ui.Model;
 import com.techm.bluemix.smarterairport.Wrapper.LoginForm;
 import com.techm.bluemix.smarterairport.Wrapper.User;	
 import org.springframework.web.bind.annotation.ModelAttribute;
+import com.techm.bluemix.smarterairport.Services.WeatherServices;
 @Controller
 @RequestMapping("/")
 public class SmartController {
+	
+	@Autowired(required=true)
+	private WeatherServices weatherServices;
 
-	private Thread t;
 	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public ModelAndView smartIndex(){
@@ -33,21 +36,11 @@ public class SmartController {
 	
 	// Update API ID and key
 	@RequestMapping(value="update", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api) throws ConfigurationException, InterruptedException {
-		String application_id=api+".appid";
-		String application_key=api+".appkey";		
+	public ModelAndView smartUpdate(@RequestParam("appid") String appid,@RequestParam("appkey") String appkey,@RequestParam("api") String api){
 		String filename="db.properties";
-		t.start();
-		File propertiesFile = new File(getClass().getClassLoader().getResource(filename).getFile());
-		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
-		fileChangedReloadingStrategy.setRefreshDelay(2000);
-		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
-		prop.setReloadingStrategy(fileChangedReloadingStrategy);	
-		prop.setProperty(application_id, appid);
-		prop.setProperty(application_key, appkey);
-		prop.save();	
-		Thread.sleep(3000);
+		weatherServices.propUpdate(appid, appkey, filename, api);
 		return new ModelAndView("home");		
+				
 	}
 	
 	
