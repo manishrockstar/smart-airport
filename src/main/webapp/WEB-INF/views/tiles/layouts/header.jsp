@@ -14,14 +14,12 @@ Smart Airport
 </head>
 <style>
   html, body, iframe { width: 100%; height:100%; padding:0; margin:0; }
-  #ibm_chat_root { position:fixed; bottom:0; right: 20px; height: 80%; min-height:400px; width:300px; background:#000; }
+  #ibm_chat_root {
+  	position:fixed; bottom:0; right: 20px; height: 80%; min-height:400px; width:300px; background:#000;
+  	z-index:100;
+  	display:none;
+  	}
 </style>
-<script src="${scripts}/script.js"></script>
-<script type="text/javascript">
-
-
-function flight() {
-	
 	if(window.location.href.indexOf("flight" || "weather") > -1) {
        window.location.href="/";
     }	
