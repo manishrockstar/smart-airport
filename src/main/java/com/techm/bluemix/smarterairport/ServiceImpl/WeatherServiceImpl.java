@@ -9,6 +9,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.httpclient.HttpClient;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Properties;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.File;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -56,6 +65,7 @@ import org.springframework.http.HttpEntity;
 public class WeatherServiceImpl implements WeatherServices {
 
 	private static final Logger log = LoggerFactory.getLogger(WeatherServiceImpl.class);
+	private Thread t;
 	
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -93,6 +103,27 @@ public class WeatherServiceImpl implements WeatherServices {
 		//List<WeatherForecastWrapper> data = new ArrayList<>(Arrays.asList(response.getEntity().getContent()));
 		System.out.println(data);
 		return data;
+		
+	}
+	
+	
+	@Override
+	public void propUpdate(String appid, String appkey, String fname, String api) throws ConfigurationException, InterruptedException {
+		// TODO Auto-generated method stub
+		String application_id=api+".appid";
+		String application_key=api+".appkey";		
+		
+		t.start();
+		File propertiesFile = new File(getClass().getClassLoader().getResource(fname).getFile());
+		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
+		fileChangedReloadingStrategy.setRefreshDelay(2000);
+		PropertiesConfiguration prop=new PropertiesConfiguration(propertiesFile);
+		prop.setReloadingStrategy(fileChangedReloadingStrategy);	
+		prop.setProperty(application_id, appid);
+		prop.setProperty(application_key, appkey);
+		prop.save();	
+		Thread.sleep(3000);
+		
 		
 	}
 }
