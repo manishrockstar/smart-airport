@@ -237,6 +237,7 @@ width:375px;
 background:none;
 position:fixed;
 overflow:hidden;
+display:block;
 }
 
 /* Modal Content/Box */
