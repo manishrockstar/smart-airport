@@ -235,7 +235,7 @@ span.psw {
 height:475px;
 width:375px;
 background:none;
-position:fixed;
+position:absolute;
 overflow:hidden;
 display:block;
 }
