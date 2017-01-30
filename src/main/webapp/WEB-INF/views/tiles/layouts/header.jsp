@@ -15,7 +15,7 @@ Smart Airport
 <style>
   html, body, iframe { width: 100%; height:100%; padding:0; margin:0; }
   #ibm_chat_root {
-  	position:fixed; bottom:5; right: 20px; height: 80%; min-height:400px; width:300px; background:#000;
+  	position:fixed; bottom:5; right: 10px; height: 80%; min-height:400px; width:400px; background:#000;
   	z-index:100;
   	display:none;
   	}
@@ -19725,7 +19725,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="ibm_chat_root">		
     <div class="imgcontainer1">
-      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:#8A2BE2	">&times;</span>   
+      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:#8A2BE2">&times;</span>   
       </div>      
 </div>
 
