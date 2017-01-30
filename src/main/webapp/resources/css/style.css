@@ -225,14 +225,14 @@ span.psw {
     top:74px;
     font-size: 45px;
     font-weight: bold;
-    color:#FBFCFC;
+    color:#FF0000;
     z-index:1;
     
 }
 
 #idxx
 {
-height:475px;
+height:575px;
 width:375px;
 background:none;
 position:fixed;
