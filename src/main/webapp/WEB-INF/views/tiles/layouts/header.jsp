@@ -201,7 +201,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <br>
 <br>
-<select type="list" name="hoursofday" required>
+<select type="list1" name="hoursofday" required>
  <option value="">Select Time(in Hours)</option>
  <option value="0">0000-0400</option>
  <option value="4">0400-0800</option>

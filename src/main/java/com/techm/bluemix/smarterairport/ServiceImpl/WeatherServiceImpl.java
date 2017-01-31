@@ -112,8 +112,7 @@ public class WeatherServiceImpl implements WeatherServices {
 		// TODO Auto-generated method stub
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
-		Thread t = null;
-		t.start();
+		
 		File propertiesFile = new File(getClass().getClassLoader().getResource(fname).getFile());
 		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
 		fileChangedReloadingStrategy.setRefreshDelay(2000);
