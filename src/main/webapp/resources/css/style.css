@@ -221,21 +221,21 @@ span.psw {
 
 .closeme {
     position:fixed;
-    right:28px;
-    top:74px;
+    right:24px;
+    top:62px;
     font-size: 45px;
     font-weight: bold;
-    color:#FBFCFC;
-    z-index:1;
-    
+    color:#FF0000;
+    display:block;
 }
 
 #idxx
 {
 height:475px;
-width:325px;
+width:375px;
 background:none;
-position:fixed;
+position:absolute;
+overflow:hidden;
 }
 
 /* Modal Content/Box */
