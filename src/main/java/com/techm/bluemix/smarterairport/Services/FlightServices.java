@@ -24,6 +24,7 @@ public interface FlightServices {
 
 	public List<FlightStatusWrapper> trackByflightID(String airline, String flightId, String departarrival, Date dat);
 
-	
+	public List<FlightStatusWrapper> trackByAirport(String airports, String departarrival, String hoursofday, Date dat,
+			String airline);	
 
 }
