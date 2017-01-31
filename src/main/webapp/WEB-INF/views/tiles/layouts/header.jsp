@@ -195,8 +195,9 @@ We will consistently achieve top quartile growth by contributing to our customer
    <h3>Flight Information by Airport</h3>
 
     <input list="airports" name="airports" placeholder="Airport"  type="list" required>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;<input list="airline" name="airline" placeholder="Airline"  type="list" required>&nbsp;&nbsp;&nbsp;
 <input type="date" name="dat">
+
 <br>
 <br>
 <select type="list" name="hoursofday" required>
