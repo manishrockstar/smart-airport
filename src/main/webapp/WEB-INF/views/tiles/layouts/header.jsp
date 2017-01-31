@@ -15,8 +15,7 @@ Smart Airport
 <style>
   html, body, iframe { width: 100%; height:100%; padding:0; margin:0; }
   #ibm_chat_root {
-  	position:fixed; bottom:5; right: 10px; height: 80%; min-height:400px; width:400px; background:#000;
-  	z-index:100;
+  	position:fixed; bottom:2; right: 10px; height: 80%; min-height:400px; width:400px; background:#000;
   	display:none;
   	}
 </style>

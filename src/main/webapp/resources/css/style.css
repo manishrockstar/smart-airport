@@ -222,11 +222,10 @@ span.psw {
 .closeme {
     position:fixed;
     right:28px;
-    top:70px;
+    top:65px;
     font-size: 45px;
     font-weight: bold;
     color:#FF0000;
-    z-index:110;
     
 }
 
