@@ -222,7 +222,7 @@ span.psw {
 .closeme {
     position:fixed;
     right:28px;
-    top:55px;
+    top:62px;
     font-size: 45px;
     font-weight: bold;
     color:#FF0000;
@@ -237,7 +237,6 @@ width:375px;
 background:none;
 position:absolute;
 overflow:hidden;
-display:block;
 }
 
 /* Modal Content/Box */
