@@ -196,12 +196,12 @@ We will consistently achieve top quartile growth by contributing to our customer
    <h3>Flight Information by Airport</h3>
 
     <input list="airports" name="airports" placeholder="Airport"  type="list" required>
-    &nbsp;&nbsp;&nbsp;<input list="airline" name="airline" placeholder="Airline"  type="list" required>&nbsp;&nbsp;&nbsp;
-<input type="date1" name="dat">
+    &nbsp;&nbsp;&nbsp;<input list="airline" name="airline" placeholder="Airline"  type="list">&nbsp;&nbsp;&nbsp;
+<input type="date" name="dat">
 
 <br>
 <br>
-<select type="list1" name="hoursofday" required>
+<select type="list" name="hoursofday" required>
  <option value="">Select Time(in Hours)</option>
  <option value="0">0000-0400</option>
  <option value="4">0400-0800</option>
@@ -212,9 +212,9 @@ We will consistently achieve top quartile growth by contributing to our customer
  </select>
 
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="departarrival" value="dep" required>Departure
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="departarrival" value="arr">Arrival
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="departarrival" value="arr">Arrival
 &nbsp;
 <button style="width:0px;height:0px;background-color:white;">
 <img src="${images}/download.jpg" width="30" height="30" border="0">
