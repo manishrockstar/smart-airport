@@ -738,6 +738,9 @@ function carousel() {
 <option value="Interjet (4O)">
 <option value="Iran Air (IR)">
 <option value="Iran Aseman Airlines (EP)">
+<option value="indigo (6E)">
+<option value="spicejet (SG)">
+<option value="GoAir (G8)">
 <option value="Israir (6H)">
 <option value="Japan Airlines (JL)">
 <option value="Jazeera Airways  (J9)">
