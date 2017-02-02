@@ -61,7 +61,8 @@ public class FlightController<fsWrapper> {
 	public ModelAndView trackFlightByAirport(@RequestParam(value="airline", required=false) String airline,@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		if(airline==null || airline==""){
+		if(airline.equals(null)||airline.isEmpty()||airline.equals(""))
+		{
 			List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat);	
 			System.out.println(fswrapper);
 			return new ModelAndView("flightstatus","fswrapper",fswrapper);
