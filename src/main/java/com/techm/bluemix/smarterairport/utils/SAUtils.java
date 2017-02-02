@@ -202,7 +202,7 @@ public class SAUtils {
 		airlineCodeMap.put("Iran Air (IR)", "IRA");
 		airlineCodeMap.put("Iran Aseman Airlines (EP)", "IRC");
 		airlineCodeMap.put("Israir (6H)", "ISR");
-		airlineCodeMap.put("indigo (6E)","IGO");
+		airlineCodeMap.put("Indigo (6E)","IGO");
 		airlineCodeMap.put("Japan Airlines (JL)", "JAL");
 		airlineCodeMap.put("Jazeera Airways  (J9)", "JZR");
 		airlineCodeMap.put("Jet Airways (9W)", "JAI");
@@ -277,7 +277,7 @@ public class SAUtils {
 		airlineCodeMap.put("Safi Airways (4Q)", "SFW");
 		airlineCodeMap.put("Santa Barbara (S3)", "BBR");
 		airlineCodeMap.put("SAS (SK)", "SAS");
-		airlineCodeMap.put("spicejet (SG)","SEJ");
+		airlineCodeMap.put("Spicejet (SG)","SEJ");
 		airlineCodeMap.put("SATA Air Açores (SP)", "SAT");
 		airlineCodeMap.put("SATA Internacional (S4)", "RZO");
 		airlineCodeMap.put("Saudi Arabian Airlines (SV)", "SVA");
