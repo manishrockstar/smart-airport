@@ -95,7 +95,16 @@ public class SAUtils {
 		airlineCodeMap.put("Air Europa (UX)", "AEA");
 		airlineCodeMap.put("Air France (AF)", "AFR");
 		airlineCodeMap.put("Air India  (AI)", "AIC");
-		airlineCodeMap.put("Air Koryo (JS)", "KOR");
+		airlineCodeMap.put("Air India Express (IX)", "AXB");
+		airlineCodeMap.put("JetKonnect (S2)", "JLL");
+		airlineCodeMap.put("AirAsia India (I5)", "IAD");
+		airlineCodeMap.put("Air Costa (LB)", "LEP");
+		airlineCodeMap.put("Vistara Airlines (UK)", "VTI");
+
+		
+		
+		
+	  	airlineCodeMap.put("Air Koryo (JS)", "KOR");
 		airlineCodeMap.put("Air Macau (NX)", "AMU");
 		airlineCodeMap.put("Air Madagascar (MD)", "MDG");
 		airlineCodeMap.put("Air Malta  (KM)", "AMC");
