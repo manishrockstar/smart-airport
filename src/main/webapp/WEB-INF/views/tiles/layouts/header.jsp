@@ -196,7 +196,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="id04" class="modal">
   
-  <form class="modal-content animate" method ="GET" action="/flight/trackByAirport">
+  <form class="modal-content animate" method ="POST" action="/flight/trackByAirport">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
       <br>
