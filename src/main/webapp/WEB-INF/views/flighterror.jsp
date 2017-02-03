@@ -41,14 +41,14 @@ function nn(){
 <br>
 <br><br>
 <br>
-<div style="height:100%">
+<div style="height:100%; width:200px">
 <center>
-<form action="">
+<form action="/">
 	<table width="200px">
 		<tr>
 			<td><center><h2><b>${message}</b></h2></center></td>
 		</tr>
-		<tr> <td> <input type="submit" value="OK"> </td></tr>
+		<tr> <td> <center><input type="submit" value="OK"> </center></td></tr>
 	</table>
 </form>
 </center>
