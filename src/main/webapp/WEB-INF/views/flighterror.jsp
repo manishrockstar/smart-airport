@@ -31,25 +31,6 @@ function nn(){
 <body style="background-image:url(${images}/flight.jpg)" onload='nn()'>
 
 
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<div style="height:200px; width:300px; align:center">
-<center>
-<form action="/">
-	<table width="200px">
-		<tr>
-			<td><center><h2><b>${message}</b></h2></center></td>
-		</tr>
-		<tr> <td> <center><input type="submit" value="OK"> </center></td></tr>
-	</table>
-</form>
-</center>
-</div>
-
 </body>
 
 </html>
