@@ -229,27 +229,15 @@ span.psw {
 #id08
 {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
-    right: 5px;
-    width: 350px; /* Full width */
-    height: 500px; /* Full height */
-
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-bottom: 10px;
 }
 
 
 .closeme {
-    position:fixed;
-    right:24px;
-    top:62px;
-    font-size: 45px;
+    position: absolute;
+    right:14.8px;
+    top:13%;
+    font-size: 35px;
     font-weight: bold;
-    color:#FF0000;
-    display:block;
 }
 
 #idxx
@@ -954,3 +942,5 @@ p.small {
   -webkit-animation-delay: 1s;
 
 }
+
+#ibm_chat_root { display:none; position:fixed; bottom:5.8%; right: 14.8px; height: 80%; min-height:400px; width:25%; background:#000; }

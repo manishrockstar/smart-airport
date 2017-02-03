@@ -10,7 +10,8 @@
 <title>
 Smart Airport
 </title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
 
 
@@ -44,6 +45,18 @@ function weather() {
     document.getElementById('id10').style.display='block';
 }
 </script>
+<script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
+<script>
+  var config = {
+    el: 'ibm_chat_root',
+    baseURL: 'https://api.ibm.com/virtualagent/run/api/v1',
+    botID: '7f4fec34-ad32-4a5c-b58b-260d3c1106af',
+    XIBMClientID: '3a461f2b-04a2-4683-9926-2e1ade618c77',
+    XIBMClientSecret: 'J7dW5wE7vF1iB4tR8qD6kV0pX1sH2bW7qB5pR7nW5dQ0bO4oF4'
+  };
+  window.IBMChat.init(config);
+</script>
+
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
 <img id="imgicon1" src="${images}/smart.png" height="55px" class="inlineprop" usemap="#planetmap">
@@ -21563,13 +21576,10 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="id08">		
     <div class="imgcontainer1">
-      <span onclick="document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:#333">&times;</span>   
-      </div>      
-   <iframe id="idxx" src="http://smartairport-conversation.mybluemix.net/dist/index.html" frameborder="4" ></iframe>    
+      <span onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:white">&times;</span>   
+      </div> 
 </div>
-
-
-
+<div id="ibm_chat_root"></div>
 
 
 <div id="id09" class="modal">
