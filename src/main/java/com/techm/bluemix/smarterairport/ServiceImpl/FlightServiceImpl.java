@@ -109,6 +109,31 @@ public class FlightServiceImpl implements FlightServices {
 		System.out.println(data);
 		return data;
 	}
+	
+	
+	@Override
+	public List<FlightStatusWrapper> trackByAirport(String airports, String departarrival, String hoursofday, Date dat,
+			String airline) {
+		// TODO Auto-generated method stub
+		Date mydate=dat;
+		SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
+	    SimpleDateFormat monFormat = new SimpleDateFormat("MM");
+	    SimpleDateFormat datFormat = new SimpleDateFormat("dd");
+	    //dat.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+	    String yy=yearFormat.format(mydate);
+	    String mm=monFormat.format(mydate);
+	    String dd=datFormat.format(mydate);
+		
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END+airline+"&sort=departureDate&departureDate.dir=asc";
+		System.out.println(srcURL);
+		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
+		RestTemplate restTemplate=new RestTemplate();
+		ResponseEntity<FlightStatusWrapper> jsonString=restTemplate.getForEntity(srcURL, FlightStatusWrapper.class);
+		List<FlightStatusWrapper> data = new ArrayList<>(Arrays.asList(jsonString.getBody()));
+	
+		System.out.println(data);
+		return data;
+	}
 
 	/**Flight Status by FlightID
 	 * 

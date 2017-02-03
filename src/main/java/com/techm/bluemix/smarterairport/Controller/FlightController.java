@@ -58,19 +58,21 @@ public class FlightController<fsWrapper> {
 	}
 	
 	@RequestMapping(value="/trackByAirport", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView trackFlightByAirport(@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
+	public ModelAndView trackFlightByAirport(@RequestParam(value="airline", required=false) String airline,@RequestParam("airports") String airports,@RequestParam("hoursofday") String hoursofday,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
 		
-		List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat);
-		//FlightStatusWrapper fsWrapper = flightServices.trackByAirport(SAUtils.airportCodeMap.get(airports),departarrival,hoursofday,dat);
-		System.out.println(fswrapper);
-		if(fswrapper.isEmpty()){		
-			String message="Flight details not Found";
-			return new ModelAndView("flighterror","message",message);
+		if(airline.equals(null)||airline.isEmpty()||airline.equals(""))
+		{
+			List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat);	
+			System.out.println(fswrapper);
+			return new ModelAndView("flightstatus","fswrapper",fswrapper);
 		}
-		else{
-			return new ModelAndView("flightstatus","fswrapper",fswrapper);			
+		else {
+			List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat,SAUtils.airlineCodeMap.get(airline));
+			System.out.println(fswrapper);
+			return new ModelAndView("flightstatus","fswrapper",fswrapper);
 		}
+		
 	}
 	
 	@RequestMapping(value="/trackByflightID", method={RequestMethod.GET,RequestMethod.POST})

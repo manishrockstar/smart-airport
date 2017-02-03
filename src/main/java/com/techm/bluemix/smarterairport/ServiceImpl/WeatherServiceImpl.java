@@ -65,7 +65,7 @@ import org.springframework.http.HttpEntity;
 public class WeatherServiceImpl implements WeatherServices {
 
 	private static final Logger log = LoggerFactory.getLogger(WeatherServiceImpl.class);
-	private Thread t;
+	
 	
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -113,7 +113,6 @@ public class WeatherServiceImpl implements WeatherServices {
 		String application_id=api+".appid";
 		String application_key=api+".appkey";		
 		
-		t.start();
 		File propertiesFile = new File(getClass().getClassLoader().getResource(fname).getFile());
 		FileChangedReloadingStrategy fileChangedReloadingStrategy = new FileChangedReloadingStrategy();
 		fileChangedReloadingStrategy.setRefreshDelay(2000);
