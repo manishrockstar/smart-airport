@@ -21575,7 +21575,7 @@ We will consistently achieve top quartile growth by contributing to our customer
 
 <div id="ibm_chat_root">
   <div class="imgcontainer1">
-      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:#8A2BE2	">&times;</span>   
+      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:white	">&times;</span>   
   </div>  
   </div>
   <script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
