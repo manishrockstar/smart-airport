@@ -27,11 +27,7 @@ function nn(){
 </script>
 
 
-<style type="text/css">
-.bgimg {
-    background-image: url('${images}/wall.jpg');
-}
-</style>
+
 <body style="background-image:url(${images}/flight.jpg)">
 
 
@@ -41,14 +37,14 @@ function nn(){
 <br>
 <br><br>
 <br>
-<div style="height:100%">
+<div style="height:200px; width:300px; align:center">
 <center>
-<form action="">
+<form action="/">
 	<table width="200px">
 		<tr>
 			<td><center><h2><b>${message}</b></h2></center></td>
 		</tr>
-		<tr> <td> <input type="submit" value="OK"> </td></tr>
+		<tr> <td> <center><input type="submit" value="OK"> </center></td></tr>
 	</table>
 </form>
 </center>
