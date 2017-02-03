@@ -38,7 +38,7 @@ public class FlightController<fsWrapper> {
 		System.out.println(fswrapper);
 		if(fswrapper.get(0).getFlightStatuses().length<1){		
 			String message="Flight details not Found, Please try again";
-			return new ModelAndView("flighterror","message",message);
+			return new ModelAndView("id04","message",message);
 		}
 		else{
 			return new ModelAndView("flightstatus","fswrapper",fswrapper);			
