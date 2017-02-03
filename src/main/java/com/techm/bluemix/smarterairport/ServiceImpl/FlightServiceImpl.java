@@ -124,7 +124,7 @@ public class FlightServiceImpl implements FlightServices {
 	    String mm=monFormat.format(mydate);
 	    String dd=datFormat.format(mydate);
 		
-		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END+airline+"&sort=departureDate&departureDate.dir=asc";
+		String srcURL=SAConstant.FLIGHSTATS_API_BASE_URI+SAConstant.F_WEBSERVICE_AIRPORTS+airports+"/"+departarrival+"/"+yy+"/"+mm+"/"+dd+"/"+hoursofday+SAConstant.FLIGHSTATS_APP_ID_KEY+SAConstant.F_WEBSERVICE_Airport_END+"&carrier="+airline+"&sort=departureDate&departureDate.dir=asc";
 		System.out.println(srcURL);
 		//RestTemplate restTemplate=new RestTemplate(SAUtils.getClientFactory());
 		RestTemplate restTemplate=new RestTemplate();
