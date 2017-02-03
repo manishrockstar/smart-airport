@@ -48,7 +48,7 @@ public class FlightController<fsWrapper> {
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(departure,arrival,departarrival,dat);
 		System.out.println(fswrapper);
-		if(fswrapper.size()>1){		
+		if(fswrapper.get(0).getFlightStatuses().length<1){		
 			String message="Flight details not Found";
 			return new ModelAndView("flighterror","message",message);
 		}
@@ -81,7 +81,7 @@ public class FlightController<fsWrapper> {
 		
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByflightID(SAUtils.airlineCodeMap.get(airline),flightId, departarrival,dat);
 		System.out.println(fswrapper);
-		if(fswrapper.size()>1){		
+		if(fswrapper.get(0).getFlightStatuses().length<1 || fswrapper.get(0).getFlightStatuses().equals(null)){		
 			String message="Flight details not Found";
 			return new ModelAndView("flighterror","message",message);
 		}
