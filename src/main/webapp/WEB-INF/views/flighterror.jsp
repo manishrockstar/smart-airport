@@ -15,7 +15,22 @@
 
 <spring:url value="/resources/images" var="images" />
 
-<script type="text/javascript">
+
+
+
+<body style="background-image:url(${images}/flight.jpg)" onload='rr()'>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+
+<script>
 
 function nn(){
 	
@@ -33,7 +48,6 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
  function rr() {
- 	window.location.href="/";
     modal.style.display = "block";
 }
 
@@ -51,19 +65,6 @@ window.onclick = function(event) {
 }
 
 </script>
-
-
-
-<body style="background-image:url(${images}/flight.jpg)" onload='rr()'>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
 
 
 </body>
