@@ -13,6 +13,15 @@ Smart Airport
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 </head>
+<style>
+  
+ html, body, iframe { width: 100%; height:100%; padding:0; margin:0; }
+ #ibm_chat_root {
+  	position:fixed; bottom:0; right: 20px; height: 80%; min-height:400px; width:300px; background:#000;
+  	z-index:100;
+  	display:none;
+  	}
+</style>
 
 
 <script src="${scripts}/script.js"></script>
@@ -45,17 +54,7 @@ function weather() {
     document.getElementById('id10').style.display='block';
 }
 </script>
-<script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
-<script>
-  var config = {
-    el: 'ibm_chat_root',
-    baseURL: 'https://api.ibm.com/virtualagent/run/api/v1',
-    botID: '7f4fec34-ad32-4a5c-b58b-260d3c1106af',
-    XIBMClientID: '3a461f2b-04a2-4683-9926-2e1ade618c77',
-    XIBMClientSecret: 'J7dW5wE7vF1iB4tR8qD6kV0pX1sH2bW7qB5pR7nW5dQ0bO4oF4'
-  };
-  window.IBMChat.init(config);
-</script>
+
 
 <body bgcolor="#DFE2DB">
 <div id="fixedheader">
@@ -21574,12 +21573,22 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 
-<div id="id08">		
-    <div class="imgcontainer1">
-      <span onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('id08').style.display='none'" class="closeme" title="Close Modal" style="color:white">&times;</span>   
-      </div> 
-</div>
-<div id="ibm_chat_root"></div>
+<div id="ibm_chat_root">
+  <div class="imgcontainer1">
+      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:#8A2BE2	">&times;</span>   
+  </div>  
+  </div>
+  <script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
+<script>
+  var config = {
+    el: 'ibm_chat_root',
+    baseURL: 'https://api.ibm.com/virtualagent/run/api/v1',
+    botID: '7f4fec34-ad32-4a5c-b58b-260d3c1106af',
+    XIBMClientID: '3a461f2b-04a2-4683-9926-2e1ade618c77',
+    XIBMClientSecret: 'J7dW5wE7vF1iB4tR8qD6kV0pX1sH2bW7qB5pR7nW5dQ0bO4oF4'
+  };
+  window.IBMChat.init(config);
+</script>
 
 
 <div id="id09" class="modal">
