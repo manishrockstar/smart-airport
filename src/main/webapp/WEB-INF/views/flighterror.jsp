@@ -35,16 +35,22 @@ function nn(){
 <body style="background-image:url(${images}/flight.jpg)">
 
 
-
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
 <div style="height:100%">
 <center>
-<table border="1px" padding="1px" id="t01">
 
-	
-	<tr>
-			<td align="center">${message}</td>
-	</tr>
-</table>
+	<table>
+		<tr>
+			<td><h2><b>${message}</b></h2></td>
+		</tr>
+		<tr> <td> <button onclick="/">Ok</button> </td></tr>
+	</table>
+
 </center>
 </div>
 

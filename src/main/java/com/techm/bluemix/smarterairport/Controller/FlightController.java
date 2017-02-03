@@ -29,19 +29,7 @@ public class FlightController<fsWrapper> {
 	@Autowired(required=true)
 	private FlightServices flightServices;
 
-	@RequestMapping(value="", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView flightHome()
-	{
-		return new ModelAndView("flight");
-	}
-	
-	@RequestMapping(value="/trackByFS", method={RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView trackFlightByFS(@RequestParam("fs") String fs) throws JsonParseException, JsonMappingException, IOException
-	{
-		FlightStatusbyFSWrapper fswrapper = flightServices.trackByFS(fs);
-		return new ModelAndView("flightstatus","fswrapper",fswrapper);
-	}
-	
+		
 	@RequestMapping(value="/trackByRoute", method={RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView trackFlightByRoute(@RequestParam("departure") String departure,@RequestParam("arrival") String arrival,@RequestParam("departarrival") String departarrival,@RequestParam("dat")@DateTimeFormat(pattern = "yyyy-MM-dd") Date dat) throws JsonParseException, JsonMappingException, IOException
 	{	
@@ -49,7 +37,7 @@ public class FlightController<fsWrapper> {
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByRoute(departure,arrival,departarrival,dat);
 		System.out.println(fswrapper);
 		if(fswrapper.get(0).getFlightStatuses().length<1){		
-			String message="Flight details not Found";
+			String message="Flight details not Found, Please try again";
 			return new ModelAndView("flighterror","message",message);
 		}
 		else{
@@ -65,12 +53,24 @@ public class FlightController<fsWrapper> {
 		{
 			List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat);	
 			System.out.println(fswrapper);
-			return new ModelAndView("flightstatus","fswrapper",fswrapper);
+			if(fswrapper.get(0).getFlightStatuses().length<1 || fswrapper.get(0).getFlightStatuses().equals(null)){		
+			String message="Flight details not Found, Please try again";
+			return new ModelAndView("flighterror","message",message);
+			}
+			else{
+				return new ModelAndView("flightstatus","fswrapper",fswrapper);			
+			}
 		}
 		else {
 			List<FlightStatusWrapper> fswrapper = flightServices.trackByAirport(airports,departarrival,hoursofday,dat,SAUtils.airlineCodeMap.get(airline));
 			System.out.println(fswrapper);
-			return new ModelAndView("flightstatus","fswrapper",fswrapper);
+			if(fswrapper.get(0).getFlightStatuses().length<1 || fswrapper.get(0).getFlightStatuses().equals(null)){		
+			String message="Flight details not Found, Please try again";
+			return new ModelAndView("flighterror","message",message);
+			}
+			else{
+				return new ModelAndView("flightstatus","fswrapper",fswrapper);			
+			}
 		}
 		
 	}
@@ -82,7 +82,7 @@ public class FlightController<fsWrapper> {
 		List<FlightStatusWrapper> fswrapper = flightServices.trackByflightID(SAUtils.airlineCodeMap.get(airline),flightId, departarrival,dat);
 		System.out.println(fswrapper);
 		if(fswrapper.get(0).getFlightStatuses().length<1 || fswrapper.get(0).getFlightStatuses().equals(null)){		
-			String message="Flight details not Found";
+			String message="Flight details not Found, Please try again";
 			return new ModelAndView("flighterror","message",message);
 		}
 		else{
