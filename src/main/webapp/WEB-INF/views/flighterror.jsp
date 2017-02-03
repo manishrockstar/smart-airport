@@ -28,7 +28,7 @@ function nn(){
 
 
 
-<body style="background-image:url(${images}/flight.jpg)">
+<body style="background-image:url(${images}/flight.jpg)" onload='nn()'>
 
 
 <br>
