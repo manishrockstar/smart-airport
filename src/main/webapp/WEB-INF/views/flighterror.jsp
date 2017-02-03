@@ -18,7 +18,7 @@
 
 
 
-<body style="background-image:url(${images}/flight.jpg)" onload='rr()'>
+<body style="background-image:url(${images}/flight.jpg)" onload='nn()'>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
