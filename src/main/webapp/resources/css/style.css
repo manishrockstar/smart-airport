@@ -234,8 +234,8 @@ span.psw {
 
 .closeme {
     position: absolute;
-    right:18px;
-    top:0;
+    right:25px;
+    top:13%;
     font-size: 35px;
     font-weight: bold;
     z-index:1;
