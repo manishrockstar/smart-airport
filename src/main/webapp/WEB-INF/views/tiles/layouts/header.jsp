@@ -24,6 +24,7 @@ Smart Airport
   	
   	#closechat
   	{
+  		font-size:3px;
   		display:none;
   		position:fixed;
   		top:15%;
