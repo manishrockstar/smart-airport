@@ -21,16 +21,7 @@ Smart Airport
   	z-index:100;
   	display:none;
   	}
-  	#closechat {
-    min-height:2px;
-    width:80px;
-	display:none;
-  	position:fixed; top:16%; right:20px;
-  	z-index:101;
-    background-color: #333; /* Green */
-    border: none;
-    color: white;
-  	}
+  	
 </style>
 
 
@@ -21583,7 +21574,7 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 
-<button id='closechat'onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('closechat').style.display='none'">End Chat</button>
+<button style="min-height:2px;width:75px;display:none;position:fixed;top:20%;right:20px;z-index:101;background-color:#333;border:none;color:white;" id='closechat'onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('closechat').style.display='none'">End Chat</button>
 
 <div id="ibm_chat_root"> 
 </div>
