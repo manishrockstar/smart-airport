@@ -21,6 +21,14 @@ Smart Airport
   	z-index:100;
   	display:none;
   	}
+  	#closechat {
+	display:none;
+  	position:fixed; top:20%; right:20px;
+  	z-index:101;
+    background-color: #333; /* Green */
+    border: none;
+    color: white;
+  	}
 </style>
 
 
@@ -64,7 +72,7 @@ function weather() {
         <li>
             <a href="javascript:void(0)">Services &#9662;</a>
             <ul class="dropdown">
-                    <li><a onclick="document.getElementById('id08').style.display='block'">Chat me</a></li>
+                    <li><a onclick="document.getElementById('ibm_chat_root').style.display='block';document.getElementById('closechat').style.display='block'">Chat me</a></li>
                     <li><a onclick="document.getElementById('id08').style.display='block'">Queue</a></li>
             </ul>
         </li>
@@ -21573,11 +21581,10 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 
-<div id="ibm_chat_root">
-  <div class="imgcontainer1">
-      <span onclick="document.getElementById('ibm_chat_root').style.display='none'" class="closeme" title="Close Modal" style="color:white">&times;</span>   
-  </div>  
-  </div>
+<button id='closechat'onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('closechat').style.display='none'">End Chat</button>
+
+<div id="ibm_chat_root"> 
+</div>
   <script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
 <script>
   var config = {
