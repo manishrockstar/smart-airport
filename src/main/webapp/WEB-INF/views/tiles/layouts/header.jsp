@@ -22,6 +22,15 @@ Smart Airport
   	display:none;
   	}
   	
+  	#closechat
+  	{
+  		display:none;
+  		position:fixed;
+  		top:15%;
+  		right:15px;
+  		z-index:101;
+  	}
+  	
 </style>
 
 
@@ -21574,8 +21583,8 @@ We will consistently achieve top quartile growth by contributing to our customer
   </form>
 </div>
 
-<button style="min-height:2px;width:75px;display:none;position:fixed;top:20%;right:15px;z-index:101;background-color:#333;border:none;color:white;" id='closechat'onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('closechat').style.display='none'">&times;</button>
 
+<span id='closechat' onclick="document.getElementById('ibm_chat_root').style.display='none';document.getElementById('closechat').style.display='none'" class="close" title="Close Modal">End chat</span>
 <div id="ibm_chat_root"> 
 </div>
   <script src='https://unpkg.com/@watson-virtual-agent/chat-widget/dist/chat.min.js'></script>
