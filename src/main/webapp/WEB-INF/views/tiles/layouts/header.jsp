@@ -22,6 +22,8 @@ Smart Airport
   	display:none;
   	}
   	#closechat {
+    min-height:2px;
+    width:75px;
 	display:none;
   	position:fixed; top:20%; right:20px;
   	z-index:101;
