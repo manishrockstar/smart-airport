@@ -23,9 +23,9 @@ Smart Airport
   	}
   	#closechat {
     min-height:2px;
-    width:75px;
+    width:80px;
 	display:none;
-  	position:fixed; top:20%; right:20px;
+  	position:fixed; top:16%; right:20px;
   	z-index:101;
     background-color: #333; /* Green */
     border: none;
